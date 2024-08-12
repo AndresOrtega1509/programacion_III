@@ -10,11 +10,11 @@ public class PeluqueriaApp extends Application{
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(PeluqueriaApp.class.getResource("/peluqueriaView.fxml"));
+        FXMLLoader loader = new FXMLLoader(PeluqueriaApp.class.getResource("/co.edu.uniquindio.peluqueria/peluqueriaView.fxml"));
         Parent parent = loader.load();
         Scene scene = new Scene(parent);
         stage.setScene(scene);
-        stage.setTitle("UniEventos");
+        stage.setTitle("Peluqueria");
         stage.setResizable(false);
         stage.show();
 
