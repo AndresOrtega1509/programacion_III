@@ -1,7 +1,7 @@
-package co.edu.uniquindio.peluqueria.mapping.dto;
+package co.edu.uniquindio.peluqueriataller.peluqueriaapp.mapping.dto;
 
 public record ClienteDto(String nombre,
-                        String apellido,
+                         String apellido,
                          String cedula,
                          String correo,
                          String celular) {
