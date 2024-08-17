@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="480.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.peluqueriataller.peluqueriaapp.viewController.EmpleadoViewController">
+    <children>
+        <TabPane prefHeight="480.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Empleado">
+                    <content>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="714.0">
+                            <children>
+                                <GridPane alignment="CENTER" layoutX="26.0" layoutY="31.0" prefHeight="139.0" prefWidth="267.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label alignment="CENTER" text="Nombre:" textAlignment="CENTER">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER" text="Apellido:" textAlignment="CENTER" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" text="Cedula:" textAlignment="CENTER" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    </children>
+                                </GridPane>
+                                <GridPane layoutX="384.0" layoutY="31.0" prefHeight="94.0" prefWidth="238.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Correo:">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField GridPane.columnIndex="1" />
+                                        <Label text="Celular:" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                                <Separator layoutX="343.0" layoutY="14.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="6.0" />
+                                <TableView layoutX="154.0" layoutY="205.0" prefHeight="146.0" prefWidth="378.0">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" text="Nombre" />
+                                        <TableColumn prefWidth="75.0" text="Apellido" />
+                                        <TableColumn prefWidth="75.0" text="Cedula" />
+                                        <TableColumn prefWidth="75.0" text="Correo" />
+                                        <TableColumn prefWidth="75.0" text="Celular" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Empleado">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="Cita">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

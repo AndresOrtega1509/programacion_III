@@ -12,7 +12,7 @@ public class PeluqueriaApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PeluqueriaApplication.class.getResource("peluqueriaView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Peluqueria");
         stage.setScene(scene);
         stage.show();
     }
