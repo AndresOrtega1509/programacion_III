@@ -1,7 +1,6 @@
 package co.edu.uniquindio.peluqueriataller.peluqueriaapp.model;
 
 import java.time.LocalDate;
-
 public class Cita {
 
     private Cliente cliente;

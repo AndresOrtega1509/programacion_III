@@ -1,6 +1,8 @@
 module co.edu.uniquindio.peluqueriataller.peluqueriaapp {
     requires javafx.controls;
     requires javafx.fxml;
+    requires static lombok;
+    requires org.mapstruct;
 
 
     opens co.edu.uniquindio.peluqueriataller.peluqueriaapp to javafx.fxml;

@@ -75,6 +75,56 @@ public class Peluqueria implements IPeluqueriaService {
     }
 
     @Override
+    public boolean actualizarEmpleado(String cedulaActual, Empleado empleado) throws Exception {
+        Empleado empleadoActual = obtenerEmpleado(cedulaActual);
+        if(empleadoActual == null)
+            throw new Exception("El empleado a actualizar no existe");
+        else{
+            empleadoActual.setNombre(empleado.getNombre());
+            empleadoActual.setApellido(empleado.getApellido());
+            empleadoActual.setCedula(empleado.getCedula());
+            empleadoActual.setCorreo(empleado.getCorreo());
+            empleadoActual.setCelular(empleado.getCelular());
+            return true;
+        }
+    }
+
+    public Empleado obtenerEmpleado(String cedula) {
+
+        Empleado empleadoEncontrado = null;
+        for (Empleado empleado : getListaEmpleados()) {
+            if(empleado.getCedula().equalsIgnoreCase(cedula)){
+                empleadoEncontrado = empleado;
+                break;
+            }
+        }
+        return empleadoEncontrado;
+    }
+
+    @Override
+    public ArrayList<Empleado> obtenerEmpleados() {
+        return listaEmpleados;
+    }
+
+    @Override
+    public Boolean eliminarEmpleado(String cedula) throws Exception {
+        Empleado empleado;
+        boolean flagExiste = false;
+        empleado = obtenerEmpleado(cedula);
+        if(empleado == null)
+            throw new Exception("El empleado a eliminar no existe");
+        else{
+            getListaEmpleados().remove(empleado);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+    public void agregarEmpleado(Empleado nuevoEmpleado) throws Exception{
+        getListaEmpleados().add(nuevoEmpleado);
+    }
+
+    @Override
     public Cita crearCita(Cliente cliente, Empleado empleado, LocalDate fecha) throws Exception {
         return null;
     }
