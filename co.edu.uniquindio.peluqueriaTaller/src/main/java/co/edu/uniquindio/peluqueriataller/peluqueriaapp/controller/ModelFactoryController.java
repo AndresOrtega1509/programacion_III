@@ -8,15 +8,11 @@ import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Cliente;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Empleado;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Peluqueria;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.utils.PeluqueriaUtils;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
 public class ModelFactoryController implements IModelFactoryService {
 
-    @Setter
-    @Getter
     Peluqueria peluqueria;
 
     PeluqueriaMapper mapper = PeluqueriaMapper.INSTANCE;
@@ -100,6 +96,4 @@ public class ModelFactoryController implements IModelFactoryService {
             return false;
         }
     }
-
-
 }

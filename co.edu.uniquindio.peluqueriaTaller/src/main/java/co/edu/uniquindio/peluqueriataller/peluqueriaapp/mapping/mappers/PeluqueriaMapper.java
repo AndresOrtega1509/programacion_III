@@ -16,6 +16,17 @@ public interface PeluqueriaMapper {
 
     PeluqueriaMapper INSTANCE = Mappers.getMapper(PeluqueriaMapper.class);
 
+    @Named("clienteToClienteDto")
+    @Mapping(source = "nombre", target = "nombre")
+    ClienteDto clienteToClienteDto(Cliente cliente);
+
+    @Mapping(source = "nombre", target = "nombre")
+    @Mapping(source = "apellido", target = "apellido")
+    @Mapping(source = "cedula", target = "cedula")
+    @Mapping(source = "correo", target = "correo")
+    @Mapping(source = "celular", target = "celular")
+    Cliente clienteDtoToCliente(ClienteDto clienteDto);
+
     @Named("empleadoToEmpleadoDto")
     EmpleadoDto empleadoToEmpleadoDto(Empleado empleado);
 
@@ -24,20 +35,6 @@ public interface PeluqueriaMapper {
     @IterableMapping(qualifiedByName = "empleadoToEmpleadoDto")
     List<EmpleadoDto> getEmpleadosDto(List<Empleado> listaEmpleados);
 
-//    @Named("mappingToEmpeladoDto")
-//    EmpleadoDto mappingToEmpeladoDto(Empleado empleado);
-
-    Cliente clienteDtoToCliente(ClienteDto clienteDto);
-
     @IterableMapping(qualifiedByName = "clienteToClienteDto")
     List<ClienteDto> getClientesDto(List<Cliente> listaClientes);
-
-    @Mapping(target = "nombre", source = "cliente.nombre")
-    @Mapping(target = "apellido", source = "cliente.apellido")
-    @Mapping(target = "cedula", source = "cliente.cedula")
-    @Mapping(target = "correo", source = "cliente.correo")
-    @Mapping(target = "celular", source = "cliente.celular")
-    ClienteDto clienteToClienteDto(Cliente cliente);
-
-
 }
