@@ -32,11 +32,11 @@ public interface PeluqueriaMapper {
     @IterableMapping(qualifiedByName = "clienteToClienteDto")
     List<ClienteDto> getClientesDto(List<Cliente> listaClientes);
 
-    @Mapping(target = "nombre", source = "persona.nombre")
-    @Mapping(target = "apellido", source = "persona.apellido")
-    @Mapping(target = "cedula", source = "persona.cedula")
-    @Mapping(target = "correo", source = "persona.correo")
-    @Mapping(target = "celular", source = "persona.celular")
+    @Mapping(target = "nombre", source = "cliente.nombre")
+    @Mapping(target = "apellido", source = "cliente.apellido")
+    @Mapping(target = "cedula", source = "cliente.cedula")
+    @Mapping(target = "correo", source = "cliente.correo")
+    @Mapping(target = "celular", source = "cliente.celular")
     ClienteDto clienteToClienteDto(Cliente cliente);
 
 
