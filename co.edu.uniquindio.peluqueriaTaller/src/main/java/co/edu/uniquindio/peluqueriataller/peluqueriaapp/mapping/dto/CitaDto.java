@@ -7,5 +7,6 @@ import java.time.LocalDate;
 
 public record CitaDto(Cliente cliente,
                       Empleado empleado,
-                      LocalDate fecha) {
+                      LocalDate fecha,
+                      String hora) {
 }

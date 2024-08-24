@@ -6,6 +6,7 @@ public class Cita {
     private Cliente cliente;
     private Empleado empleado;
     private LocalDate fecha;
+    private String hora;
 
     public Cita() {
     }
@@ -32,5 +33,13 @@ public class Cita {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 }

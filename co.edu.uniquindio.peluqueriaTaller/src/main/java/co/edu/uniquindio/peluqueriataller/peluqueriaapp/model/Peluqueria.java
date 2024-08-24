@@ -124,6 +124,10 @@ public class Peluqueria implements IPeluqueriaService {
         getListaEmpleados().add(nuevoEmpleado);
     }
 
+    public void agregarCliente(Cliente nuevoCliente) throws Exception{
+        getListaClientes().add(nuevoCliente);
+    }
+
     @Override
     public Cita crearCita(Cliente cliente, Empleado empleado, LocalDate fecha) throws Exception {
         return null;

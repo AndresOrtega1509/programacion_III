@@ -38,19 +38,19 @@
                                                 <Font size="16.0" />
                                             </font>
                                         </Label>
-                                        <TextField GridPane.columnIndex="1" />
+                                        <TextField fx:id="txtNombreCliente" GridPane.columnIndex="1" />
                                         <Label alignment="CENTER" text="Apellido:" textAlignment="CENTER" GridPane.rowIndex="1">
                                             <font>
                                                 <Font size="16.0" />
                                             </font>
                                         </Label>
-                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="txtApellidoCliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                         <Label alignment="CENTER" text="Cedula:" textAlignment="CENTER" GridPane.rowIndex="2">
                                             <font>
                                                 <Font size="16.0" />
                                             </font>
                                         </Label>
-                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <TextField fx:id="txtCedulaCliente" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                     </children>
                                 </GridPane>
                                 <GridPane layoutX="384.0" layoutY="31.0" prefHeight="94.0" prefWidth="238.0">
@@ -68,26 +68,26 @@
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <TextField GridPane.columnIndex="1" />
+                                        <TextField fx:id="txtCorreoCliente" GridPane.columnIndex="1" />
                                         <Label text="Celular:" GridPane.rowIndex="1">
                                             <font>
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="txtCelularCliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
                                 <Separator layoutX="343.0" layoutY="14.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="6.0" />
-                                <TableView layoutX="154.0" layoutY="205.0" prefHeight="146.0" prefWidth="378.0">
+                                <TableView fx:id="tablaCliente" layoutX="154.0" layoutY="205.0" prefHeight="146.0" prefWidth="378.0">
                                     <columns>
-                                        <TableColumn prefWidth="75.0" text="Nombre" />
-                                        <TableColumn prefWidth="75.0" text="Apellido" />
-                                        <TableColumn prefWidth="75.0" text="Cedula" />
-                                        <TableColumn prefWidth="75.0" text="Correo" />
-                                        <TableColumn prefWidth="75.0" text="Celular" />
+                                        <TableColumn fx:id="tcNombreCliente" prefWidth="75.0" text="Nombre" />
+                                        <TableColumn fx:id="tcApellidoCliente" prefWidth="75.0" text="Apellido" />
+                                        <TableColumn fx:id="tcCedulaCliente" prefWidth="75.0" text="Cedula" />
+                                        <TableColumn fx:id="tcCorreoCliente" prefWidth="75.0" text="Correo" />
+                                        <TableColumn fx:id="tcCelularCliente" prefWidth="75.0" text="Celular" />
                                     </columns>
                                 </TableView>
-                        <Button layoutX="442.0" layoutY="138.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="121.0" style="-fx-background-color: #90EE90;" text="Agregar cliente">
+                        <Button layoutX="442.0" layoutY="138.0" mnemonicParsing="false" onAction="#agregarClienteAction" prefHeight="32.0" prefWidth="121.0" style="-fx-background-color: #90EE90;" text="Agregar cliente">
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>

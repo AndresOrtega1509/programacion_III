@@ -11,7 +11,6 @@ module co.edu.uniquindio.peluqueriataller.peluqueriaapp {
     opens co.edu.uniquindio.peluqueriataller.peluqueriaapp.viewController;
     exports co.edu.uniquindio.peluqueriataller.peluqueriaapp.viewController;
 
-
-
-
+    exports co.edu.uniquindio.peluqueriataller.peluqueriaapp.mapping.dto;
+    exports co.edu.uniquindio.peluqueriataller.peluqueriaapp.mapping.mappers;
 }

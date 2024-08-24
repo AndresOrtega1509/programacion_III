@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -53,6 +54,7 @@
                                     </columnConstraints>
                                     <rowConstraints>
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
                                         <Label text="Fecha:">
@@ -61,14 +63,21 @@
                                             </font>
                                         </Label>
                               <DatePicker GridPane.columnIndex="1" />
+                              <Label text="Hora:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
                                 <Separator layoutX="343.0" layoutY="14.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="6.0" />
-                                <TableView layoutX="167.0" layoutY="205.0" prefHeight="146.0" prefWidth="352.0">
+                                <TableView layoutX="118.0" layoutY="205.0" prefHeight="146.0" prefWidth="462.0">
                                     <columns>
                                         <TableColumn prefWidth="118.39996337890625" text="Cliente" />
                                         <TableColumn prefWidth="116.79998779296875" text="Empleado" />
                               <TableColumn prefWidth="120.80001831054688" text="Fecha" />
+                              <TableColumn prefWidth="104.80002441406248" text="Hora" />
                                     </columns>
                                 </TableView>
                             </children>

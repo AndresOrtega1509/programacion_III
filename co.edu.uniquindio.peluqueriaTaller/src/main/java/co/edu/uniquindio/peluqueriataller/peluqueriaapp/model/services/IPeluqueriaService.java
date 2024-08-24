@@ -15,7 +15,7 @@ public interface IPeluqueriaService {
                                    String celular) throws Exception;
     boolean actualizarEmpleado(String cedulaActual, Empleado empleado) throws Exception;
     Empleado obtenerEmpleado(String cedula);
-    public ArrayList<Empleado> obtenerEmpleados();
+    ArrayList<Empleado> obtenerEmpleados();
     Boolean eliminarEmpleado(String cedula)throws Exception;
     Cita crearCita (Cliente cliente, Empleado empleado, LocalDate fecha) throws Exception;
     boolean  verificarClienteExistente(String cedula) throws Exception;
