@@ -10,6 +10,8 @@ public class PeluqueriaUtils {
 
         Peluqueria peluqueria = new Peluqueria();
 
+        peluqueria.setNombre("Barber Shop");
+
         Cliente cliente1 = new Cliente();
         cliente1.setNombre("Luiz");
         cliente1.setApellido("Ortiz");

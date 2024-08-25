@@ -221,6 +221,15 @@ public class EmpleadoViewController {
         listenerSelection();
     }
 
+    private void initDataBinding() {
+
+        tcNombreEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
+        tcApellidoEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().apellido()));
+        tcCedulaEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cedula()));
+        tcCorreoEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correo()));
+        tcCelularEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().celular()));
+    }
+
     private void listenerSelection() {
 
         tablaEmpleado.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
@@ -243,14 +252,5 @@ public class EmpleadoViewController {
     private void obtenerEmpleados() {
         
         listaEmpleadosDto.addAll(empleadoController.obtenerEmpleados());
-    }
-
-    private void initDataBinding() {
-        
-        tcNombreEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
-        tcApellidoEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().apellido()));
-        tcCedulaEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cedula()));
-        tcCorreoEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correo()));
-        tcCelularEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().celular()));
     }
 }

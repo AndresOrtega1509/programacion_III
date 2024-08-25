@@ -69,6 +69,13 @@ public class CitaViewController  {
         tablaCita.setItems(listaCitasDto);
 
     }
+    private void initDataBinding() {
+
+        tcCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cliente()));
+        tcEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().empleado()));
+        tcFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().fecha().toString()));
+        tcHora.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().hora()));
+    }
 
     @FXML
     void crearCitaAction(ActionEvent event) {
@@ -153,13 +160,5 @@ public class CitaViewController  {
     private void obtenerCitas() {
 
         listaCitasDto.addAll(citaController.obtenerCitasDto());
-    }
-
-    private void initDataBinding() {
-
-        tcCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cliente()));
-        tcEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().empleado()));
-        tcFecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().fecha().toString()));
-        tcHora.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().hora()));
     }
 }

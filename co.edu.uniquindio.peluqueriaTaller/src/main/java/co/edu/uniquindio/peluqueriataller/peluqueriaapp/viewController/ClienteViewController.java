@@ -75,6 +75,15 @@ public class ClienteViewController {
         listenerSelection();
     }
 
+    private void initDataBinding() {
+
+        tcNombreCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
+        tcApellidoCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().apellido()));
+        tcCedulaCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cedula()));
+        tcCorreoCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correo()));
+        tcCelularCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().celular()));
+    }
+
     private void listenerSelection() {
 
         tablaCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
@@ -92,15 +101,6 @@ public class ClienteViewController {
             txtCorreoCliente.setText(clienteSeleccionado.correo());
             txtCelularCliente.setText(clienteSeleccionado.celular());
         }
-    }
-
-    private void initDataBinding() {
-
-        tcNombreCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
-        tcApellidoCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().apellido()));
-        tcCedulaCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cedula()));
-        tcCorreoCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correo()));
-        tcCelularCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().celular()));
     }
 
     private void obtenerClientes() {
@@ -203,6 +203,17 @@ public class ClienteViewController {
         }
     }
 
+    private ClienteDto construirClienteDto() {
+
+        return new ClienteDto(
+                txtNombreCliente.getText(),
+                txtApellidoCliente.getText(),
+                txtCedulaCliente.getText(),
+                txtCorreoCliente.getText(),
+                txtCelularCliente.getText()
+        );
+    }
+
     private void limpiarCamposCliente() {
 
         txtNombreCliente.setText("");
@@ -239,17 +250,6 @@ public class ClienteViewController {
         aler.setHeaderText(header);
         aler.setContentText(contenido);
         aler.showAndWait();
-    }
-
-    private ClienteDto construirClienteDto() {
-
-        return new ClienteDto(
-                txtNombreCliente.getText(),
-                txtApellidoCliente.getText(),
-                txtCedulaCliente.getText(),
-                txtCorreoCliente.getText(),
-                txtCelularCliente.getText()
-        );
     }
 
 }

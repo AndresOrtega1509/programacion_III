@@ -9,11 +9,20 @@ import java.util.ArrayList;
 
 public class Peluqueria implements IPeluqueriaService {
 
+    private String nombre;
     ArrayList<Cliente> listaClientes = new ArrayList<>();
     ArrayList<Empleado> listaEmpleados = new ArrayList<>();
     ArrayList<Cita> listaCitas = new ArrayList<>();
 
     public Peluqueria() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public ArrayList<Cliente> getListaClientes() {
