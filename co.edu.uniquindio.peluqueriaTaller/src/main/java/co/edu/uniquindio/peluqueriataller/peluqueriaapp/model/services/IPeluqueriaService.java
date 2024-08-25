@@ -14,11 +14,18 @@ public interface IPeluqueriaService {
     Empleado crearEmpleado (String nombre, String apellido, String cedula, String correo,
                                    String celular) throws Exception;
     Cita crearCita(Cliente cliente, Empleado empleado, LocalDate fecha, String hora);
-    boolean actualizarEmpleado(String cedulaActual, Empleado empleado) throws Exception;
     Empleado obtenerEmpleado(String cedula);
     ArrayList<Empleado> obtenerEmpleados();
-    Boolean eliminarEmpleado(String cedula)throws Exception;
-    Cita crearCita (Cliente cliente, Empleado empleado, LocalDate fecha) throws Exception;
+    void agregarEmpleado(Empleado nuevoEmpleado) throws Exception;
+    void agregarCita(Cita nuevaCita) throws Exception;
+    void agregarCliente(Cliente nuevoCliente) throws Exception;
+
     boolean  verificarClienteExistente(String cedula) throws Exception;
     boolean  verificarEmpleadoExistente(String cedula) throws Exception;
+    Cliente obtenerClienteCedula(String cedula) throws Exception;
+    Empleado obtenerEmpleadoCedula(String cedula) throws Exception;
+    boolean actualizarCliente(String cedulaActual, Cliente cliente) throws Exception;
+    boolean actualizarEmpleado(String cedulaActual, Empleado empleado) throws Exception;
+    boolean eliminarCliente(String cedula) throws Exception;
+    Boolean eliminarEmpleado(String cedula)throws Exception;
 }

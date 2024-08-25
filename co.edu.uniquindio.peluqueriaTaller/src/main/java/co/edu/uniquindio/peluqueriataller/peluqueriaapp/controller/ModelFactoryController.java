@@ -48,10 +48,12 @@ public class ModelFactoryController implements IModelFactoryService {
         return mapper.getClientesDto(peluqueria.getListaClientes());
     }
 
+    @Override
     public List<CitaDto> obtenerCitasDto() {
         return mapper.getCitasDto(peluqueria.getListaCitas());
     }
 
+    @Override
     public boolean agregarCita(CitaDto citaDto) {
         try{
             Cita cita = mapper.citaDtoToCita(citaDto);
@@ -63,10 +65,12 @@ public class ModelFactoryController implements IModelFactoryService {
         }
     }
 
+    @Override
     public Cliente obtenerClienteCedula(String cedula) throws Exception {
         return peluqueria.obtenerClienteCedula(cedula);
     }
 
+    @Override
     public Empleado obtenerEmpleadoCedula(String cedula) throws Exception {
         return peluqueria.obtenerEmpleadoCedula(cedula);
     }
@@ -110,6 +114,7 @@ public class ModelFactoryController implements IModelFactoryService {
         return flagExiste;
     }
 
+    @Override
     public boolean eliminarCliente(String cedula) throws Exception{
         boolean flagExiste = false;
         try {
@@ -133,6 +138,7 @@ public class ModelFactoryController implements IModelFactoryService {
         }
     }
 
+    @Override
     public boolean actualizarCliente(String cedulaActual, ClienteDto clienteDto) {
         try {
             Cliente cliente = mapper.clienteDtoToCliente(clienteDto);
