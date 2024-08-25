@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -21,9 +21,9 @@
             <tabs>
                 <Tab text="Cita">
                     <content>
-                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="714.0">
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="453.0" prefWidth="700.0">
                             <children>
-                                <GridPane alignment="CENTER" layoutX="25.0" layoutY="21.0" prefHeight="139.0" prefWidth="267.0">
+                                <GridPane alignment="CENTER" layoutX="25.0" layoutY="21.0" prefHeight="139.0" prefWidth="287.0">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -33,21 +33,21 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
-                                        <Label alignment="CENTER" text="Empleado:" textAlignment="CENTER" GridPane.rowIndex="1">
+                                        <Label alignment="CENTER" text="Cedula Empleado:" textAlignment="CENTER" GridPane.rowIndex="1">
                                             <font>
                                                 <Font size="16.0" />
                                             </font>
                                         </Label>
-                              <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label alignment="CENTER" text="Cliente:" textAlignment="CENTER">
+                              <Label alignment="CENTER" text="Cedula Cliente:" textAlignment="CENTER">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox prefWidth="150.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtCedulaCliente" prefHeight="26.0" prefWidth="152.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtCedulaEmpleado" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
-                                <GridPane layoutX="381.0" layoutY="53.0" prefHeight="94.0" prefWidth="238.0">
+                                <GridPane layoutX="374.0" layoutY="29.0" prefHeight="94.0" prefWidth="238.0">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -62,24 +62,29 @@
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                              <DatePicker GridPane.columnIndex="1" />
+                              <DatePicker fx:id="dpFecha" GridPane.columnIndex="1" />
                               <Label text="Hora:" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtHora" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
                                 <Separator layoutX="343.0" layoutY="14.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="6.0" />
-                                <TableView layoutX="118.0" layoutY="205.0" prefHeight="146.0" prefWidth="462.0">
+                                <TableView fx:id="tablaCita" layoutX="118.0" layoutY="205.0" prefHeight="146.0" prefWidth="462.0">
                                     <columns>
-                                        <TableColumn prefWidth="118.39996337890625" text="Cliente" />
-                                        <TableColumn prefWidth="116.79998779296875" text="Empleado" />
-                              <TableColumn prefWidth="120.80001831054688" text="Fecha" />
-                              <TableColumn prefWidth="104.80002441406248" text="Hora" />
+                                        <TableColumn fx:id="tcCliente" prefWidth="118.39996337890625" text="Cliente" />
+                                        <TableColumn fx:id="tcEmpleado" prefWidth="116.79998779296875" text="Empleado" />
+                              <TableColumn fx:id="tcFecha" prefWidth="120.80001831054688" text="Fecha" />
+                              <TableColumn fx:id="tcHora" prefWidth="104.80002441406248" text="Hora" />
                                     </columns>
                                 </TableView>
+                        <Button alignment="CENTER" layoutX="446.0" layoutY="150.0" mnemonicParsing="false" onAction="#crearCitaAction" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #ADD8E6; -fx-text-fill: Black;" text="Crear Cita">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
                             </children>
                         </AnchorPane>
                     </content>

@@ -13,6 +13,7 @@ public interface IPeluqueriaService {
                            String celular) throws Exception;
     Empleado crearEmpleado (String nombre, String apellido, String cedula, String correo,
                                    String celular) throws Exception;
+    Cita crearCita(Cliente cliente, Empleado empleado, LocalDate fecha, String hora);
     boolean actualizarEmpleado(String cedulaActual, Empleado empleado) throws Exception;
     Empleado obtenerEmpleado(String cedula);
     ArrayList<Empleado> obtenerEmpleados();

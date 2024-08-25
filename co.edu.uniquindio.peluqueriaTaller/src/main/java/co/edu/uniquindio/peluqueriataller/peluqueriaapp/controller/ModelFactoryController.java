@@ -1,9 +1,11 @@
 package co.edu.uniquindio.peluqueriataller.peluqueriaapp.controller;
 
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.controller.service.IModelFactoryService;
+import co.edu.uniquindio.peluqueriataller.peluqueriaapp.mapping.dto.CitaDto;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.mapping.dto.ClienteDto;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.mapping.dto.EmpleadoDto;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.mapping.mappers.PeluqueriaMapper;
+import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Cita;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Cliente;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Empleado;
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Peluqueria;
@@ -16,6 +18,7 @@ public class ModelFactoryController implements IModelFactoryService {
     Peluqueria peluqueria;
 
     PeluqueriaMapper mapper = PeluqueriaMapper.INSTANCE;
+
 
     private static class SingletonHolder {
         private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
@@ -43,6 +46,33 @@ public class ModelFactoryController implements IModelFactoryService {
     @Override
     public List<ClienteDto> obtenerClientes() {
         return mapper.getClientesDto(peluqueria.getListaClientes());
+    }
+
+    public List<CitaDto> obtenerCitasDto() {
+        return mapper.getCitasDto(peluqueria.getListaCitas());
+    }
+
+    public boolean agregarCita(CitaDto citaDto) {
+        try{
+            Cita cita = mapper.citaDtoToCita(citaDto);
+            peluqueria.agregarCita(cita);
+            return true;
+        }catch (Exception e){
+            e.getMessage();
+            return false;
+        }
+    }
+
+    public Cliente obtenerClienteCedula(String cedula) throws Exception {
+        return peluqueria.obtenerClienteCedula(cedula);
+    }
+
+    public Empleado obtenerEmpleadoCedula(String cedula) throws Exception {
+        return peluqueria.obtenerEmpleadoCedula(cedula);
+    }
+
+    public List<Empleado> obtenerEmpleadosObjeto() {
+        return peluqueria.getListaEmpleados();
     }
 
     @Override

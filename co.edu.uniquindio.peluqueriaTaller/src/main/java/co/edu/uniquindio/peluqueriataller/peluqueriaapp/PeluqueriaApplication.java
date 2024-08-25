@@ -15,6 +15,7 @@ public class PeluqueriaApplication extends Application {
         stage.setTitle("Peluqueria");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {

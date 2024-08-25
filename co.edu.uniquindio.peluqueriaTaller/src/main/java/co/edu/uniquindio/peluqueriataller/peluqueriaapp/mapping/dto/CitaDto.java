@@ -5,8 +5,8 @@ import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.Empleado;
 
 import java.time.LocalDate;
 
-public record CitaDto(Cliente cliente,
-                      Empleado empleado,
+public record CitaDto(String cliente,
+                      String empleado,
                       LocalDate fecha,
                       String hora) {
 }

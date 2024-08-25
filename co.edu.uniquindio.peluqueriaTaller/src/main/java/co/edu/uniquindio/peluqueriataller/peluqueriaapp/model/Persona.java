@@ -57,4 +57,5 @@ public class Persona {
     public void setCelular(String celular) {
         this.celular = celular;
     }
+
 }

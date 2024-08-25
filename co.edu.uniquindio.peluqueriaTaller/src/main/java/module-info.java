@@ -18,4 +18,5 @@ module co.edu.uniquindio.peluqueriataller.peluqueriaapp {
     exports co.edu.uniquindio.peluqueriataller.peluqueriaapp.controller;
 
     exports co.edu.uniquindio.peluqueriataller.peluqueriaapp.model;
+
 }

@@ -1,6 +1,8 @@
 package co.edu.uniquindio.peluqueriataller.peluqueriaapp.model;
 
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.model.services.IPeluqueriaService;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -73,6 +75,18 @@ public class Peluqueria implements IPeluqueriaService {
         }
         return nuevoEmpleado;
     }
+    @Override
+    public Cita crearCita(Cliente cliente, Empleado empleado, LocalDate fecha, String hora)  {
+
+        Cita nuevaCita = new Cita();
+        nuevaCita.setCliente(cliente);
+        nuevaCita.setEmpleado(empleado);
+        nuevaCita.setFecha(fecha);
+        nuevaCita.setHora(hora);
+        getListaCitas().add(nuevaCita);
+
+        return nuevaCita;
+    }
 
     @Override
     public boolean actualizarEmpleado(String cedulaActual, Empleado empleado) throws Exception {
@@ -122,6 +136,10 @@ public class Peluqueria implements IPeluqueriaService {
 
     public void agregarEmpleado(Empleado nuevoEmpleado) throws Exception{
         getListaEmpleados().add(nuevoEmpleado);
+    }
+
+    public void agregarCita(Cita nuevaCita) throws Exception{
+        getListaCitas().add(nuevaCita);
     }
 
     public void agregarCliente(Cliente nuevoCliente) throws Exception{
@@ -174,5 +192,25 @@ public class Peluqueria implements IPeluqueriaService {
             }
         }
         return empleadoEncontrado;
+    }
+
+    public Cliente obtenerClienteCedula(String cedula) throws Exception{
+
+        for (Cliente cliente : listaClientes){
+            if (cliente.getCedula().equalsIgnoreCase(cedula)){
+                return  cliente;
+            }
+        }
+        throw new Exception("El cliente con cedula: "+ cedula + " no existe");
+    }
+
+    public Empleado obtenerEmpleadoCedula(String cedula) throws Exception {
+
+        for (Empleado empleado : listaEmpleados){
+            if (empleado.getCedula().equalsIgnoreCase(cedula)){
+                return empleado;
+            }
+        }
+        throw new Exception("El empleado con cedula: "+ cedula + " no existe");
     }
 }

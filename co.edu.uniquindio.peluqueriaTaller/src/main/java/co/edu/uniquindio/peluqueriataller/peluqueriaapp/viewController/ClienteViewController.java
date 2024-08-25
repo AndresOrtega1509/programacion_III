@@ -20,6 +20,7 @@ public class ClienteViewController {
     ClienteController clienteController;
     ObservableList<ClienteDto> listaClientesDto = FXCollections.observableArrayList();
     ClienteDto clienteSeleccionado;
+    private CitaViewController citaViewController;
 
     @FXML
     private ResourceBundle resources;
@@ -65,6 +66,7 @@ public class ClienteViewController {
 
         clienteController = new ClienteController();
         initView();
+
     }
 
     private void initView() {
@@ -90,7 +92,7 @@ public class ClienteViewController {
             txtApellidoCliente.setText(clienteSeleccionado.apellido());
             txtCedulaCliente.setText(clienteSeleccionado.cedula());
             txtCorreoCliente.setText(clienteSeleccionado.correo());
-            txtCelularCliente.setText(clienteSeleccionado.correo());
+            txtCelularCliente.setText(clienteSeleccionado.celular());
         }
     }
 
@@ -174,7 +176,7 @@ public class ClienteViewController {
 
         return new ClienteDto(
                 txtNombreCliente.getText(),
-                txtNombreCliente.getText(),
+                txtApellidoCliente.getText(),
                 txtCedulaCliente.getText(),
                 txtCorreoCliente.getText(),
                 txtCelularCliente.getText()
