@@ -92,6 +92,16 @@
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Button>
+                        <Button alignment="CENTER" layoutX="560.0" layoutY="305.0" mnemonicParsing="false" onAction="#EliminarEmpleadoAction" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: #ADD8E6; -fx-text-fill: Black;" text="Eliminar Empleado">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="10.0" layoutY="305.0" mnemonicParsing="false" onAction="#actualizarEmpleadoAction" prefHeight="36.0" prefWidth="134.0" style="-fx-background-color: #ADD8E6; -fx-text-fill: Black;" text="Actualizar Empleado">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
                             </children>
                         </AnchorPane>
                     </content>

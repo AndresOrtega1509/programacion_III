@@ -213,4 +213,33 @@ public class Peluqueria implements IPeluqueriaService {
         }
         throw new Exception("El empleado con cedula: "+ cedula + " no existe");
     }
+
+    public boolean actualizarCliente(String cedulaActual, Cliente cliente) throws Exception {
+        Cliente clienteActual = obtenerClienteCedula(cedulaActual);
+        if(clienteActual == null)
+            throw new Exception("El cliente a actualizar no existe");
+        else{
+            clienteActual.setNombre(cliente.getNombre());
+            clienteActual.setApellido(cliente.getApellido());
+            clienteActual.setCedula(cliente.getCedula());
+            clienteActual.setCorreo(cliente.getCorreo());
+            clienteActual.setCelular(cliente.getCelular());
+            return true;
+        }
+
+    }
+
+    public boolean eliminarCliente(String cedula) throws Exception {
+
+        Cliente cliente;
+        boolean flagExiste = false;
+        cliente = obtenerClienteCedula(cedula);
+        if(cliente == null)
+            throw new Exception("El cliente a eliminar no existe");
+        else{
+            getListaClientes().remove(cliente);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
 }

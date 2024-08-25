@@ -2,6 +2,7 @@ package co.edu.uniquindio.peluqueriataller.peluqueriaapp.viewController;
 
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.peluqueriataller.peluqueriaapp.controller.EmpleadoController;
@@ -11,10 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class EmpleadoViewController {
     
@@ -73,6 +71,18 @@ public class EmpleadoViewController {
         crearEmpleado();
     }
 
+    @FXML
+    void actualizarEmpleadoAction(ActionEvent event) {
+
+        actualizarEmpleado();
+    }
+
+    @FXML
+    void EliminarEmpleadoAction(ActionEvent event) {
+
+        eliminarEmpleado();
+    }
+
     private void crearEmpleado() {
 
         //1. Capturar los datos
@@ -88,6 +98,68 @@ public class EmpleadoViewController {
             }
         }else{
             mostrarMensaje("Notificación empleado", "Empleado no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+        }
+    }
+
+    private void actualizarEmpleado() {
+
+        boolean clienteActualizado = false;
+        //1. Capturar los datos
+        String cedulaActual = empleadoSeleccionado.cedula();
+        EmpleadoDto empleadoDto = construirEmpleadoDto();
+        //2. verificar el empleado seleccionado
+        if(empleadoSeleccionado != null){
+            //3. Validar la información
+            if(datosValidos(empleadoSeleccionado)){
+                clienteActualizado = empleadoController.actualizarEmpleado(cedulaActual,empleadoDto);
+                if(clienteActualizado){
+                    listaEmpleadosDto.remove(empleadoSeleccionado);
+                    listaEmpleadosDto.add(empleadoDto);
+                    tablaEmpleado.refresh();
+                    mostrarMensaje("Notificación empleado", "Empleado actualizado", "El empleado se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                    limpiarCamposEmpleado();
+                }else{
+                    mostrarMensaje("Notificación empleado", "Empleado no actualizado", "El empleado no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                }
+            }else{
+                mostrarMensaje("Notificación empleado", "Empleado no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+            }
+
+        }
+    }
+
+    private void eliminarEmpleado() {
+
+        boolean empleadoEliminado = false;
+        if(empleadoSeleccionado != null){
+            if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar al empleado?")){
+                empleadoEliminado = empleadoController.eliminarEmpleado(empleadoSeleccionado.cedula());
+                if(empleadoEliminado){
+                    listaEmpleadosDto.remove(empleadoSeleccionado);
+                    empleadoSeleccionado = null;
+                    tablaEmpleado.getSelectionModel().clearSelection();
+                    limpiarCamposEmpleado();
+                    mostrarMensaje("Notificación empleado", "Empleado eliminado", "El empleado se ha eliminado con éxito", Alert.AlertType.INFORMATION);
+                }else{
+                    mostrarMensaje("Notificación empleado", "Empleado no eliminado", "El empleado no se puede eliminar", Alert.AlertType.ERROR);
+                }
+            }
+        }else{
+            mostrarMensaje("Notificación empleado", "Empleado no seleccionado", "Seleccionado un empleado de la lista", Alert.AlertType.WARNING);
+        }
+    }
+
+    private boolean mostrarMensajeConfirmacion(String mensaje) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Confirmación");
+        alert.setContentText(mensaje);
+        Optional<ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
         }
     }
 

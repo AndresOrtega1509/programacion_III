@@ -70,11 +70,6 @@ public class ModelFactoryController implements IModelFactoryService {
     public Empleado obtenerEmpleadoCedula(String cedula) throws Exception {
         return peluqueria.obtenerEmpleadoCedula(cedula);
     }
-
-    public List<Empleado> obtenerEmpleadosObjeto() {
-        return peluqueria.getListaEmpleados();
-    }
-
     @Override
     public boolean agregarEmpleado(EmpleadoDto empleadoDto) {
         try{
@@ -115,11 +110,33 @@ public class ModelFactoryController implements IModelFactoryService {
         return flagExiste;
     }
 
+    public boolean eliminarCliente(String cedula) throws Exception{
+        boolean flagExiste = false;
+        try {
+            flagExiste = peluqueria.eliminarCliente(cedula);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
     @Override
     public boolean actualizarEmpleado(String cedulaActual, EmpleadoDto empleadoDto) {
         try {
             Empleado empleado = mapper.empleadoDtoToEmpleado(empleadoDto);
             peluqueria.actualizarEmpleado(cedulaActual, empleado);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean actualizarCliente(String cedulaActual, ClienteDto clienteDto) {
+        try {
+            Cliente cliente = mapper.clienteDtoToCliente(clienteDto);
+            peluqueria.actualizarCliente(cedulaActual, cliente);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

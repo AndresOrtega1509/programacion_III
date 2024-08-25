@@ -7,12 +7,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ClienteViewController {
@@ -114,6 +112,77 @@ public class ClienteViewController {
     void agregarClienteAction(ActionEvent event) {
 
         crearCliente();
+    }
+    @FXML
+    void actualizarClienteAction(ActionEvent event) {
+
+        actualizarCliente();
+    }
+    @FXML
+    void eliminarClienteAction(ActionEvent event) throws Exception {
+
+        eliminarCliente();
+    }
+
+    private void actualizarCliente() {
+
+        boolean clienteActualizado = false;
+        //1. Capturar los datos
+        String cedulaActual = clienteSeleccionado.cedula();
+        ClienteDto empleadoDto = construirClienteDto();
+        //2. verificar el empleado seleccionado
+        if(clienteSeleccionado != null){
+            //3. Validar la información
+            if(datosValidos(clienteSeleccionado)){
+                clienteActualizado = clienteController.actualizarCliente(cedulaActual,empleadoDto);
+                if(clienteActualizado){
+                    listaClientesDto.remove(clienteSeleccionado);
+                    listaClientesDto.add(empleadoDto);
+                    tablaCliente.refresh();
+                    mostrarMensaje("Notificación cliente", "Cliente actualizado", "El Cliente se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                    limpiarCamposCliente();
+                }else{
+                    mostrarMensaje("Notificación Cliente", "Cliente no actualizado", "El Cliente no se ha actualizado con éxito", Alert.AlertType.INFORMATION);
+                }
+            }else{
+                mostrarMensaje("Notificación Cliente", "Cliente no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+            }
+
+        }
+    }
+
+    private void eliminarCliente() throws Exception {
+
+        boolean clienteEliminado = false;
+        if(clienteSeleccionado != null){
+            if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar al empleado?")){
+                clienteEliminado = clienteController.eliminarCliente(clienteSeleccionado.cedula());
+                if(clienteEliminado){
+                    listaClientesDto.remove(clienteSeleccionado);
+                    clienteSeleccionado = null;
+                    tablaCliente.getSelectionModel().clearSelection();
+                    limpiarCamposCliente();
+                    mostrarMensaje("Notificación cliente", "Cliente eliminado", "El cliente se ha eliminado con éxito", Alert.AlertType.INFORMATION);
+                }else{
+                    mostrarMensaje("Notificación cliente", "Cliente no eliminado", "El cliente no se puede eliminar", Alert.AlertType.ERROR);
+                }
+            }
+        }else{
+            mostrarMensaje("Notificación cliente", "Cliente no seleccionado", "Seleccionado un cliente de la lista", Alert.AlertType.WARNING);
+        }
+    }
+
+    private boolean mostrarMensajeConfirmacion(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Confirmación");
+        alert.setContentText(mensaje);
+        Optional<ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private void crearCliente() {
