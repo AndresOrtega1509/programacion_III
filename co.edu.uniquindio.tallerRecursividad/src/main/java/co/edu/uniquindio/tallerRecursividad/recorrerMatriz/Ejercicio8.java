@@ -4,11 +4,10 @@ public class Ejercicio8 {
 
     public  static  void main(String[] args){
 
-        int[][] matriz  = {
-                {1, 2, 3,
-                 4, 5, 6,
-                 7, 8, 9}
-        };
+        int[][] matriz  =   {{1,2,3},
+                            {4,5,6},
+                            {7,8,9},
+                            {10,11,12}};
         int i = 0;
         int j = 0;
 
@@ -21,12 +20,12 @@ public class Ejercicio8 {
 
             if (j <= matriz[i].length - 1) {
 
-                System.out.print(matriz[i][j]);
+                System.out.print(matriz[i][j] + " ");
 
                 if (j == matriz[i].length - 1) {
                     j = 0;
                     i++;
-                    System.out.println("\n");
+                    System.out.println();
                 } else {
                     j++;
                 }
