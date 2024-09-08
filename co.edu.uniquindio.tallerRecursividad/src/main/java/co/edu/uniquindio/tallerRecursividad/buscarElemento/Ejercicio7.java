@@ -5,7 +5,7 @@ public class Ejercicio7 {
 
         String[] array = {"a", "hola", "l", "e"};
         int indice = 0;
-        String elementoABuscar = "L";
+        String elementoABuscar = "e";
 
         boolean elemento = buscarElemento(array, indice, elementoABuscar);
 
