@@ -18,8 +18,8 @@ public class Laberinto {
     /* --------------------- PRUEBA DEL ALGORITMO --------------------- */
     public static void main(String[] args) {
         Laberinto m = new Laberinto(); 												// construimos un objeto de la clase Laberinto por defecto
-        m.laberinto[1][1] = 'X'; 													// introducimos en este caso, la salida (X) en las coordenadas (1,1)
-        m.resuelve(8, 1); 															// ahora, introducimos la entrada (S) en las coordenadas (8,1) y llamamos al algoritmo
+        m.laberinto[8][1] = 'X'; 													// introducimos en este caso, la salida (X) en las coordenadas (1,1)
+        m.resuelve(1, 1); 															// ahora, introducimos la entrada (S) en las coordenadas (8,1) y llamamos al algoritmo
         System.out.println(m.imprimirLaberinto()); 								    // imprimimos el laberinto ya resuelto (si tiene solución)
     }
 
