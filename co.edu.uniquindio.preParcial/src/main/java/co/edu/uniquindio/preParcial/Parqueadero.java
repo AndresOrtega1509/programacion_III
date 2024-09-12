@@ -1,7 +1,5 @@
 package co.edu.uniquindio.preParcial;
 
-import java.util.Objects;
-
 public class Parqueadero {
 
     public static String[][] parqueadero = {
@@ -17,16 +15,14 @@ public class Parqueadero {
             {"carro",   "",   "R",    "",      "carro",            "",           "R"},
             {  "",      "",   "R",    "",      "carro",          "carro",        "R"},
             {"entrada", "",   "R",    "",        "",               "",           "R2"},
+
     };
-    public boolean estadoParqueadero1 = true;
-    public boolean estadoParqueadero2 = true;
 
     public static void main(String[] args) {
 
         Parqueadero p = new Parqueadero();
         int repeticiones = 1;
-        p.resuelve(11, 0, repeticiones); // Iniciar desde (0, 0)
-        //imprimirParqueadero(0, 0);
+        p.resuelve(11, 0, repeticiones);
 
     }
 
@@ -51,15 +47,13 @@ public class Parqueadero {
             return false;
         }
 
-        if (parqueadero[x][y].equals("R1") && estadoParqueadero1) {
+        if (parqueadero[x][y].equals("R1")) {
             parqueadero[x][y] = "Carro 1, parqueado en R1";
-            estadoParqueadero1 = false;
             return true;
         }
 
-        if (parqueadero[x][y].equals("R2") && estadoParqueadero2) {
+        if (parqueadero[x][y].equals("R2")) {
             parqueadero[x][y] = "Carro 2, parqueado en R2";
-            estadoParqueadero2 = false;
             return true;
         }
 
@@ -121,7 +115,7 @@ public class Parqueadero {
 
             if (j <= parqueadero[i].length - 1) {
 
-                System.out.print(parqueadero[i][j] + "  ");
+                System.out.printf("%-25s", parqueadero[i][j] + "  ");
 
                 if (j == parqueadero[i].length - 1) {
                     j = 0;
