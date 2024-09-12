@@ -21,7 +21,7 @@ public class Carcel {
         c.resuelve(0, 0);  // Iniciar desde (0, 0)
         System.out.println("La cantidad de presos es " + c.cantidadPresos);
         System.out.println("La cantidad de presos fugados es " + c.presosFugados);
-        System.out.println(imprimirCarcel(0, 0));
+        imprimirCarcel(0, 0);
     }
 
 
@@ -77,15 +77,12 @@ public class Carcel {
         return false;
     }
 
-    private static String imprimirCarcel(int i, int j) {
-
-        String salida = "";
+    private static void imprimirCarcel(int i, int j) {
 
         if (i <= carcel.length - 1) {
 
             if (j <= carcel[i].length - 1) {
 
-                salida += carcel[i][j] + " ";
                 System.out.print(carcel[i][j] + " ");
 
                 if (j == carcel[i].length - 1) {
@@ -98,7 +95,6 @@ public class Carcel {
                 imprimirCarcel(i, j);
             }
         }
-        return salida;
     }
 }
 
