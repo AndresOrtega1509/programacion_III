@@ -1,4 +1,4 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.controller;
 
-public class PanelClienteController {
+public class BilleteraVirtualController {
 }
