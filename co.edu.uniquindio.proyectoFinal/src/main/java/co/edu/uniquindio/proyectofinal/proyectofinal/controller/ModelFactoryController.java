@@ -60,6 +60,33 @@ public class ModelFactoryController implements IModelFactoryService {
          return billeteraVirtual.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
     }
 
+    public void actualizarUsuario(String idUsuario, String nombre, String correo, String telefono, String direccion) throws Exception {
+
+        billeteraVirtual.actualizarUsuario(idUsuario, nombre, correo, telefono, direccion);
+    }
+
+    public boolean eliminarUsuario(String idUsuario) {
+        boolean flagExiste = false;
+        try {
+            flagExiste = billeteraVirtual.eliminarUsuario(idUsuario);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
+    public boolean eliminarCuenta(String idCuenta) throws Exception{
+        boolean flagExiste = false;
+        try {
+            flagExiste = billeteraVirtual.eliminarCuenta(idCuenta);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
     @Override
     public void navegarVentana(String nombreArchivoFxml, String tituloVentana) {
 

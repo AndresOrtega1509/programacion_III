@@ -15,8 +15,53 @@ public class BilleteraVirtual {
         listaCuentas = new ArrayList<>();
     }
 
+    public ArrayList<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
+    public ArrayList<Cuenta> getListaCuentas() {
+        return listaCuentas;
+    }
+
     public void agregarUsuario(Usuario usuario) {
         listaUsuarios.add(usuario);
+    }
+
+    /**
+     * Método que actualiza los datos de un usuario
+     *
+     * @param idUsuario               número de identificación del usuario
+     * @param nombre            nombre del usuario
+     * @param correoElectronico correo electrónico del usuario
+     * @param numeroTelefono    numero de telefono del usuario
+     * @param direccion           direccion del usuario
+     */
+    public void actualizarUsuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion) throws Exception {
+
+        if (nombre == null || nombre.isBlank()) {
+            throw new Exception("El nombre es obligatorio");
+        }
+
+        if (correoElectronico == null || correoElectronico.isBlank()) {
+            throw new Exception("El correo electronico es obligatorio");
+        }
+
+        if (numeroTelefono == null || numeroTelefono.isBlank()) {
+            throw new Exception("La contraseña es obligatoria");
+        }
+
+        if (direccion == null || direccion.isBlank()) {
+            throw new Exception("La direccion es obligatoria");
+        }
+
+        Usuario usuario = obtenerUsuario(idUsuario, 0);
+        if (usuario == null) {
+            throw new Exception("No existe un usuario con el número de identificación: " + idUsuario);
+        }
+        usuario.setNombre(nombre);
+        usuario.setDireccion(direccion);
+        usuario.setCorreoElectronico(correoElectronico);
+        usuario.setNumeroTelefono(numeroTelefono);
     }
 
     public Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception {
@@ -45,6 +90,11 @@ public class BilleteraVirtual {
     public String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
 
         Usuario propietario = obtenerUsuario(idUsuario, 0);
+        Cuenta idCuentaExistente = verificarIdCuenta(idCuenta, 0);
+
+        if (idCuentaExistente != null) {
+            throw new Exception("El cuenta ya existe con el identidicador: "+ idCuentaExistente.getIdCuenta());
+        }
 
         if (propietario != null) {
             String numeroCuenta = crearNumeroCuenta();
@@ -58,6 +108,19 @@ public class BilleteraVirtual {
 
     }
 
+    private Cuenta verificarIdCuenta(String idCuenta, int posicion) throws Exception {
+
+        if (posicion >= listaCuentas.size()){
+            return null;
+        }else {
+            if (listaCuentas.get(posicion).getIdCuenta().equals(idCuenta)) {
+                return listaCuentas.get(posicion);
+            }else {
+                return verificarIdCuenta(idCuenta,posicion+1);
+            }
+        }
+    }
+
     /**
      * Método que crea un número de cuenta aleatorio y verifica que no exista en el sistema para evitar duplicados
      *
@@ -67,14 +130,14 @@ public class BilleteraVirtual {
 
         String numeroCuenta = generarNumeroCuenta();
 
-        while (obtenerCuentaAhorros(numeroCuenta, 0) != null) {
+        while (obtenerCuentaBancaria(numeroCuenta, 0) != null) {
             numeroCuenta = generarNumeroCuenta();
         }
 
         return numeroCuenta;
     }
 
-    private Cuenta obtenerCuentaAhorros(String numeroCuenta, int posicion) {
+    private Cuenta obtenerCuentaBancaria(String numeroCuenta, int posicion) {
 
         if (posicion >= listaCuentas.size()){
             return null;
@@ -82,7 +145,7 @@ public class BilleteraVirtual {
             if (listaCuentas.get(posicion).getIdCuenta().equals(numeroCuenta)) {
                 return listaCuentas.get(posicion);
             }else {
-                return obtenerCuentaAhorros(numeroCuenta,posicion+1);
+                return obtenerCuentaBancaria(numeroCuenta,posicion+1);
             }
         }
     }
@@ -120,5 +183,37 @@ public class BilleteraVirtual {
             }
         }
     }
+
+    public boolean eliminarUsuario(String idUsuario) throws Exception {
+
+        Usuario usuario;
+        boolean flagExiste = false;
+        usuario = obtenerUsuario(idUsuario, 0);
+        if(usuario == null)
+            throw new Exception("El usuario a eliminar no existe");
+        else{
+            getListaUsuarios().remove(usuario);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+    public boolean eliminarCuenta(String idCuenta) throws Exception {
+
+        Cuenta cuenta;
+        boolean flagExiste = false;
+        cuenta = obtenerCuentaBancaria(idCuenta, 0);
+        if(cuenta == null)
+            throw new Exception("La cuenta a eliminar no existe");
+        else{
+            getListaCuentas().remove(cuenta);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+
+
+
 
 }

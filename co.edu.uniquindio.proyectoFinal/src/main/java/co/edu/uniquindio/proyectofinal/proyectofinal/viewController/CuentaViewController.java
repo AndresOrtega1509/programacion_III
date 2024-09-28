@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.viewController;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.CuentaBancariaController;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 import javafx.collections.FXCollections;
@@ -22,13 +23,15 @@ public class CuentaViewController {
     private TextField txtNombreBanco;
     @FXML
     private ComboBox<TipoCuenta> cbTipoCuenta;
-    private Usuario usuario;
     CuentaBancariaController cuentaBancariaController;
+    private final Sesion sesion = Sesion.getInstancia();
+    private Usuario usuario;
 
     @FXML
     public void initialize() {
         cuentaBancariaController = new CuentaBancariaController();
         cbTipoCuenta.setItems(FXCollections.observableArrayList(TipoCuenta.values()));
+        Usuario usuario = sesion.getUsuario();
         inicializarValores(usuario);
     }
 
@@ -37,11 +40,13 @@ public class CuentaViewController {
         try {
             cuentaBancariaController.agregarCuenta(txtIdCuenta.getText(), txtNombreBanco.getText(),0,
                     usuario.getIdUsuario(), cbTipoCuenta.getValue());
-            usuario.setTieneCuenta(true);
             mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta ha sido creada con exito",
                     Alert.AlertType.INFORMATION);
             cerrarVentana();
-            navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
+            if (!usuario.isTieneCuenta()){
+                navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
+            }
+            usuario.setTieneCuenta(true);
         }catch (Exception e) {
             mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta no se pudo crear",
                     Alert.AlertType.WARNING);

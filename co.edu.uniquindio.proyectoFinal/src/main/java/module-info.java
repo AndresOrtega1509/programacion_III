@@ -21,4 +21,8 @@ module co.edu.uniquindio.proyectofinal.proyectofinal {
     exports co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
     exports co.edu.uniquindio.proyectofinal.proyectofinal.model.enums;
+
+    exports co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer;
+
+
 }

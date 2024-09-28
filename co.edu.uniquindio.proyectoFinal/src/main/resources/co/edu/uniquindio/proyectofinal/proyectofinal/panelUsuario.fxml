@@ -26,7 +26,8 @@
                 <MenuButton mnemonicParsing="false" text="Menu">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#irActualizar" text="Actualizar datos" />
-                        <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="cerrar sesion">
+                        <MenuItem mnemonicParsing="false" onAction="#irCrearCuentaBancaria" text="Crear nueva cuenta" />
+                        <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesion">
                         </MenuItem>
                     </items>
                 </MenuButton>
@@ -34,7 +35,7 @@
         </HBox>
         <HBox prefHeight="21.0" prefWidth="740.0">
             <children>
-                <Label fx:id="lblNombre" prefHeight="22.0" prefWidth="510.0" text="Carlos, bienvenido a su banco, aquí podrá ver sus transacciones" textAlignment="JUSTIFY">
+                <Label fx:id="lblNombre" prefHeight="22.0" prefWidth="510.0" text="Carlos, bienvenido a su billetera virtual, aquí podrá ver sus transacciones" textAlignment="JUSTIFY">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -70,6 +71,8 @@
                 <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#consultarSaldo" style="-fx-background-color: #00807a;" text="Consultar" textFill="WHITE" />
                 <Region prefHeight="200.0" prefWidth="200.0" />
                 <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#irTransferencia" style="-fx-background-color: #00807a;" text="Transferir" textFill="WHITE" />
+                <Region prefHeight="200.0" prefWidth="200.0" />
+                <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#eliminar" style="-fx-background-color: #00807a;" text="Eliminar" textFill="WHITE" />
             </children>
         </HBox>
     </children>
