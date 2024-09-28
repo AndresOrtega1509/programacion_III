@@ -3,10 +3,6 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.viewController;
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.InicioController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class InicioViewController {
     

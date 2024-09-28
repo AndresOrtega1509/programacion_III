@@ -1,4 +1,17 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.controller;
 
-public class LoginController {
+import co.edu.uniquindio.proyectofinal.proyectofinal.controller.service.ILoginController;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
+
+public class LoginController implements ILoginController {
+
+    ModelFactoryController modelFactoryController;
+
+    public LoginController() {
+        modelFactoryController = ModelFactoryController.getInstance();
+    }
+    @Override
+    public Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception {
+         return modelFactoryController.validarInicioSesion(nombre, idUsuario);
+    }
 }

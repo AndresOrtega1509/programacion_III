@@ -1,7 +1,10 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.controller;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.service.IModelFactoryService;
+import co.edu.uniquindio.proyectofinal.proyectofinal.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyectofinal.proyectofinal.mapping.mappers.BilleteraVirtualMapper;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.BilleteraVirtual;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,7 +13,7 @@ import javafx.stage.Stage;
 public class ModelFactoryController implements IModelFactoryService {
 
     BilleteraVirtual billeteraVirtual;
-    //BilleteraVitualMapper mapper = BilleteraVitualMapper.INSTANCE;
+    BilleteraVirtualMapper mapper = BilleteraVirtualMapper.INSTANCE;
 
     private static class SingletonHolder {
         private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
@@ -22,6 +25,28 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     public ModelFactoryController() {
+        this.billeteraVirtual = new BilleteraVirtual();
+    }
+
+    @Override
+    public boolean agregarUsuario(UsuarioDto usuarioDto) {
+        try{
+            if(billeteraVirtual.obtenerUsuario(usuarioDto.idUsuario(), 0) == null) {
+                Usuario usuario = mapper.usuarioDtoToUsuario(usuarioDto);
+                billeteraVirtual.agregarUsuario(usuario);
+
+            }
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception {
+
+            Usuario usuario = billeteraVirtual.validarInicioSesion(nombre,idUsuario);
+            return usuario;
     }
 
     @Override
