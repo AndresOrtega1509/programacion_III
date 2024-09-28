@@ -41,7 +41,12 @@ public class LoginViewController {
                 mostrarMensaje("Notificacion - Usuario","Inicio de sesión exitoso", "Los datos del usuario son validos",
                         Alert.AlertType.INFORMATION);
                 cerrarVentana();
-                navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
+
+                if (usuario.isTieneCuenta()){
+                    navegarVentanaPanel("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel Principal", usuario);
+                }else {
+                    navegarVentanaCuenta("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml", "Banco - creación cuenta bancaria", usuario);
+                }
             }
 
         } catch (Exception e) {
@@ -56,7 +61,37 @@ public class LoginViewController {
         stage.close();
     }
 
-    private void navegarVentana(String nombreArchivoFxml, String tituloVentana, Usuario usuario) {
+    private void navegarVentanaCuenta(String nombreArchivoFxml, String tituloVentana, Usuario usuario) {
+
+        try {
+
+            // Cargar la vista
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(nombreArchivoFxml));
+            Parent root = loader.load();
+
+
+            // Obtener el controlador de la nueva ventana
+            CuentaViewController controller = loader.getController();
+            controller.inicializarValores(usuario);
+
+            // Crear la escena
+            Scene scene = new Scene(root);
+
+            // Crear un nuevo escenario (ventana)
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.setTitle(tituloVentana);
+
+            // Mostrar la nueva ventana
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navegarVentanaPanel(String nombreArchivoFxml, String tituloVentana, Usuario usuario) {
 
         try {
 

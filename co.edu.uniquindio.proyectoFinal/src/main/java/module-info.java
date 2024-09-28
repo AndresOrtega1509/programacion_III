@@ -19,4 +19,6 @@ module co.edu.uniquindio.proyectofinal.proyectofinal {
     exports co.edu.uniquindio.proyectofinal.proyectofinal.mapping.mappers;
 
     exports co.edu.uniquindio.proyectofinal.proyectofinal.model;
+
+    exports co.edu.uniquindio.proyectofinal.proyectofinal.model.enums;
 }

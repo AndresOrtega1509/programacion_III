@@ -1,5 +1,8 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
+
 import java.util.List;
 
 public class Cuenta {
@@ -7,20 +10,23 @@ public class Cuenta {
     private String idCuenta;
     private String nombreBanco;
     private String numeroCuenta;
-    private String saldo;
+    private float saldo;
     private Usuario usuario;
     private List<Transaccion> listaTransacciones;
+    private TipoCuenta tipoCuenta;
 
     public Cuenta() {
     }
 
-    public Cuenta(String idCuenta, String nombreBanco, String numeroCuenta, String saldo, Usuario usuario, List<Transaccion> listaTransacciones) {
+    public Cuenta(String idCuenta, String nombreBanco, String numeroCuenta, float saldo, Usuario usuario, List<Transaccion> listaTransacciones,
+                  TipoCuenta tipoCuenta) {
         this.idCuenta = idCuenta;
         this.nombreBanco = nombreBanco;
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
         this.usuario = usuario;
         this.listaTransacciones = listaTransacciones;
+        this.tipoCuenta = tipoCuenta;
     }
 
     public String getIdCuenta() {
@@ -47,11 +53,11 @@ public class Cuenta {
         this.numeroCuenta = numeroCuenta;
     }
 
-    public String getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(String saldo) {
+    public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
 
@@ -69,5 +75,13 @@ public class Cuenta {
 
     public void setListaTransacciones(List<Transaccion> listaTransacciones) {
         this.listaTransacciones = listaTransacciones;
+    }
+
+    public TipoCuenta getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public void setTipoCuenta(TipoCuenta tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
     }
 }

@@ -7,16 +7,18 @@ public class Usuario {
     private String correoElectronico;
     private String numeroTelefono;
     private String direccion;
+    private boolean tieneCuenta;
 
     public Usuario() {
     }
 
-    public Usuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion) {
+    public Usuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion, boolean tieneCuenta) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;
         this.numeroTelefono = numeroTelefono;
         this.direccion = direccion;
+        this.tieneCuenta = false;
     }
 
     public String getIdUsuario() {
@@ -57,6 +59,14 @@ public class Usuario {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public boolean isTieneCuenta() {
+        return tieneCuenta;
+    }
+
+    public void setTieneCuenta(boolean tieneCuenta) {
+        this.tieneCuenta = tieneCuenta;
     }
 
     @Override

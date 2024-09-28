@@ -9,6 +9,10 @@ public class Sesion {
     public static Sesion INSTANCIA;
 
     private Usuario usuario;
+    private Cuenta cuenta;
+
+    private Sesion() {
+    }
 
     public Usuario getUsuario() {
         return usuario;
@@ -18,7 +22,12 @@ public class Sesion {
         this.usuario = usuario;
     }
 
-    private Sesion() {
+    public Cuenta getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
     }
 
 
