@@ -1,7 +1,6 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
-import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 
 import java.util.ArrayList;
 import java.util.List;

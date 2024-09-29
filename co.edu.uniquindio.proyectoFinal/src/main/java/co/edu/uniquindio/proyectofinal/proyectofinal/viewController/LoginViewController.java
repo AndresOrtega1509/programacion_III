@@ -43,9 +43,11 @@ public class LoginViewController {
                 cerrarVentana();
 
                 if (usuario.isTieneCuenta()){
-                    navegarVentanaPanel("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel Principal", usuario);
+                    navegarVentanaPanel("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel Principal",
+                            usuario);
                 }else {
-                    navegarVentanaCuenta("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml", "Banco - creación cuenta bancaria", usuario);
+                    navegarVentanaCuenta("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml", "Banco - creación cuenta bancaria",
+                            usuario);
                 }
             }
 
