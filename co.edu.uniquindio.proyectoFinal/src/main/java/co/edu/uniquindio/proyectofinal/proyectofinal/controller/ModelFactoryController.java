@@ -7,6 +7,7 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.BilleteraVirtual;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.utils.BancoUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -28,6 +29,7 @@ public class ModelFactoryController implements IModelFactoryService {
 
     public ModelFactoryController() {
         this.billeteraVirtual = new BilleteraVirtual();
+        cargarDatosBase();
     }
 
     @Override
@@ -45,26 +47,31 @@ public class ModelFactoryController implements IModelFactoryService {
         }
     }
 
+    @Override
     public Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception {
 
         return billeteraVirtual.validarInicioSesion(nombre,idUsuario);
     }
 
+    @Override
     public Cuenta consultarCuenta(String idUsuario, int posicion) throws Exception {
 
         return billeteraVirtual.consultarCuenta(idUsuario, posicion);
     }
 
+    @Override
     public String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
 
          return billeteraVirtual.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
     }
 
+    @Override
     public void actualizarUsuario(String idUsuario, String nombre, String correo, String telefono, String direccion) throws Exception {
 
         billeteraVirtual.actualizarUsuario(idUsuario, nombre, correo, telefono, direccion);
     }
 
+    @Override
     public boolean eliminarUsuario(String idUsuario) {
         boolean flagExiste = false;
         try {
@@ -76,6 +83,7 @@ public class ModelFactoryController implements IModelFactoryService {
         return flagExiste;
     }
 
+    @Override
     public boolean eliminarCuenta(String idCuenta) throws Exception{
         boolean flagExiste = false;
         try {
@@ -85,6 +93,16 @@ public class ModelFactoryController implements IModelFactoryService {
             e.printStackTrace();
         }
         return flagExiste;
+    }
+
+    @Override
+    public String consultarSaldo(String idUsuario) {
+
+        return billeteraVirtual.consultarSaldo(idUsuario);
+    }
+
+    private void cargarDatosBase() {
+        billeteraVirtual = BancoUtils.inicializarDatos();
     }
 
     @Override

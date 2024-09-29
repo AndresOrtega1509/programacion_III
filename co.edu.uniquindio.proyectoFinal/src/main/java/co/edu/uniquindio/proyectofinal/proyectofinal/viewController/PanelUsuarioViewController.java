@@ -69,7 +69,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
                 lblNombre.setText(usuario.getNombre() +", bienvenido a su banco, aquí podra ver sus transacciones");
                 lblCuenta.setText("Nro. Cuenta: " + cuenta.getNumeroCuenta());
-                //consultarTransacciones();
+                consultarTransacciones();
 
             }
         } catch (Exception e) {
@@ -77,7 +77,16 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
         }
     }
 
+    private void consultarTransacciones() {
+
+        tablaTransacciones.setItems(FXCollections.observableArrayList(cuenta.getListaTransacciones()));
+    }
+
     public void consultarSaldo(ActionEvent actionEvent) {
+
+        String saldo = panelUsuarioController.consultarSaldo(sesion.getUsuario().getIdUsuario());
+        mostrarMensaje("Notificacion Usuario","Saldo disponible",
+                "El saldo actual de su cuenta es de: " +"$"+ saldo, Alert.AlertType.INFORMATION);
     }
 
     public void irTransferencia(ActionEvent actionEvent) {
@@ -85,7 +94,8 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     public void irActualizar(ActionEvent actionEvent) throws Exception {
 
-        FXMLLoader loader = navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/actualizar.fxml",
+        FXMLLoader loader = navegarVentana(
+                "/co/edu/uniquindio/proyectofinal/proyectofinal/actualizar.fxml",
                 "Banco - Actualizar Datos");
 
         ActualizarViewController controlador = loader.getController();
@@ -95,12 +105,14 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     public void cerrarSesion(ActionEvent actionEvent) throws Exception {
 
-        mostrarMensaje("Notificacion Usuario","Cerrar Sesion","Se ha cerrado la sesión correctamente", Alert.AlertType.INFORMATION);
+        mostrarMensaje("Notificacion Usuario","Cerrar Sesion",
+                "Se ha cerrado la sesión correctamente", Alert.AlertType.INFORMATION);
         Stage stage = (Stage) tablaTransacciones.getScene().getWindow();
         sesion.cerrarSesion();
         stage.close();
 
-        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/login.fxml", "Banco - Iniciar Sesión");
+        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/login.fxml",
+                "Banco - Iniciar Sesión");
     }
 
     private FXMLLoader navegarVentana(String nombreArchivoFxml, String tituloVentana) throws Exception{
@@ -135,20 +147,24 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     @Override
     public void notificarActualizacion() {
-        lblNombre.setText(sesion.getUsuario().getNombre() + ", bienvenido a su billetera virtual, aquí podra ver sus transacciones");
+        lblNombre.setText(sesion.getUsuario().getNombre() + ", " +
+                "bienvenido a su billetera virtual, aquí podra ver sus transacciones");
     }
 
     public void irCrearCuentaBancaria(ActionEvent actionEvent) throws Exception {
-        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml", "Banco - creación cuenta bancaria");
+        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml",
+                "Banco - creación cuenta bancaria");
     }
 
     public void eliminar(ActionEvent actionEvent) throws Exception {
         if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar su cuenta?")){
 
             boolean clienteEliminado = panelUsuarioController.eliminarUsuario(sesion.getUsuario().getIdUsuario());
-            boolean cuentaEliminada = panelUsuarioController.eliminarCuenta(sesion.getCuenta().getIdCuenta());
+            panelUsuarioController.eliminarCuenta(sesion.getCuenta().getIdCuenta());
             if(clienteEliminado){
-
+                for (UsuarioDto usuarioDto : listaUsuariosDto) {
+                    listaUsuariosDto.remove(usuarioDto);
+                }
             }
             cerrarVentana();
         }

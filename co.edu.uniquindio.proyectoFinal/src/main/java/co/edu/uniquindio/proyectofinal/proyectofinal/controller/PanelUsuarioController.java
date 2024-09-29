@@ -24,4 +24,9 @@ public class PanelUsuarioController implements IPanelUsuarioService {
     public boolean eliminarCuenta(String idCuenta) throws Exception {
         return modelFactoryController.eliminarCuenta(idCuenta);
     }
+
+    @Override
+    public String consultarSaldo(String idUsuario) {
+        return modelFactoryController.consultarSaldo(idUsuario);
+    }
 }

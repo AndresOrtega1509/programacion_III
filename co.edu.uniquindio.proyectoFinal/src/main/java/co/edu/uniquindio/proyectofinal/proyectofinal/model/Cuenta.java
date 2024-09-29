@@ -3,6 +3,7 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cuenta {
@@ -18,14 +19,14 @@ public class Cuenta {
     public Cuenta() {
     }
 
-    public Cuenta(String idCuenta, String nombreBanco, String numeroCuenta, float saldo, Usuario usuario, List<Transaccion> listaTransacciones,
+    public Cuenta(String idCuenta, String nombreBanco, String numeroCuenta, float saldo, Usuario usuario,
                   TipoCuenta tipoCuenta) {
         this.idCuenta = idCuenta;
         this.nombreBanco = nombreBanco;
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
         this.usuario = usuario;
-        this.listaTransacciones = listaTransacciones;
+        this.listaTransacciones = new ArrayList<>();
         this.tipoCuenta = tipoCuenta;
     }
 

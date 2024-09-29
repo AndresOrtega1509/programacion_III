@@ -1,5 +1,8 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Usuario {
 
     private String idUsuario;
@@ -8,17 +11,34 @@ public class Usuario {
     private String numeroTelefono;
     private String direccion;
     private boolean tieneCuenta;
+    private List<Cuenta> listaCuentas;
 
     public Usuario() {
+
+        this.listaCuentas = new ArrayList<>();
     }
 
-    public Usuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion, boolean tieneCuenta) {
+    public Usuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion, boolean tieneCuenta,List<Cuenta> listaCuentas) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;
         this.numeroTelefono = numeroTelefono;
         this.direccion = direccion;
         this.tieneCuenta = false;
+
+        if (listaCuentas == null) {
+            this.listaCuentas = new ArrayList<>();
+        } else {
+            this.listaCuentas = listaCuentas;
+        }
+    }
+
+    public List<Cuenta> getListaCuentas() {
+        return listaCuentas;
+    }
+
+    public void setListaCuentas(List<Cuenta> listaCuentas) {
+        this.listaCuentas = listaCuentas;
     }
 
     public String getIdUsuario() {

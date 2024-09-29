@@ -1,11 +1,12 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.services.IBancoService;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BilleteraVirtual {
+public class BilleteraVirtual implements IBancoService {
 
     private ArrayList<Usuario> listaUsuarios;
     private ArrayList<Cuenta> listaCuentas;
@@ -36,6 +37,7 @@ public class BilleteraVirtual {
      * @param numeroTelefono    numero de telefono del usuario
      * @param direccion           direccion del usuario
      */
+    @Override
     public void actualizarUsuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion) throws Exception {
 
         if (nombre == null || nombre.isBlank()) {
@@ -64,6 +66,7 @@ public class BilleteraVirtual {
         usuario.setNumeroTelefono(numeroTelefono);
     }
 
+    @Override
     public Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception {
         Usuario usuario = obtenerUsuario(idUsuario, 0);
         if (usuario != null) {
@@ -74,6 +77,7 @@ public class BilleteraVirtual {
         throw new Exception("Los datos del usuario no son correctos");
     }
 
+    @Override
     public Usuario obtenerUsuario(String idUsuario, int posicion) {
 
         if (posicion >= listaUsuarios.size()){
@@ -87,19 +91,22 @@ public class BilleteraVirtual {
         }
     }
 
-    public String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
+    @Override
+    public String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario,
+                                TipoCuenta tipoCuenta) throws Exception {
 
         Usuario propietario = obtenerUsuario(idUsuario, 0);
         Cuenta idCuentaExistente = verificarIdCuenta(idCuenta, 0);
 
         if (idCuentaExistente != null) {
-            throw new Exception("El cuenta ya existe con el identidicador: "+ idCuentaExistente.getIdCuenta());
+            throw new Exception("La cuenta ya existe con el identidicador: "+ idCuentaExistente.getIdCuenta());
         }
 
         if (propietario != null) {
             String numeroCuenta = crearNumeroCuenta();
-            Cuenta cuenta = new Cuenta(idCuenta, nombreBanco,numeroCuenta, saldo, propietario,null, tipoCuenta);
+            Cuenta cuenta = new Cuenta(idCuenta, nombreBanco,numeroCuenta, saldo, propietario, tipoCuenta);
             listaCuentas.add(cuenta);
+            propietario.getListaCuentas().add(cuenta);
 
             return numeroCuenta;
         }
@@ -171,6 +178,7 @@ public class BilleteraVirtual {
      * @param idUsuario
      * @return cuenta
      */
+    @Override
     public Cuenta consultarCuenta(String idUsuario, int posicion) {
 
         if (posicion >= listaCuentas.size()){
@@ -184,6 +192,7 @@ public class BilleteraVirtual {
         }
     }
 
+    @Override
     public boolean eliminarUsuario(String idUsuario) throws Exception {
 
         Usuario usuario;
@@ -198,22 +207,35 @@ public class BilleteraVirtual {
         return flagExiste;
     }
 
+    @Override
     public boolean eliminarCuenta(String idCuenta) throws Exception {
 
         Cuenta cuenta;
         boolean flagExiste = false;
         cuenta = obtenerCuentaBancaria(idCuenta, 0);
+
         if(cuenta == null)
             throw new Exception("La cuenta a eliminar no existe");
         else{
             getListaCuentas().remove(cuenta);
+            cuenta.getUsuario().getListaCuentas().clear();
             flagExiste = true;
         }
         return flagExiste;
     }
 
+    @Override
+    public String consultarSaldo(String idUsuario) {
+        String saldo = "";
+        for (Cuenta cuenta : listaCuentas){
+            if (cuenta.getUsuario().getIdUsuario().equals(idUsuario)) {
+                saldo = String.valueOf(cuenta.getSaldo());
+                break;
+            }
 
-
+        }
+        return saldo;
+    }
 
 
 }
