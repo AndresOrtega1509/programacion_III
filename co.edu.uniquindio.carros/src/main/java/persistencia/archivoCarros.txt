@@ -1,0 +1,15 @@
+Toyota;Corolla;Blanco;1.8L 4 cilindros
+Honda;Civic;Azul metálico; 2.0L 4 cilindros
+Ford;Mustang;Rojo;5.0L V8
+Chevrolet;Malibu;Plata;2.5L 4 cilindros
+BMW;Serie 3;Negro;2.0L Turbo 4 cilindros
+Mercedes-Benz;Clase C;Gris oscuro;2.0L Turbo 4 cilindros
+Audi;A4;Blanco perla;2.0L Turbo 4 cilindros
+Nissan;Altima;Rojo burdeos;2.5L 4 cilindros
+Tesla;Model 3;Negro;Eléctrico de 258 kW (348 hp)
+Volkswagen;Golf;Azul;1.4L Turbo 4 cilindros
+Subaru;Outback;Verde;2.5L Boxer 4 cilindros
+Mazda;CX-5;Rojo metálico;2.5L 4 cilindros
+Hyundai;Elantra;Gris;2.0L 4 cilindros
+Kia;Sorento;Plata;2.5L Turbo 4 cilindros
+Dodge;Charger;Azul oscuro;6.4L V8Ferrari;
