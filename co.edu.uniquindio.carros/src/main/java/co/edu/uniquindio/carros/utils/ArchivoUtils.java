@@ -17,12 +17,6 @@ public class ArchivoUtils {
         System.out.println("Archivo guardado exitosamente");
     }
 
-    /**
-     * ESte metodo retorna el contendio del archivo ubicado en una ruta,con la lista de cadenas.
-     * @param ruta
-     * @return
-     * @throws IOException
-     */
     public static ArrayList<String> leerArchivo(String ruta) throws IOException {
 
         ArrayList<String>  contenido = new ArrayList<String>();
