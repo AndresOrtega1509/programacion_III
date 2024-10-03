@@ -1,0 +1,7 @@
+endpoint1@/database/main
+endpoint2@/database/backup
+password@12345
+puerto@5432
+host1@localhost
+host2@backuphost
+usuario@admin

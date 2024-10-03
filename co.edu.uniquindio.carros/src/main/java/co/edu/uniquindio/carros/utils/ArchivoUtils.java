@@ -9,6 +9,7 @@ public class ArchivoUtils {
 
         FileWriter fw = new FileWriter(ruta,flagAnexarContenido);
         BufferedWriter bfw = new BufferedWriter(fw);
+        bfw.newLine();
         bfw.write(contenido);
         bfw.close();
         fw.close();
