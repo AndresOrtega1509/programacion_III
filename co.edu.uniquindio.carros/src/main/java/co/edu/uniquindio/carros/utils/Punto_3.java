@@ -36,6 +36,8 @@ public class Punto_3 {
                         writer.write(clave + "@" + valor);
                         writer.newLine();
                     }
+                    // Guardar los datos
+                    writer.flush();
                     System.out.println("Archivo guardado correctamente en: " + rutaArchivoSeparado);
 
                 } catch (IOException e) {

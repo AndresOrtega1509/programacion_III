@@ -13,6 +13,8 @@ public class ArchivoUtils {
         bfw.write(contenido);
         bfw.close();
         fw.close();
+
+        System.out.println("Archivo guardado exitosamente");
     }
 
     /**
@@ -62,6 +64,8 @@ public class ArchivoUtils {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true))) {
             writer.newLine();
             writer.write(nuevoCarro);
+
+            System.out.println(nuevoCarro);
 
         }catch (IOException e) {
             System.out.println(e.getMessage());
