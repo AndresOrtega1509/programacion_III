@@ -12,4 +12,4 @@ Subaru;Outback;Verde;2.5L Boxer 4 cilindros
 Mazda;CX-5;Rojo metálico;2.5L 4 cilindros
 Hyundai;Elantra;Gris;2.0L 4 cilindros
 Kia;Sorento;Plata;2.5L Turbo 4 cilindros
-Dodge;Charger;Azul oscuro;6.4L V8Ferrari;
+Dodge;Charger;Azul oscuro;6.4L V8

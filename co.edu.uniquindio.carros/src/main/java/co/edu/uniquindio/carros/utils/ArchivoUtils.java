@@ -61,6 +61,7 @@ public class ArchivoUtils {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true))) {
             writer.newLine();
             writer.write(nuevoCarro);
+
         }catch (IOException e) {
             System.out.println(e.getMessage());
         }
