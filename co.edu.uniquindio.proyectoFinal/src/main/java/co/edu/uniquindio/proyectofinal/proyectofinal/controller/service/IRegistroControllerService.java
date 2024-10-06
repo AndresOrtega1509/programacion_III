@@ -7,6 +7,6 @@ public interface IRegistroControllerService {
 
     boolean agregarUsuario(UsuarioDto usuarioDto);
 
-    void registrarAcciones(String mensaje, int nivel, String accion);
+    void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado);
     Usuario obtenerUsuario(String idUsuario, int posicion);
 }

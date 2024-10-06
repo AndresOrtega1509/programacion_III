@@ -46,7 +46,8 @@ public class RegistroViewController {
                 if(registroController.agregarUsuario(usuarioDto)){
                     listaUsuariosDto.add(usuarioDto);
                     mostrarMensaje("Notificación usuario", "Usuario creado", "El usuario se ha creado con éxito", Alert.AlertType.INFORMATION);
-                    registrarAcciones("Usuario creado", 1, "agregar usuario");
+                    registrarAcciones("Usuario creado", 1, "agregar usuario",
+                            txtNombre.getText() + " se registró en la aplicación");
                     cerrarVentana();
                 }else{
                     mostrarMensaje("Notificación usuario", "Usuario no creado", "El usuario no se ha creado con éxito", Alert.AlertType.ERROR);
@@ -55,17 +56,18 @@ public class RegistroViewController {
                 mostrarMensaje("Notificación usuario", "Usuario existente", "Ya existe un usuario con el numero de identificacion:  " + txtIdentificacion.getText(),
                         Alert.AlertType.ERROR);
 
-                registrarAcciones("Usuario ya existe", 2, "agregar usuario");
+                registrarAcciones("Usuario ya existe", 2, "agregar usuario", txtNombre.getText() + " con la identificacion: "+
+                        txtIdentificacion.getText() + " ya existe");
             }
 
         }else{
             mostrarMensaje("Notificación usuario", "Usuario no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
-            registrarAcciones("Usuario no creado", 2, "agregar usuario");
+            registrarAcciones("Usuario no creado", 2, "agregar usuario", "");
         }
     }
 
-    private void registrarAcciones(String mensaje, int nivel, String accion) {
-        registroController.registrarAcciones(mensaje, nivel, accion);
+    private void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
+        registroController.registrarAcciones(mensaje, nivel, accion, usuarioAsociado);
     }
 
     private void cerrarVentana() {

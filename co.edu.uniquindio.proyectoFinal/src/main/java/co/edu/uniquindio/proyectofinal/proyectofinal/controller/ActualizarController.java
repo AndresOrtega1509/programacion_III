@@ -16,7 +16,7 @@ public class ActualizarController implements IActualizarControllerService {
     }
 
     @Override
-    public void registrarAcciones(String mensaje, int nivel, String accion) {
-        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
+    public void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion, usuarioAsociado);
     }
 }

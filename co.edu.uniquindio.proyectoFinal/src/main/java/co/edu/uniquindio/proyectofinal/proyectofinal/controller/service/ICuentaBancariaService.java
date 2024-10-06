@@ -6,7 +6,7 @@ public interface ICuentaBancariaService {
 
     void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception;
 
-    void registrarAcciones(String mensaje, int nivel, String accion);
+    void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado);
 
     void guardarResourceXML();
 }

@@ -40,7 +40,8 @@ public class LoginViewController {
 
                 mostrarMensaje("Notificacion - Usuario","Inicio de sesión exitoso", "Los datos del usuario son validos",
                         Alert.AlertType.INFORMATION);
-                registroAcciones("Inicio de sesión", 1, "logiarse");
+                registroAcciones("Inicio de sesión", 1, "logiarse", usuario.getNombre()
+                + " inició sesion");
                 cerrarVentana();
 
                 if (usuario.isTieneCuenta()){
@@ -55,11 +56,12 @@ public class LoginViewController {
         } catch (Exception e) {
             mostrarMensaje("Notificacion - Usuario","Inicio de sesión no exitoso",
                     e.getMessage(), Alert.AlertType.ERROR);
+            registroAcciones("Los datos ingresados son incorrectos", 2, "logiarse", "");
         }
     }
 
-    private void registroAcciones(String mensaje, int nivel, String accion) {
-        loginController.registroAcciones(mensaje, nivel, accion);
+    private void registroAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
+        loginController.registroAcciones(mensaje, nivel, accion, usuarioAsociado);
     }
 
     private void cerrarVentana() {

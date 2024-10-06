@@ -43,18 +43,24 @@ public class CuentaViewController {
                         usuario.getIdUsuario(), cbTipoCuenta.getValue());
                 mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta ha sido creada con exito",
                         Alert.AlertType.INFORMATION);
-                registrarAcciones("Cuenta bancaria creada", 1, "crearCuenta");
+                registrarAcciones("Cuenta bancaria creada", 1, "crearCuenta",
+                        usuario.getNombre()+ " creó una cuenta bancaria");
                 cerrarVentana();
                 if (!usuario.isTieneCuenta()){
                     navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
                 }
                 usuario.setTieneCuenta(true);
                 cuentaBancariaController.guardarResourceXML();
+            }else {
+                registrarAcciones("Datos de cuenta bancaria invalidos", 2, "crearCuenta",
+                        "");
             }
 
         }catch (Exception e) {
             mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta no se pudo crear",
                     Alert.AlertType.WARNING);
+            registrarAcciones("Los datos de la cuenta son invalidos", 2, "crearCuenta",
+                    usuario.getNombre() + " tuvo un error al crear su cuenta bancaria");
         }
     }
 
@@ -74,8 +80,8 @@ public class CuentaViewController {
         }
     }
 
-    private void registrarAcciones(String mensaje, int nivel, String accion) {
-        cuentaBancariaController.registrarAcciones(mensaje,nivel,accion);
+    private void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
+        cuentaBancariaController.registrarAcciones(mensaje,nivel,accion, usuarioAsociado);
     }
 
     private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {

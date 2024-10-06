@@ -16,7 +16,7 @@ public class LoginController implements ILoginController {
     }
 
     @Override
-    public void registroAcciones(String mensaje, int nivel, String accion) {
-        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
+    public void registroAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion, usuarioAsociado);
     }
 }

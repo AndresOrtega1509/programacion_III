@@ -136,9 +136,9 @@ public class Persistencia {
     }
 
 
-    public static void guardaRegistroLog(String mensajeLog, int nivel, String accion)
+    public static void guardaRegistroLog(String mensajeLog, int nivel, String accion, String usuarioAsociado)
     {
-        ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
+        ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, usuarioAsociado,RUTA_ARCHIVO_LOG);
     }
 
 

@@ -44,10 +44,11 @@ public class ActualizarViewController {
     public void actualizarUsuario(ActionEvent actionEvent) {
 
         try {
+            registrarAcciones("Actualización de datos", 1, "actualizarUsuario",
+                    sesion.getUsuario().getNombre() + " actualizó sus datos");
             actualizarController.actualizarUsuario(txtIdUsuario.getText(), txtNombre.getText(), txtCorreo.getText(),
                     txtNumeroTelefono.getText(), txtDireccion.getText());
             observadorActualizar.notificarActualizacion();
-            registrarAcciones("Actualización de datos", 1, "actualizarUsuario");
             mostrarMensaje("Notificacion - Usuario","Actualización Usuario",
                     "El usuario ha sido actualizado con exito",
                     Alert.AlertType.INFORMATION);
@@ -56,11 +57,13 @@ public class ActualizarViewController {
             mostrarMensaje("Notificacion - Usuario","Actualización Usuario",
                     e.getMessage(),
                     Alert.AlertType.WARNING);
+            registrarAcciones("Error al actualizar el usuario", 2, "actualizarUsuario",
+                    sesion.getUsuario().getNombre() + " tuvo un error al actualizar sus datos");
         }
     }
 
-    private void registrarAcciones(String mensaje, int nivel, String accion) {
-        actualizarController.registrarAcciones(mensaje, nivel, accion);
+    private void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
+        actualizarController.registrarAcciones(mensaje, nivel, accion, usuarioAsociado);
     }
 
     private void cerrarVentana() {

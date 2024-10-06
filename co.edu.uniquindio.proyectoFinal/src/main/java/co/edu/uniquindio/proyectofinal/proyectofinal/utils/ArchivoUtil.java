@@ -57,7 +57,7 @@ public class ArchivoUtil {
     }
 
 
-    public static void guardarRegistroLog(String mensajeLog, int nivel, String accion, String rutaArchivo)
+    public static void guardarRegistroLog(String mensajeLog, int nivel, String accion, String usuarioAsociado,String rutaArchivo)
     {
         String log = "";
         Logger LOGGER = Logger.getLogger(accion);
@@ -69,15 +69,15 @@ public class ArchivoUtil {
             LOGGER.addHandler(fileHandler);
             switch (nivel) {
                 case 1:
-                    LOGGER.log(Level.INFO,accion+","+mensajeLog+","+fechaSistema) ;
+                    LOGGER.log(Level.INFO,accion+","+mensajeLog+","+usuarioAsociado+","+fechaSistema) ;
                     break;
 
                 case 2:
-                    LOGGER.log(Level.WARNING,accion+","+mensajeLog+","+fechaSistema) ;
+                    LOGGER.log(Level.WARNING,accion+","+mensajeLog+","+usuarioAsociado+","+fechaSistema) ;
                     break;
 
                 case 3:
-                    LOGGER.log(Level.SEVERE,accion+","+mensajeLog+","+fechaSistema) ;
+                    LOGGER.log(Level.SEVERE,accion+","+mensajeLog+","+usuarioAsociado+","+fechaSistema) ;
                     break;
 
                 default:

@@ -6,5 +6,5 @@ public interface ILoginController {
 
     Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception;
 
-    void registroAcciones(String mensaje, int nivel, String accion);
+    void registroAcciones(String mensaje, int nivel, String accion, String usuarioAsociado);
 }

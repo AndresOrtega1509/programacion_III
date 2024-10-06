@@ -107,6 +107,8 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
         mostrarMensaje("Notificacion Usuario","Cerrar Sesion",
                 "Se ha cerrado la sesión correctamente", Alert.AlertType.INFORMATION);
+        registrarAcciones("La sesión se ha cerrado", 1, "cerrarSesion", sesion.getUsuario().getNombre()
+        + " ha cerrado la sesión");
         Stage stage = (Stage) tablaTransacciones.getScene().getWindow();
         sesion.cerrarSesion();
         stage.close();
@@ -159,12 +161,13 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
     public void eliminar(ActionEvent actionEvent) throws Exception {
         if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar su cuenta?")){
 
+            registrarAcciones("Usuario eliminado", 1, "eliminar",
+                    sesion.getUsuario().getNombre() + " eliminó su cuenta");
             boolean clienteEliminado = panelUsuarioController.eliminarUsuario(sesion.getUsuario().getIdUsuario());
             panelUsuarioController.eliminarCuenta(sesion.getCuenta().getIdCuenta());
             if(clienteEliminado){
                 for (UsuarioDto usuarioDto : listaUsuariosDto) {
                     listaUsuariosDto.remove(usuarioDto);
-                    registrarAcciones("Usuario eliminado", 1, "eliminar");
                 }
             }
             cerrarVentana();
@@ -172,9 +175,9 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
                 
     }
 
-    private void registrarAcciones(String mensaje, int nivel, String accion) {
+    private void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
 
-        panelUsuarioController.registrarAcciones(mensaje, nivel, accion);
+        panelUsuarioController.registrarAcciones(mensaje, nivel, accion, usuarioAsociado);
     }
 
     private void cerrarVentana() {

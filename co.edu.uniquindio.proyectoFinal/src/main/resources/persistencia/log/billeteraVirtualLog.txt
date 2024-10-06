@@ -112,3 +112,69 @@ oct 06, 2024 3:03:41 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils
 INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
 oct 06, 2024 3:04:03 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:38:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:38:44 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 1:39:52 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:40:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:41:19 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:41:35 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 1:42:35 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:42:47 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 1:44:32 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:44:44 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:44:49 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 1:45:23 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:45:42 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:46:06 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 1:46:14 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:46:38 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 2:24:00 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-10-06
+oct 06, 2024 2:24:26 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: agregar usuario,Usuario no creado,,2024-10-06
+oct 06, 2024 2:24:47 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,ortega, se registró en la aplicación,2024-10-06
+oct 06, 2024 2:25:44 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: logiarse,Los datos ingresados son incorrectos,,2024-10-06
+oct 06, 2024 2:26:02 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,ortega, inició sesion,2024-10-06
+oct 06, 2024 2:26:35 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,ortega, creó una cuenta bancaria,2024-10-06
+oct 06, 2024 2:26:47 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: actualizarUsuario,Actualización de datos,san, actualizó sus datos,2024-10-06
+oct 06, 2024 2:27:05 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,san, ha cerrado la sesión,2024-10-06
+oct 06, 2024 2:27:24 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,san, inició sesion,2024-10-06
+oct 06, 2024 2:27:35 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: eliminar,Usuario eliminado,san,eliminó su cuenta,2024-10-06
+oct 06, 2024 2:34:13 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-10-06
+oct 06, 2024 2:34:37 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: agregar usuario,Usuario ya existe,online con la identificacion: 456 ya existe,2024-10-06
+oct 06, 2024 2:34:59 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,online se registró en la aplicación,2024-10-06
+oct 06, 2024 2:35:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,online inició sesion,2024-10-06
+oct 06, 2024 2:35:23 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: crearCuenta,Datos de cuenta bancaria invalidos,,2024-10-06
+oct 06, 2024 2:35:34 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,online creó una cuenta bancaria,2024-10-06
+oct 06, 2024 2:35:39 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,online ha cerrado la sesión,2024-10-06

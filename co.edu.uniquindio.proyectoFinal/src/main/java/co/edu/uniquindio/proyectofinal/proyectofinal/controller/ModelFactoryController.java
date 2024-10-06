@@ -54,11 +54,11 @@ public class ModelFactoryController implements IModelFactoryService {
             cargarDatosBase();
             guardarResourceXML();
         }
-        registrarAccionesSistema("Inicio del sistema", 1, "inicioSistema");
+        registrarAccionesSistema("Inicio de la aplicacion", 1, "inicioSistema", "");
     }
 
-    public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
-        Persistencia.guardaRegistroLog(mensaje, nivel, accion);
+    public void registrarAccionesSistema(String mensaje, int nivel, String accion, String usuarioAsociado) {
+        Persistencia.guardaRegistroLog(mensaje, nivel, accion, usuarioAsociado);
     }
 
     private void cargarResourceXML() {
@@ -112,7 +112,6 @@ public class ModelFactoryController implements IModelFactoryService {
             return true;
         }catch (Exception e){
             e.printStackTrace();
-            registrarAccionesSistema(e.getMessage(), 2, "agregarUsuario");
             return false;
         }
     }
@@ -134,6 +133,7 @@ public class ModelFactoryController implements IModelFactoryService {
 
         billeteraVirtual.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
         guardarResourceXML();
+        salvarDatosPrueba();
 
     }
 

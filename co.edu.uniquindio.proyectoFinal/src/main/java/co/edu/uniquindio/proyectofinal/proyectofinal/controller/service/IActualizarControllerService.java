@@ -4,5 +4,5 @@ public interface IActualizarControllerService {
 
     void actualizarUsuario(String idUsuario, String nombre, String correo, String telefono, String direccion) throws Exception;
 
-    void registrarAcciones(String mensaje, int nivel, String accion);
+    void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado);
 }
