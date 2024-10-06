@@ -38,19 +38,44 @@ public class CuentaViewController {
     public void crearCuenta(ActionEvent actionEvent) {
 
         try {
-            cuentaBancariaController.agregarCuenta(txtIdCuenta.getText(), txtNombreBanco.getText(),0,
-                    usuario.getIdUsuario(), cbTipoCuenta.getValue());
-            mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta ha sido creada con exito",
-                    Alert.AlertType.INFORMATION);
-            cerrarVentana();
-            if (!usuario.isTieneCuenta()){
-                navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
+            if (datosValidos()){
+                cuentaBancariaController.agregarCuenta(txtIdCuenta.getText(), txtNombreBanco.getText(),0.0,
+                        usuario.getIdUsuario(), cbTipoCuenta.getValue());
+                mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta ha sido creada con exito",
+                        Alert.AlertType.INFORMATION);
+                registrarAcciones("Cuenta bancaria creada", 1, "crearCuenta");
+                cerrarVentana();
+                if (!usuario.isTieneCuenta()){
+                    navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
+                }
+                usuario.setTieneCuenta(true);
+                cuentaBancariaController.guardarResourceXML();
             }
-            usuario.setTieneCuenta(true);
+
         }catch (Exception e) {
             mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta no se pudo crear",
                     Alert.AlertType.WARNING);
         }
+    }
+
+    private boolean datosValidos() {
+        String mensaje = "";
+        if(txtIdCuenta == null || txtIdCuenta.getText().isEmpty())
+            mensaje += "El id de la cuenta es invalido \n" ;
+        if(txtNombreBanco == null || txtNombreBanco.getText().isEmpty())
+            mensaje += "El nombre del banco es invalida \n" ;
+        if(cbTipoCuenta == null || cbTipoCuenta.getValue() == null)
+            mensaje += "El tipo de cuenta es invalido \n" ;
+        if(mensaje.isEmpty()){
+            return true;
+        }else{
+            mostrarMensaje("Notificación Usuario","Datos invalidos",mensaje, Alert.AlertType.WARNING);
+            return false;
+        }
+    }
+
+    private void registrarAcciones(String mensaje, int nivel, String accion) {
+        cuentaBancariaController.registrarAcciones(mensaje,nivel,accion);
     }
 
     private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {

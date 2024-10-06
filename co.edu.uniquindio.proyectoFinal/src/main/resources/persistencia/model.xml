@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.4" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.BilleteraVirtual" id="BilleteraVirtual0">
+  <void property="listaCuentas">
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta" id="Cuenta0">
+     <void property="idCuenta">
+      <string>321</string>
+     </void>
+     <void property="nombreBanco">
+      <string>Nequi</string>
+     </void>
+     <void property="numeroCuenta">
+      <string>5846375637</string>
+     </void>
+     <void property="saldo">
+      <double>0.0</double>
+     </void>
+     <void property="tipoCuenta">
+      <object class="java.lang.Enum" id="TipoCuenta0" method="valueOf">
+       <class>co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta</class>
+       <string>AHORROS</string>
+      </object>
+     </void>
+     <void property="usuario">
+      <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario" id="Usuario0">
+       <void property="correoElectronico">
+        <string>sara@hotmail.com</string>
+       </void>
+       <void property="direccion">
+        <string>parque sucre</string>
+       </void>
+       <void property="idUsuario">
+        <string>321</string>
+       </void>
+       <void property="listaCuentas">
+        <void method="add">
+         <object idref="Cuenta0"/>
+        </void>
+       </void>
+       <void property="nombre">
+        <string>sara</string>
+       </void>
+       <void property="numeroTelefono">
+        <string>3132334323</string>
+       </void>
+       <void property="tieneCuenta">
+        <boolean>true</boolean>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta" id="Cuenta1">
+     <void property="idCuenta">
+      <string>1214</string>
+     </void>
+     <void property="listaTransacciones">
+      <object class="java.util.ArrayList"/>
+     </void>
+     <void property="nombreBanco">
+      <string>ads</string>
+     </void>
+     <void property="numeroCuenta">
+      <string>9677571495</string>
+     </void>
+     <void property="saldo">
+      <double>0.0</double>
+     </void>
+     <void property="tipoCuenta">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta</class>
+       <string>CORRIENTE</string>
+      </object>
+     </void>
+     <void property="usuario">
+      <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario" id="Usuario1">
+       <void property="correoElectronico">
+        <string>sdf</string>
+       </void>
+       <void property="direccion">
+        <string>wef</string>
+       </void>
+       <void property="idUsuario">
+        <string>123</string>
+       </void>
+       <void property="listaCuentas">
+        <void method="add">
+         <object idref="Cuenta1"/>
+        </void>
+        <void method="add">
+         <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta" id="Cuenta2">
+          <void property="idCuenta">
+           <string>345</string>
+          </void>
+          <void property="listaTransacciones">
+           <object class="java.util.ArrayList"/>
+          </void>
+          <void property="nombreBanco">
+           <string>ert</string>
+          </void>
+          <void property="numeroCuenta">
+           <string>8307906594</string>
+          </void>
+          <void property="saldo">
+           <double>0.0</double>
+          </void>
+          <void property="tipoCuenta">
+           <object idref="TipoCuenta0"/>
+          </void>
+          <void property="usuario">
+           <object idref="Usuario1"/>
+          </void>
+         </object>
+        </void>
+       </void>
+       <void property="nombre">
+        <string>pipe</string>
+       </void>
+       <void property="numeroTelefono">
+        <string>ewf</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object idref="Cuenta2"/>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta" id="Cuenta3">
+     <void property="idCuenta">
+      <string>324</string>
+     </void>
+     <void property="listaTransacciones">
+      <object class="java.util.ArrayList"/>
+     </void>
+     <void property="nombreBanco">
+      <string>ert</string>
+     </void>
+     <void property="numeroCuenta">
+      <string>1884396885</string>
+     </void>
+     <void property="saldo">
+      <double>0.0</double>
+     </void>
+     <void property="tipoCuenta">
+      <object idref="TipoCuenta0"/>
+     </void>
+     <void property="usuario">
+      <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario" id="Usuario2">
+       <void property="correoElectronico">
+        <string>gf</string>
+       </void>
+       <void property="direccion">
+        <string>erf</string>
+       </void>
+       <void property="idUsuario">
+        <string>09</string>
+       </void>
+       <void property="listaCuentas">
+        <void method="add">
+         <object idref="Cuenta3"/>
+        </void>
+       </void>
+       <void property="nombre">
+        <string>edw</string>
+       </void>
+       <void property="numeroTelefono">
+        <string>ef</string>
+       </void>
+       <void property="tieneCuenta">
+        <boolean>true</boolean>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaUsuarios">
+   <void method="add">
+    <object idref="Usuario0"/>
+   </void>
+   <void method="add">
+    <object idref="Usuario1"/>
+   </void>
+   <void method="add">
+    <object idref="Usuario2"/>
+   </void>
+  </void>
+ </object>
+</java>

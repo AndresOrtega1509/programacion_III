@@ -14,4 +14,9 @@ public class ActualizarController implements IActualizarControllerService {
     public void actualizarUsuario(String idUsuario, String nombre, String correo, String telefono, String direccion) throws Exception {
         modelFactoryController.actualizarUsuario(idUsuario, nombre, correo, telefono,direccion);
     }
+
+    @Override
+    public void registrarAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
+    }
 }

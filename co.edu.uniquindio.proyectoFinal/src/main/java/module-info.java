@@ -3,6 +3,8 @@ module co.edu.uniquindio.proyectofinal.proyectofinal {
     requires javafx.fxml;
     requires org.mapstruct;
     requires static lombok;
+    requires java.desktop;
+    requires java.logging;
 
 
     opens co.edu.uniquindio.proyectofinal.proyectofinal to javafx.fxml;

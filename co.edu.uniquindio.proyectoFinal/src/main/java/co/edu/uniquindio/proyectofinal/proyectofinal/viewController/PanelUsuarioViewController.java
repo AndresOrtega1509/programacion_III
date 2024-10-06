@@ -69,7 +69,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
                 lblNombre.setText(usuario.getNombre() +", bienvenido a su banco, aquí podra ver sus transacciones");
                 lblCuenta.setText("Nro. Cuenta: " + cuenta.getNumeroCuenta());
-                consultarTransacciones();
+                //consultarTransacciones();
 
             }
         } catch (Exception e) {
@@ -79,7 +79,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     private void consultarTransacciones() {
 
-        tablaTransacciones.setItems(FXCollections.observableArrayList(cuenta.getListaTransacciones()));
+        //tablaTransacciones.setItems(FXCollections.observableArrayList(cuenta.getListaTransacciones()));
     }
 
     public void consultarSaldo(ActionEvent actionEvent) {
@@ -164,11 +164,17 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
             if(clienteEliminado){
                 for (UsuarioDto usuarioDto : listaUsuariosDto) {
                     listaUsuariosDto.remove(usuarioDto);
+                    registrarAcciones("Usuario eliminado", 1, "eliminar");
                 }
             }
             cerrarVentana();
         }
                 
+    }
+
+    private void registrarAcciones(String mensaje, int nivel, String accion) {
+
+        panelUsuarioController.registrarAcciones(mensaje, nivel, accion);
     }
 
     private void cerrarVentana() {

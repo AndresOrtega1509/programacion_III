@@ -29,4 +29,9 @@ public class PanelUsuarioController implements IPanelUsuarioService {
     public String consultarSaldo(String idUsuario) {
         return modelFactoryController.consultarSaldo(idUsuario);
     }
+
+    @Override
+    public void registrarAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAccionesSistema(mensaje,nivel,accion);
+    }
 }

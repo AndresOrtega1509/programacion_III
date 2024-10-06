@@ -1,0 +1,114 @@
+oct 06, 2024 1:13:57 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:14:13 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 1:18:48 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:18:59 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:25:50 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:25:56 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:27:30 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:28:02 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:28:08 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:28:18 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 1:31:00 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 1:31:10 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:31:16 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 1:41:33 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:41:39 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:41:46 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 1:43:37 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:43:44 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:43:59 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 1:58:44 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 1:58:55 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 1:59:02 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 2:32:09 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:34:56 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:35:22 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:35:42 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 2:37:45 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:38:18 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:38:33 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 2:41:59 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:42:05 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:42:10 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 2:43:20 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:43:28 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:44:19 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:44:29 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:44:49 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 2:45:09 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:45:16 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 2:46:35 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:46:42 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:50:23 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:51:48 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:53:45 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:53:58 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:55:00 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 2:55:06 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:55:13 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 2:56:30 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 2:56:43 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 2:56:49 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 3:01:53 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 3:02:14 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,2024-10-06
+oct 06, 2024 3:02:22 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06
+oct 06, 2024 3:02:26 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,2024-10-06
+oct 06, 2024 3:03:41 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio del sistema,2024-10-06
+oct 06, 2024 3:04:03 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,2024-10-06

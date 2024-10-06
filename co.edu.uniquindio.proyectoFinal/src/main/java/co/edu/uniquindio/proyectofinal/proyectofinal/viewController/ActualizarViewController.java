@@ -47,6 +47,7 @@ public class ActualizarViewController {
             actualizarController.actualizarUsuario(txtIdUsuario.getText(), txtNombre.getText(), txtCorreo.getText(),
                     txtNumeroTelefono.getText(), txtDireccion.getText());
             observadorActualizar.notificarActualizacion();
+            registrarAcciones("Actualización de datos", 1, "actualizarUsuario");
             mostrarMensaje("Notificacion - Usuario","Actualización Usuario",
                     "El usuario ha sido actualizado con exito",
                     Alert.AlertType.INFORMATION);
@@ -56,6 +57,10 @@ public class ActualizarViewController {
                     e.getMessage(),
                     Alert.AlertType.WARNING);
         }
+    }
+
+    private void registrarAcciones(String mensaje, int nivel, String accion) {
+        actualizarController.registrarAcciones(mensaje, nivel, accion);
     }
 
     private void cerrarVentana() {

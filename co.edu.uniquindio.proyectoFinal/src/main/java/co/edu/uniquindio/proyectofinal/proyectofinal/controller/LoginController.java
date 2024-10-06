@@ -14,4 +14,9 @@ public class LoginController implements ILoginController {
     public Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception {
          return modelFactoryController.validarInicioSesion(nombre, idUsuario);
     }
+
+    @Override
+    public void registroAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
+    }
 }

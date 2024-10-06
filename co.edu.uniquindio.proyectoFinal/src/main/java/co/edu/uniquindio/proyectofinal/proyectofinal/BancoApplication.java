@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal;
 
+import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.RegistroViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

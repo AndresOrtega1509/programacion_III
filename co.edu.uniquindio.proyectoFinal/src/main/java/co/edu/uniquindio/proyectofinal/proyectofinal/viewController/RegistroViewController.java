@@ -41,16 +41,31 @@ public class RegistroViewController {
         UsuarioDto usuarioDto = construirUsuarioDto();
         //2. Validar la información
         if(datosValidos(usuarioDto)){
-            if(registroController.agregarUsuario(usuarioDto)){
-                listaUsuariosDto.add(usuarioDto);
-                mostrarMensaje("Notificación usuario", "Usuario creado", "El usuario se ha creado con éxito", Alert.AlertType.INFORMATION);
-                cerrarVentana();
-            }else{
-                mostrarMensaje("Notificación usuario", "Usuario no creado", "El usuario no se ha creado con éxito", Alert.AlertType.ERROR);
+            if (registroController.obtenerUsuario(txtIdentificacion.getText(), 0) == null){
+
+                if(registroController.agregarUsuario(usuarioDto)){
+                    listaUsuariosDto.add(usuarioDto);
+                    mostrarMensaje("Notificación usuario", "Usuario creado", "El usuario se ha creado con éxito", Alert.AlertType.INFORMATION);
+                    registrarAcciones("Usuario creado", 1, "agregar usuario");
+                    cerrarVentana();
+                }else{
+                    mostrarMensaje("Notificación usuario", "Usuario no creado", "El usuario no se ha creado con éxito", Alert.AlertType.ERROR);
+                }
+            }else {
+                mostrarMensaje("Notificación usuario", "Usuario existente", "Ya existe un usuario con el numero de identificacion:  " + txtIdentificacion.getText(),
+                        Alert.AlertType.ERROR);
+
+                registrarAcciones("Usuario ya existe", 2, "agregar usuario");
             }
+
         }else{
             mostrarMensaje("Notificación usuario", "Usuario no creado", "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+            registrarAcciones("Usuario no creado", 2, "agregar usuario");
         }
+    }
+
+    private void registrarAcciones(String mensaje, int nivel, String accion) {
+        registroController.registrarAcciones(mensaje, nivel, accion);
     }
 
     private void cerrarVentana() {

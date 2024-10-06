@@ -5,7 +5,6 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.model;
  */
 public class Sesion {
 
-
     public static Sesion INSTANCIA;
 
     private Usuario usuario;

@@ -3,25 +3,33 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.services.IBancoService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BilleteraVirtual implements IBancoService {
+public class BilleteraVirtual implements IBancoService, Serializable {
+    private static final long serialVersionUID = 1L;
+    private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+    private ArrayList<Cuenta> listaCuentas = new ArrayList<>();
 
-    private ArrayList<Usuario> listaUsuarios;
-    private ArrayList<Cuenta> listaCuentas;
 
     public BilleteraVirtual() {
-        listaUsuarios = new ArrayList<>();
-        listaCuentas = new ArrayList<>();
     }
 
     public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
 
+    public void setListaUsuarios(ArrayList<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+
     public ArrayList<Cuenta> getListaCuentas() {
         return listaCuentas;
+    }
+
+    public void setListaCuentas(ArrayList<Cuenta> listaCuentas) {
+        this.listaCuentas = listaCuentas;
     }
 
     public void agregarUsuario(Usuario usuario) {
@@ -92,7 +100,7 @@ public class BilleteraVirtual implements IBancoService {
     }
 
     @Override
-    public String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario,
+    public void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario,
                                 TipoCuenta tipoCuenta) throws Exception {
 
         Usuario propietario = obtenerUsuario(idUsuario, 0);
@@ -108,10 +116,9 @@ public class BilleteraVirtual implements IBancoService {
             listaCuentas.add(cuenta);
             propietario.getListaCuentas().add(cuenta);
 
-            return numeroCuenta;
+        }else {
+            throw new Exception("No se encontró el usuario con el número de identificación: " + idUsuario);
         }
-
-        throw new Exception("No se encontró el usuario con el número de identificación: " + idUsuario);
 
     }
 

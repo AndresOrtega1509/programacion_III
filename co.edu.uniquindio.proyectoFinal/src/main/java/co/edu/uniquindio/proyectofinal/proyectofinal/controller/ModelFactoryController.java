@@ -8,10 +8,13 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.utils.BancoUtils;
+import co.edu.uniquindio.proyectofinal.proyectofinal.utils.Persistencia;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ModelFactoryController implements IModelFactoryService {
 
@@ -28,8 +31,72 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     public ModelFactoryController() {
-        this.billeteraVirtual = new BilleteraVirtual();
-        cargarDatosBase();
+        //1. inicializar datos y luego guardarlo en archivos
+        System.out.println("invocación clase singleton");
+         //cargarDatosBase();
+         //salvarDatosPrueba();
+
+        //2. Cargar los datos de los archivos
+		cargarDatosDesdeArchivos();
+
+        //3. Guardar y Cargar el recurso serializable binario
+		//cargarResourceBinario();
+        //guardarResourceBinario();
+
+        //4. Guardar y Cargar el recurso serializable XML
+        //guardarResourceXML();
+        cargarResourceXML();
+        //System.out.println(billeteraVirtual.getListaUsuarios().getFirst().toString());
+
+        //Siempre se debe verificar si la raiz del recurso es null
+
+        if(billeteraVirtual == null){
+            cargarDatosBase();
+            guardarResourceXML();
+        }
+        registrarAccionesSistema("Inicio del sistema", 1, "inicioSistema");
+    }
+
+    public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
+        Persistencia.guardaRegistroLog(mensaje, nivel, accion);
+    }
+
+    private void cargarResourceXML() {
+
+        billeteraVirtual = Persistencia.cargarRecursoBilleteraVirtualXML();
+    }
+
+    public void guardarResourceXML() {
+        
+        Persistencia.guardarRecursoBilleteraVirtualXML(billeteraVirtual);
+    }
+
+    private void guardarResourceBinario() {
+        Persistencia.guardarRecursoBilleteraVirtualBinario(billeteraVirtual);
+    }
+
+    private void cargarResourceBinario() {
+        billeteraVirtual = Persistencia.cargarRecursoBilleteraVirtualBinario();
+    }
+
+    private void cargarDatosDesdeArchivos() {
+
+        billeteraVirtual = new BilleteraVirtual();
+        try {
+            Persistencia.cargarDatosArchivos(billeteraVirtual);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void salvarDatosPrueba() {
+
+        try {
+            Persistencia.guardarUsuarios(billeteraVirtual.getListaUsuarios());
+            Persistencia.guardarCuentas(billeteraVirtual.getListaCuentas());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -38,11 +105,14 @@ public class ModelFactoryController implements IModelFactoryService {
             if(billeteraVirtual.obtenerUsuario(usuarioDto.idUsuario(), 0) == null) {
                 Usuario usuario = mapper.usuarioDtoToUsuario(usuarioDto);
                 billeteraVirtual.agregarUsuario(usuario);
+                guardarResourceXML();
+                salvarDatosPrueba();
 
             }
             return true;
         }catch (Exception e){
             e.printStackTrace();
+            registrarAccionesSistema(e.getMessage(), 2, "agregarUsuario");
             return false;
         }
     }
@@ -60,15 +130,20 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     @Override
-    public String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
+    public void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
 
-         return billeteraVirtual.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
+        billeteraVirtual.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
+        guardarResourceXML();
+
     }
 
     @Override
     public void actualizarUsuario(String idUsuario, String nombre, String correo, String telefono, String direccion) throws Exception {
 
         billeteraVirtual.actualizarUsuario(idUsuario, nombre, correo, telefono, direccion);
+
+        guardarResourceXML();
+        salvarDatosPrueba();
     }
 
     @Override
@@ -76,6 +151,7 @@ public class ModelFactoryController implements IModelFactoryService {
         boolean flagExiste = false;
         try {
             flagExiste = billeteraVirtual.eliminarUsuario(idUsuario);
+            guardarResourceXML();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -88,6 +164,9 @@ public class ModelFactoryController implements IModelFactoryService {
         boolean flagExiste = false;
         try {
             flagExiste = billeteraVirtual.eliminarCuenta(idCuenta);
+
+            guardarResourceXML();
+            salvarDatosPrueba();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -99,6 +178,11 @@ public class ModelFactoryController implements IModelFactoryService {
     public String consultarSaldo(String idUsuario) {
 
         return billeteraVirtual.consultarSaldo(idUsuario);
+    }
+
+    @Override
+    public Usuario obtenerUsuario(String idUsuario, int posicion) {
+        return billeteraVirtual.obtenerUsuario(idUsuario, posicion);
     }
 
     private void cargarDatosBase() {

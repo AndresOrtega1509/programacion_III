@@ -1,21 +1,22 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Usuario {
+public class Usuario implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String idUsuario;
     private String nombre;
     private String correoElectronico;
     private String numeroTelefono;
     private String direccion;
-    private boolean tieneCuenta;
-    private List<Cuenta> listaCuentas;
+    private boolean tieneCuenta = false;
+    private List<Cuenta> listaCuentas = new ArrayList<>();
 
     public Usuario() {
 
-        this.listaCuentas = new ArrayList<>();
     }
 
     public Usuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion, boolean tieneCuenta,List<Cuenta> listaCuentas) {
@@ -24,7 +25,7 @@ public class Usuario {
         this.correoElectronico = correoElectronico;
         this.numeroTelefono = numeroTelefono;
         this.direccion = direccion;
-        this.tieneCuenta = false;
+        this.tieneCuenta = tieneCuenta;
 
         if (listaCuentas == null) {
             this.listaCuentas = new ArrayList<>();

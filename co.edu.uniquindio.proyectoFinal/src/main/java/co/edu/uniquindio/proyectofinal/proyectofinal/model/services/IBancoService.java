@@ -9,7 +9,7 @@ public interface IBancoService {
     void actualizarUsuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion) throws Exception;
     Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception;
     Usuario obtenerUsuario(String idUsuario, int posicion);
-    String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario,
+    void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario,
                          TipoCuenta tipoCuenta) throws Exception;
     Cuenta consultarCuenta(String idUsuario, int posicion);
     boolean eliminarUsuario(String idUsuario) throws Exception;

@@ -4,5 +4,9 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 
 public interface ICuentaBancariaService {
 
-    String agregarCuenta(String idCuenta, String nombreBanco, float saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception;
+    void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception;
+
+    void registrarAcciones(String mensaje, int nivel, String accion);
+
+    void guardarResourceXML();
 }

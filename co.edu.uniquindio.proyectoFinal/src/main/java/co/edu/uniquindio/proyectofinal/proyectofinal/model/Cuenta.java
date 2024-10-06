@@ -2,15 +2,17 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cuenta {
+public class Cuenta implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String idCuenta;
     private String nombreBanco;
     private String numeroCuenta;
-    private float saldo;
+    private Double saldo;
     private Usuario usuario;
     private List<Transaccion> listaTransacciones;
     private TipoCuenta tipoCuenta;
@@ -18,7 +20,7 @@ public class Cuenta {
     public Cuenta() {
     }
 
-    public Cuenta(String idCuenta, String nombreBanco, String numeroCuenta, float saldo, Usuario usuario,
+    public Cuenta(String idCuenta, String nombreBanco, String numeroCuenta, Double saldo, Usuario usuario,
                   TipoCuenta tipoCuenta) {
         this.idCuenta = idCuenta;
         this.nombreBanco = nombreBanco;
@@ -53,11 +55,11 @@ public class Cuenta {
         this.numeroCuenta = numeroCuenta;
     }
 
-    public float getSaldo() {
+    public Double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(Double saldo) {
         this.saldo = saldo;
     }
 

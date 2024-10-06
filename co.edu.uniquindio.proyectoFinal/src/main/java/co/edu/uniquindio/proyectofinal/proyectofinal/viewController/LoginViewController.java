@@ -40,6 +40,7 @@ public class LoginViewController {
 
                 mostrarMensaje("Notificacion - Usuario","Inicio de sesión exitoso", "Los datos del usuario son validos",
                         Alert.AlertType.INFORMATION);
+                registroAcciones("Inicio de sesión", 1, "logiarse");
                 cerrarVentana();
 
                 if (usuario.isTieneCuenta()){
@@ -55,6 +56,10 @@ public class LoginViewController {
             mostrarMensaje("Notificacion - Usuario","Inicio de sesión no exitoso",
                     e.getMessage(), Alert.AlertType.ERROR);
         }
+    }
+
+    private void registroAcciones(String mensaje, int nivel, String accion) {
+        loginController.registroAcciones(mensaje, nivel, accion);
     }
 
     private void cerrarVentana() {
