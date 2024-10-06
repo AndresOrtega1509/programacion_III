@@ -1,8 +1,1 @@
-sara,321,sara@hotmail.com,3132334323,parque sucre,true
-pipe,123,sdf,ewf,wef,false
-edw,09,gf,ef,erf,true
-andres,03,erg,rth,rth,true
-fgh,456,rth,rth,rth,false
-sdgreg,345,erwg,wrg,wer,false
-felipe,0904,erg,erh,wht,true
-online,678,eg,rg,erg,false
+sara@@321@@sara@hotmail.com@@3132334323@@parque sucre@@true

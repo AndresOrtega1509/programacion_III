@@ -37,7 +37,7 @@ public class ModelFactoryController implements IModelFactoryService {
          //salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
-		cargarDatosDesdeArchivos();
+		//cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
 		//cargarResourceBinario();
@@ -46,7 +46,6 @@ public class ModelFactoryController implements IModelFactoryService {
         //4. Guardar y Cargar el recurso serializable XML
         //guardarResourceXML();
         cargarResourceXML();
-        //System.out.println(billeteraVirtual.getListaUsuarios().getFirst().toString());
 
         //Siempre se debe verificar si la raiz del recurso es null
 

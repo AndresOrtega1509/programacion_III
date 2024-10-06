@@ -57,8 +57,8 @@ public class Persistencia {
         String contenido = "";
         for(Usuario usuario:listaUsuarios)
         {
-            contenido+= usuario.getNombre()+","+usuario.getIdUsuario()+","+usuario.getCorreoElectronico()+","+usuario.getNumeroTelefono()
-                    +","+usuario.getDireccion()+","+usuario.isTieneCuenta()+"\n";
+            contenido+= usuario.getNombre()+"@@"+usuario.getIdUsuario()+"@@"+usuario.getCorreoElectronico()+"@@"+usuario.getNumeroTelefono()
+                    +"@@"+usuario.getDireccion()+"@@"+usuario.isTieneCuenta()+"\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_USUARIOS, contenido, false);
     }
@@ -69,11 +69,11 @@ public class Persistencia {
         for(Cuenta cuenta:listaCuentas)
         {
             contenido+= cuenta.getNumeroCuenta()+
-                    ","+cuenta.getIdCuenta()+
-                    ","+cuenta.getNombreBanco()+
-                    ","+cuenta.getSaldo()+
-                    ","+cuenta.getTipoCuenta()+
-                    ","+cuenta.getUsuario().getIdUsuario()+"\n";
+                    "@@"+cuenta.getIdCuenta()+
+                    "@@"+cuenta.getNombreBanco()+
+                    "@@"+cuenta.getSaldo()+
+                    "@@"+cuenta.getTipoCuenta()+
+                    "@@"+cuenta.getUsuario().getIdUsuario()+"\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_CUENTAS, contenido, false);
     }
@@ -96,7 +96,7 @@ public class Persistencia {
         ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_USUARIOS);
 
         for (String linea : contenido) {
-            String[] datos = linea.split(",");
+            String[] datos = linea.split("@@");
             Usuario usuario = new Usuario();
             usuario.setNombre(datos[0]);
             usuario.setIdUsuario(datos[1]);
@@ -117,7 +117,7 @@ public class Persistencia {
         Map<String, Usuario> mapaUsuarios = cargarUsuarios(); // Carga usuarios en un mapa
 
         for (String linea : contenido) {
-            String[] datos = linea.split(",");
+            String[] datos = linea.split("@@");
             Cuenta cuenta = new Cuenta();
             cuenta.setNumeroCuenta(datos[0]);
             cuenta.setIdCuenta(datos[1]);
