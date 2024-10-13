@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.4" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante" id="Estudiante0">
+  <void property="estudiantes">
+   <void method="add">
+    <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante">
+     <void property="codigo">
+      <string>1016</string>
+     </void>
+     <void property="nombre">
+      <string>andres</string>
+     </void>
+     <void property="nota1">
+      <double>4.5</double>
+     </void>
+     <void property="nota2">
+      <double>5.0</double>
+     </void>
+     <void property="nota3">
+      <double>4.8</double>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante">
+     <void property="codigo">
+      <string>123</string>
+     </void>
+     <void property="nombre">
+      <string>sara</string>
+     </void>
+     <void property="nota1">
+      <double>3.0</double>
+     </void>
+     <void property="nota2">
+      <double>5.0</double>
+     </void>
+     <void property="nota3">
+      <double>3.0</double>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante">
+     <void property="codigo">
+      <string>321</string>
+     </void>
+     <void property="nombre">
+      <string>pipe</string>
+     </void>
+     <void property="nota1">
+      <double>4.0</double>
+     </void>
+     <void property="nota2">
+      <double>5.0</double>
+     </void>
+     <void property="nota3">
+      <double>5.0</double>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante">
+     <void property="codigo">
+      <string>111</string>
+     </void>
+     <void property="nombre">
+      <string>sandra</string>
+     </void>
+     <void property="nota1">
+      <double>2.0</double>
+     </void>
+     <void property="nota2">
+      <double>3.0</double>
+     </void>
+     <void property="nota3">
+      <double>5.0</double>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

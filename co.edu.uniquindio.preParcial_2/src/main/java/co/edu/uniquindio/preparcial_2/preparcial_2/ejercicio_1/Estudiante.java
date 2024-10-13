@@ -1,22 +1,29 @@
 package co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1;
 
-public class Estudiante {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Estudiante implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String codigo;
     private String nombre;
     private double nota1;
     private double nota2;
     private double nota3;
+    private ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
 
     public Estudiante() {
     }
 
-    public Estudiante(String codigo, String nombre, double nota1, double nota2, double nota3) {
+    public Estudiante(String codigo, String nombre, double nota1, double nota2, double nota3, ArrayList<Estudiante> estudiantes) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.nota1 = nota1;
         this.nota2 = nota2;
         this.nota3 = nota3;
+        this.estudiantes = estudiantes;
     }
 
     public String getCodigo() {
@@ -57,5 +64,51 @@ public class Estudiante {
 
     public void setNota3(double nota3) {
         this.nota3 = nota3;
+    }
+
+    public ArrayList<Estudiante> getEstudiantes() {
+        return estudiantes;
+    }
+
+    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
+        this.estudiantes = estudiantes;
+    }
+
+    public void crearEstudiante(String codigo, String nombre, double nota1, double nota2, double nota3) throws Exception {
+
+        if (estudianteExistente(codigo) == null){
+            Estudiante estudiante = new Estudiante();
+            estudiante.setCodigo(codigo);
+            estudiante.setNombre(nombre);
+            estudiante.setNota1(nota1);
+            estudiante.setNota2(nota2);
+            estudiante.setNota3(nota3);
+            estudiantes.add(estudiante);
+        }else {
+            throw new Exception("El estudiante ya existe con la cedula: "+ codigo);
+        }
+    }
+
+    private Estudiante estudianteExistente(String codigo) {
+
+        Estudiante estudiante = null;
+
+        for (Estudiante est : estudiantes) {
+            if (est.getCodigo().equals(codigo)) {
+                estudiante = est;
+            }
+        }
+        return estudiante;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", nota1=" + nota1 +
+                ", nota2=" + nota2 +
+                ", nota3=" + nota3 +
+                '}';
     }
 }

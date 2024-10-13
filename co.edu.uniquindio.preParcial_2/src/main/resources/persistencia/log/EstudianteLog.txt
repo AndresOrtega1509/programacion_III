@@ -1,0 +1,26 @@
+oct 12, 2024 7:15:25 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:21:09 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:22:57 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:23:40 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:24:14 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:24:55 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:26:19 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:27:26 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 7:28:24 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 8:20:56 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 12, 2024 8:21:39 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+GRAVE: crearEstudiante,Estudiante existente,2024-10-12
+oct 12, 2024 8:22:05 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearEstudiante,Estudiante guardado,2024-10-12
+oct 12, 2024 8:22:23 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
