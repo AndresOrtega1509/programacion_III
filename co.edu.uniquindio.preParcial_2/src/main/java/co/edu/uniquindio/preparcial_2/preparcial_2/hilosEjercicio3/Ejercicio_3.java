@@ -1,18 +1,20 @@
 package co.edu.uniquindio.preparcial_2.preparcial_2.hilosEjercicio3;
 
+
 public class Ejercicio_3 {
 
-    private static String variable = "";
-    private static final Object lock = new Object();
-    private static boolean puedeEscribir = true; // Para alternar los hilos
-    private static long tiempoInicio;
-    private static final long DURACION_TOTAL = 20000; // Duración total de 20 segundos
+    public static String variable = "";
+    public static final Object lock = new Object();
+    public static boolean puedeEscribir = true;
+    public static long tiempoInicio;
+    public static final long DURACION_TOTAL = 20000; // Duración total de 20 segundos
 
     public static void main(String[] args) {
         tiempoInicio = System.currentTimeMillis();
 
-        Thread hiloEscribir = new Thread(new HiloEscribir());
-        Thread hiloLeer = new Thread(new HiloLeer());
+        // Crear los hilos y pasarlos el objeto lock para sincronización
+        Thread hiloEscribir = new Hilo1();
+        Thread hiloLeer = new Hilo2();
 
         hiloEscribir.start();
         hiloLeer.start();
@@ -22,59 +24,6 @@ public class Ejercicio_3 {
             hiloLeer.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-    }
-
-    static class HiloEscribir extends Thread {
-        @Override
-        public void run() {
-            while (System.currentTimeMillis() - tiempoInicio < DURACION_TOTAL) {
-                synchronized (lock) {
-                    while (!puedeEscribir) { // Espera hasta que sea su turno
-                        try {
-                            lock.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    // Concatenar información durante 6 segundos
-                    long tiempoInicioEscritura = System.currentTimeMillis();
-                    while (System.currentTimeMillis() - tiempoInicioEscritura < 6000) {
-                        variable += "hola";
-                        System.out.println("Escribiendo: " + variable);
-                        try {
-                            Thread.sleep(1000); // Simulación de escribir por intervalos
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    puedeEscribir = false; // Cambiar el turno
-                    lock.notifyAll(); // Despertar al otro hilo
-                }
-            }
-        }
-    }
-
-    static class HiloLeer extends Thread {
-        @Override
-        public void run() {
-            while (System.currentTimeMillis() - tiempoInicio < DURACION_TOTAL) {
-                synchronized (lock) {
-                    while (puedeEscribir) { // Espera hasta que sea su turno
-                        try {
-                            lock.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    // Leer y mostrar la variable, luego limpiar la información
-                    String var = variable;
-                    System.out.println("Leyendo y mostrando: " + var);
-                    variable = ""; // Limpiar la variable
-                    puedeEscribir = true; // Cambiar el turno
-                    lock.notifyAll(); // Despertar al otro hilo
-                }
-            }
         }
     }
 }
