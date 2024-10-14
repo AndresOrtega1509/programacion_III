@@ -1,4 +1,4 @@
-package co.edu.uniquindio.preparcial_2.preparcial_2.hilos;
+package co.edu.uniquindio.preparcial_2.preparcial_2.hilosEjercicio1;
 
 public class Hilo3 extends Thread {
 
