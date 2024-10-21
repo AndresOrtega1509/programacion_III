@@ -24,3 +24,7 @@ oct 12, 2024 8:22:05 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercic
 INFORMACIÓN: crearEstudiante,Estudiante guardado,2024-10-12
 oct 12, 2024 8:22:23 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-12
+oct 21, 2024 3:28:33 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-21
+oct 21, 2024 3:31:08 P. M. co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,2024-10-21
