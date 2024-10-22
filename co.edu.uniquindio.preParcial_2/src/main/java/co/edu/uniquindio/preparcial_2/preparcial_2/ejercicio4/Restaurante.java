@@ -1,8 +1,11 @@
 package co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Restaurante {
+public class Restaurante implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private ArrayList<Cliente> clientes = new ArrayList<>();
     private ArrayList<Producto> productos = new ArrayList<>();

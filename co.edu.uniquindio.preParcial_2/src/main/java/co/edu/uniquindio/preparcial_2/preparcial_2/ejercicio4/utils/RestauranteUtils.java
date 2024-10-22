@@ -5,10 +5,9 @@ import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Cliente;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Pedido;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Producto;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Restaurante;
-import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+
 
 public class RestauranteUtils {
 

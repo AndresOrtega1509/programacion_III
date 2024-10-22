@@ -9,6 +9,7 @@ import java.io.IOException;
 public class ModelFactoryController2 {
 
     Restaurante restaurante;
+    Pedido pedido;
 
     private static class SingletonHolder {
         private final static ModelFactoryController2 eINSTANCE = new ModelFactoryController2();
@@ -22,31 +23,40 @@ public class ModelFactoryController2 {
 
         //1. inicializar datos y luego guardarlo en archivos
         System.out.println("invocación clase singleton");
-        cargarDatosBase();
-        salvarDatosPrueba();
+        //cargarDatosBase();
+        //salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
-        //cargarDatosDesdeArchivos();
+        cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
         //cargarResourceBinario();
         //guardarResourceBinario();
 
         //4. Guardar y Cargar el recurso serializable XML
-        //guardarResourceXML();
+        guardarResourceXML();
         //cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
 
         if(restaurante == null){
             cargarDatosBase();
-            //guardarResourceXML();
+            guardarResourceXML();
         }
+    }
+
+    private void guardarResourceBinario() {
+        Persistencia2.guardarRecursoPedidoBinario(pedido);
+    }
+
+    private void cargarResourceBinario() {
+        pedido = Persistencia2.cargarRecursoPedidoBinario();
     }
 
     private void cargarDatosBase() {
 
         restaurante = RestauranteUtils.inicializarDatos();
+
     }
 
     private void salvarDatosPrueba() {
@@ -54,6 +64,7 @@ public class ModelFactoryController2 {
         try {
             Persistencia2.guardarClientes(restaurante.getClientes());
             Persistencia2.guardarProductos(restaurante.getProductos());
+            Persistencia2.guardarPedidos(restaurante.getPedidos());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -72,5 +83,9 @@ public class ModelFactoryController2 {
     public boolean verificarInicioSesion(String usuario, String contrasenia) throws IOException {
 
         return ArchivoUtil.inicioSesionArchivoPropiedades(usuario, contrasenia);
+    }
+
+    private void guardarResourceXML() {
+        Persistencia2.guardarRecursoPedidoXML(pedido);
     }
 }

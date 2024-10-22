@@ -1,6 +1,10 @@
 package co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4;
 
-public class Producto {
+import java.io.Serializable;
+
+public class Producto implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String codigo;
     private String nombre;

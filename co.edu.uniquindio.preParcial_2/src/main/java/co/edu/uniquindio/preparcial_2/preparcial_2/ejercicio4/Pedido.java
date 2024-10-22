@@ -1,9 +1,12 @@
 package co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private LocalDate fecha;
     private double total;

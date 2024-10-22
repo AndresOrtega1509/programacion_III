@@ -4,18 +4,20 @@ import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Cliente;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Pedido;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Producto;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Restaurante;
-import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Persistencia2 {
 
     public static final String RUTA_ARCHIVO_CLIENTES = "src/main/resources/persistencia/archivoClientes.txt";
     public static final String RUTA_ARCHIVO_PRODUCTOS = "src/main/resources/persistencia/archivoProductos.txt";
+    public static final String RUTA_ARCHIVO_PEDIDOS = "src/main/resources/persistencia/archivoPedidos.txt";
     public static final String RUTA_ARCHIVO_MODELO_PEDIDOS_XML = "src/main/resources/persistencia/modelPedidos.xml";
+    public static final String RUTA_ARCHIVO_MODELO_PEDIDO_BINARIO = "src/main/resources/persistencia/modelPedido.dat";
 
 
 
@@ -28,6 +30,10 @@ public class Persistencia2 {
         ArrayList<Producto> productosCargados = cargarProductos();
         if (productosCargados.size() > 0)
             restaurante.getProductos().addAll(productosCargados);
+
+        ArrayList<Pedido> pedidosCargados = cargarPedidos(restaurante);
+        if (productosCargados.size() > 0)
+            restaurante.getPedidos().addAll(pedidosCargados);
 
     }
 
@@ -56,6 +62,40 @@ public class Persistencia2 {
             contenido+= producto.getCodigo()+"#"+producto.getNombre()+"#"+producto.getPrecio()+"\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_PRODUCTOS, contenido, false);
+    }
+    public static void guardarPedidos(ArrayList<Pedido> listaPedidos) throws IOException {
+        // Crear un StringBuilder para contener todos los pedidos
+        StringBuilder contenido = new StringBuilder();
+
+        // Recorrer la lista de pedidos y construir el contenido para cada pedido
+        for (Pedido pedido : listaPedidos) {
+            // Obtener la fecha y el total
+            String linea = pedido.getFecha().toString() + "," + pedido.getTotal();
+
+            // Obtener el código del cliente asociado
+            String codigoCliente = pedido.getCliente().getCodigo();
+            linea += "," + codigoCliente;
+
+            // Obtener los códigos de los productos asociados al pedido
+            ArrayList<Producto> productos = pedido.getProductos();
+            StringBuilder codigosProductos = new StringBuilder();
+            for (Producto producto : productos) {
+                codigosProductos.append(producto.getCodigo()).append(",");
+            }
+            // Eliminar el último delimitador '#'
+            if (codigosProductos.length() > 0) {
+                codigosProductos.setLength(codigosProductos.length() - 1);
+            }
+
+            // Agregar los códigos de productos al final de la línea
+            linea += "," + codigosProductos.toString();
+
+            // Agregar esta línea al contenido general
+            contenido.append(linea).append("\n");
+        }
+
+        // Guardar el contenido en el archivo de pedidos
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_PEDIDOS, contenido.toString(), false);
     }
 
 
@@ -109,6 +149,69 @@ public class Persistencia2 {
         return productos;
     }
 
+    private static ArrayList<Pedido> cargarPedidos(Restaurante restaurante) throws IOException {
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PEDIDOS);
+        String linea = "";
+
+        for (int i = 0; i < contenido.size(); i++) {
+            linea = contenido.get(i);
+
+            // Crear un nuevo objeto Pedido
+            Pedido pedido = new Pedido();
+
+            // Parsear la fecha y el total del pedido
+            pedido.setFecha(LocalDate.parse(linea.split(",")[0]));
+            pedido.setTotal(Double.parseDouble(linea.split(",")[1]));
+
+            // Obtener el código del cliente y buscarlo en la lista de clientes cargados
+            String codigoCliente = linea.split(",")[2];
+            Cliente cliente = buscarClientePorCodigo(restaurante.getClientes(), codigoCliente);
+            if (cliente != null) {
+                pedido.setCliente(cliente);  // Asignar el cliente al pedido
+            } else {
+                System.out.println("Cliente con código " + codigoCliente + " no encontrado.");
+            }
+
+            // Obtener los códigos de los productos, separarlos y buscar los productos en la lista cargada
+            String[] codigosProductos = linea.split(",")[3].split("#");
+            ArrayList<Producto> productosPedido = new ArrayList<>();
+            for (String codigoProducto : codigosProductos) {
+                Producto producto = buscarProductoPorCodigo(restaurante.getProductos(), codigoProducto);
+                if (producto != null) {
+                    productosPedido.add(producto);  // Agregar el producto a la lista de productos del pedido
+                } else {
+                    System.out.println("Producto con código " + codigoProducto + " no encontrado.");
+                }
+            }
+            pedido.setProductos(productosPedido);  // Asignar la lista de productos al pedido
+
+            // Agregar el pedido a la lista de pedidos
+            pedidos.add(pedido);
+        }
+        return pedidos;
+    }
+
+    // Método para buscar un cliente por código en la lista de clientes
+    private static Cliente buscarClientePorCodigo(ArrayList<Cliente> clientes, String codigo) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCodigo().equals(codigo)) {
+                return cliente;
+            }
+        }
+        return null;  // Retorna null si no se encuentra el cliente
+    }
+
+    // Método para buscar un producto por código en la lista de productos
+    private static Producto buscarProductoPorCodigo(ArrayList<Producto> productos, String codigo) {
+        for (Producto producto : productos) {
+            if (producto.getCodigo().equals(codigo)) {
+                return producto;
+            }
+        }
+        return null;  // Retorna null si no se encuentra el producto
+    }
+
 
 
 
@@ -132,10 +235,32 @@ public class Persistencia2 {
 
 
 
-    public static void guardarRecursoEstudianteXML(Pedido pedido) throws IOException {
+    public static void guardarRecursoPedidoXML(Pedido pedido)  {
 
         try {
             ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_PEDIDOS_XML, pedido);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public static Pedido cargarRecursoPedidoBinario() {
+
+        Pedido pedido = null;
+
+        try {
+            pedido = (Pedido) ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_MODELO_PEDIDO_BINARIO);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return pedido;
+    }
+
+    public static void guardarRecursoPedidoBinario(Pedido pedido)  {
+        try {
+            ArchivoUtil.salvarRecursoSerializado(RUTA_ARCHIVO_MODELO_PEDIDO_BINARIO, pedido);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
