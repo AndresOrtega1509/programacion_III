@@ -67,4 +67,16 @@ public class Cliente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "codigo='" + codigo + '\'' +
+                ", cedula='" + cedula + '\'' +
+                ", tipoIdentificacion='" + tipoIdentificacion + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
 }

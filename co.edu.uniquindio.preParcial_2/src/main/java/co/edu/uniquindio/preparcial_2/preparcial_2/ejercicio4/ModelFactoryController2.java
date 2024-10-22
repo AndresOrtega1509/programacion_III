@@ -2,9 +2,7 @@ package co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4;
 
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.utils.Persistencia2;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.utils.RestauranteUtils;
-import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.ModelFactoryController;
-import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.EstudianteUtils;
-import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.Persistencia;
+import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil;
 
 import java.io.IOException;
 
@@ -59,5 +57,20 @@ public class ModelFactoryController2 {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void cargarDatosDesdeArchivos() {
+
+        restaurante = new Restaurante();
+        try {
+            Persistencia2.cargarDatosArchivos(restaurante);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean verificarInicioSesion(String usuario, String contrasenia) throws IOException {
+
+        return ArchivoUtil.inicioSesionArchivoPropiedades(usuario, contrasenia);
     }
 }

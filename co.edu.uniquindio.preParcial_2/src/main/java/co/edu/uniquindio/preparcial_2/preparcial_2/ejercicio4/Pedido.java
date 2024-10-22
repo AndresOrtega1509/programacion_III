@@ -51,4 +51,14 @@ public class Pedido {
     public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "fecha=" + fecha +
+                ", total=" + total +
+                ", cliente=" + cliente +
+                ", productos=" + productos +
+                '}';
+    }
 }

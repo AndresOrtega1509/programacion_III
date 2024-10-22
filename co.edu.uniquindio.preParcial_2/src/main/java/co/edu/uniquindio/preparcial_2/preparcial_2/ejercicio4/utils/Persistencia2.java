@@ -15,7 +15,6 @@ public class Persistencia2 {
 
     public static final String RUTA_ARCHIVO_CLIENTES = "src/main/resources/persistencia/archivoClientes.txt";
     public static final String RUTA_ARCHIVO_PRODUCTOS = "src/main/resources/persistencia/archivoProductos.txt";
-
     public static final String RUTA_ARCHIVO_MODELO_PEDIDOS_XML = "src/main/resources/persistencia/modelPedidos.xml";
 
 
@@ -46,7 +45,7 @@ public class Persistencia2 {
             contenido+= cliente.getCodigo()+"@"+cliente.getCedula()+"@"+cliente.getTipoIdentificacion()+"@"+cliente.getNombre()
                     +"@"+cliente.getApellido()+"@"+ cliente.getTelefono() +"\n";
         }
-        ArchivoUtil2.guardarArchivo(RUTA_ARCHIVO_CLIENTES, contenido, false);
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_CLIENTES, contenido, false);
     }
 
     public static void guardarProductos(ArrayList<Producto> listaProductos) throws IOException {
@@ -54,9 +53,9 @@ public class Persistencia2 {
         String contenido = "";
         for(Producto producto:listaProductos)
         {
-            contenido+= producto.getCodigo()+"#"+producto.getNombre()+"#"+producto.getPrecio()+"#"+"\n";
+            contenido+= producto.getCodigo()+"#"+producto.getNombre()+"#"+producto.getPrecio()+"\n";
         }
-        ArchivoUtil2.guardarArchivo(RUTA_ARCHIVO_CLIENTES, contenido, false);
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_PRODUCTOS, contenido, false);
     }
 
 
@@ -74,7 +73,7 @@ public class Persistencia2 {
     public static ArrayList<Cliente> cargarClientes() throws FileNotFoundException, IOException
     {
         ArrayList<Cliente> clientes =new ArrayList<Cliente>();
-        ArrayList<String> contenido = ArchivoUtil2.leerArchivo(RUTA_ARCHIVO_CLIENTES);
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_CLIENTES);
         String linea="";
         for (int i = 0; i < contenido.size(); i++)
         {
@@ -95,7 +94,7 @@ public class Persistencia2 {
     public static ArrayList<Producto> cargarProductos() throws FileNotFoundException, IOException
     {
         ArrayList<Producto> productos =new ArrayList<Producto>();
-        ArrayList<String> contenido = ArchivoUtil2.leerArchivo(RUTA_ARCHIVO_PRODUCTOS);
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PRODUCTOS);
         String linea="";
         for (int i = 0; i < contenido.size(); i++)
         {
@@ -122,7 +121,7 @@ public class Persistencia2 {
         Pedido pedido= null;
 
         try {
-            pedido = (Pedido) ArchivoUtil2.cargarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_PEDIDOS_XML);
+            pedido = (Pedido) ArchivoUtil.cargarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_PEDIDOS_XML);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -4,17 +4,11 @@ import java.util.ArrayList;
 
 public class Restaurante {
 
-    private ArrayList<Cliente> clientes;
-    private ArrayList<Producto> productos;
-    private ArrayList<Pedido> pedidos;
+    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private ArrayList<Producto> productos = new ArrayList<>();
+    private ArrayList<Pedido> pedidos = new ArrayList<>();
 
     public Restaurante() {
-    }
-
-    public Restaurante(ArrayList<Cliente> clientes, ArrayList<Producto> productos, ArrayList<Pedido> pedidos) {
-        this.clientes = clientes;
-        this.productos = productos;
-        this.pedidos = pedidos;
     }
 
     public ArrayList<Cliente> getClientes() {

@@ -8,6 +8,7 @@ import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Restaurante;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.Estudiante;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class RestauranteUtils {
 
@@ -36,7 +37,7 @@ public class RestauranteUtils {
 
         Producto producto1 = new Producto();
         producto1.setCodigo("986");
-        producto1.setNombre("Nandeja paisa");
+        producto1.setNombre("Bandeja paisa");
         producto1.setPrecio(30.000);
 
         Producto producto2 = new Producto();
@@ -48,6 +49,7 @@ public class RestauranteUtils {
         pedido1.setCliente(cliente1);
         pedido1.setFecha(LocalDate.now());
         pedido1.setTotal(30.000);
+        pedido1.setProductos(restaurante.getProductos());
 
         restaurante.getProductos().add(producto1);
         restaurante.getProductos().add(producto2);
@@ -57,6 +59,7 @@ public class RestauranteUtils {
         System.out.println(cliente2);
         System.out.println(producto1);
         System.out.println(producto2);
+        System.out.println(pedido1);
 
         return restaurante;
 

@@ -11,8 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -204,5 +203,33 @@ public class ArchivoUtil {
         codificadorXML.writeObject(objeto);
         codificadorXML.close();
 
+    }
+
+    public static boolean inicioSesionArchivoPropiedades(String usuarioInput, String contraseniaInput) throws IOException {
+
+        Properties loginProperties = new Properties();
+        Map<String, String> credenciales = new HashMap<>();
+
+        try (FileInputStream fis = new FileInputStream("src/main/resources/persistencia/inicioSesion.properties")) {
+            loginProperties.load(fis);
+
+            // Iterar sobre las propiedades y extraer usuario y contraseñas
+            for (int i = 1; loginProperties.containsKey("usuario" + i); i++) {
+                String usuario = loginProperties.getProperty("usuario" + i);
+                String contrasenia = loginProperties.getProperty("contrasenia" + i);
+                credenciales.put(usuario, contrasenia);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        if (credenciales.containsKey(usuarioInput) && credenciales.get(usuarioInput).equals(contraseniaInput)) {
+            return true;
+
+        } else {
+            return false;
+
+        }
     }
 }
