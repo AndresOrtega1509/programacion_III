@@ -44,24 +44,31 @@ public class RestauranteUtils {
         producto2.setNombre("Sancocho");
         producto2.setPrecio(20.000);
 
-        Pedido pedido1 = new Pedido();
-        pedido1.setCliente(cliente1);
-        pedido1.setFecha(LocalDate.now());
-        pedido1.setTotal(30.000);
-        pedido1.setProductos(restaurante.getProductos());
-
         restaurante.getProductos().add(producto1);
         restaurante.getProductos().add(producto2);
-        restaurante.getPedidos().add(pedido1);
 
         System.out.println(cliente1);
         System.out.println(cliente2);
         System.out.println(producto1);
         System.out.println(producto2);
-        System.out.println(pedido1);
 
         return restaurante;
 
+    }
+
+    public static Pedido inicializarPedido(Restaurante restaurante) {
+
+        Pedido pedido1 = new Pedido();
+        pedido1.setCliente(restaurante.getClientes().getFirst());
+        pedido1.setFecha(LocalDate.now());
+        pedido1.setTotal(30.000);
+        pedido1.setProductos(restaurante.getProductos());
+
+        restaurante.getPedidos().add(pedido1);
+
+        System.out.println(pedido1);
+
+        return pedido1;
     }
 
 }

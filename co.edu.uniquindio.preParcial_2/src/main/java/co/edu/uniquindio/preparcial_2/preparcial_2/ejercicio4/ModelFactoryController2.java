@@ -31,10 +31,10 @@ public class ModelFactoryController2 {
 
         //3. Guardar y Cargar el recurso serializable binario
         //cargarResourceBinario();
-        //guardarResourceBinario();
+        guardarResourceBinario();
 
         //4. Guardar y Cargar el recurso serializable XML
-        guardarResourceXML();
+        //guardarResourceXML();
         //cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
@@ -56,6 +56,7 @@ public class ModelFactoryController2 {
     private void cargarDatosBase() {
 
         restaurante = RestauranteUtils.inicializarDatos();
+        pedido = RestauranteUtils.inicializarPedido(restaurante);
 
     }
 
