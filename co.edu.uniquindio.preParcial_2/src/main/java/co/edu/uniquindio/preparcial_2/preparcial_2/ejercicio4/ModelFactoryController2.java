@@ -3,13 +3,14 @@ package co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.utils.Persistencia2;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.utils.RestauranteUtils;
 import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.ArchivoUtil;
+import co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio_1.utils.Persistencia;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ModelFactoryController2 {
 
     Restaurante restaurante;
-    Pedido pedido;
 
     private static class SingletonHolder {
         private final static ModelFactoryController2 eINSTANCE = new ModelFactoryController2();
@@ -31,7 +32,7 @@ public class ModelFactoryController2 {
 
         //3. Guardar y Cargar el recurso serializable binario
         //cargarResourceBinario();
-        guardarResourceBinario();
+        //guardarResourceBinario();
 
         //4. Guardar y Cargar el recurso serializable XML
         //guardarResourceXML();
@@ -45,18 +46,22 @@ public class ModelFactoryController2 {
         }
     }
 
+    private void cargarResourceXML() {
+
+        restaurante = Persistencia2.cargarRecursoPedidoXML();
+    }
+
     private void guardarResourceBinario() {
-        Persistencia2.guardarRecursoPedidoBinario(pedido);
+        Persistencia2.guardarRecursoPedidoBinario(restaurante);
     }
 
     private void cargarResourceBinario() {
-        pedido = Persistencia2.cargarRecursoPedidoBinario();
+        restaurante = Persistencia2.cargarRecursoPedidoBinario();
     }
 
     private void cargarDatosBase() {
 
         restaurante = RestauranteUtils.inicializarDatos();
-        pedido = RestauranteUtils.inicializarPedido(restaurante);
 
     }
 
@@ -87,6 +92,6 @@ public class ModelFactoryController2 {
     }
 
     private void guardarResourceXML() {
-        Persistencia2.guardarRecursoPedidoXML(pedido);
+        Persistencia2.guardarRecursoPedidoXML(restaurante.getPedidos());
     }
 }

@@ -8,7 +8,7 @@ public class Pedido implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private LocalDate fecha;
+    private String fecha;
     private double total;
     private Cliente cliente;
     private ArrayList<Producto> productos;
@@ -16,18 +16,18 @@ public class Pedido implements Serializable {
     public Pedido() {
     }
 
-    public Pedido(LocalDate fecha, double total, Cliente cliente, ArrayList<Producto> productos) {
+    public Pedido(String fecha, double total, Cliente cliente, ArrayList<Producto> productos) {
         this.fecha = fecha;
         this.total = total;
         this.cliente = cliente;
         this.productos = productos;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

@@ -1,0 +1,3 @@
+103,avanzar,Tecnologia
+457,innovacion,Marketing
+635,mejorar,Financiero

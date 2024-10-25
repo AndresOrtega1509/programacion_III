@@ -1,4 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="21.0.4" class="java.beans.XMLDecoder">
-
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Pedido">
+    <void property="cliente">
+     <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Cliente">
+      <void property="apellido">
+       <string>Martinez</string>
+      </void>
+      <void property="cedula">
+       <string>1016</string>
+      </void>
+      <void property="codigo">
+       <string>123</string>
+      </void>
+      <void property="nombre">
+       <string>Oscar</string>
+      </void>
+      <void property="telefono">
+       <string>123456</string>
+      </void>
+      <void property="tipoIdentificacion">
+       <string>C.C</string>
+      </void>
+     </object>
+    </void>
+    <void property="fecha">
+     <string>2024-10-24</string>
+    </void>
+    <void property="productos">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4.Producto">
+        <void property="codigo">
+         <string>986</string>
+        </void>
+        <void property="nombre">
+         <string>Bandeja paisa</string>
+        </void>
+        <void property="precio">
+         <double>30.0</double>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="total">
+     <double>30.0</double>
+    </void>
+   </object>
+  </void>
+ </object>
 </java>

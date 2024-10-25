@@ -161,7 +161,7 @@ public class Persistencia2 {
             Pedido pedido = new Pedido();
 
             // Parsear la fecha y el total del pedido
-            pedido.setFecha(LocalDate.parse(linea.split(",")[0]));
+            pedido.setFecha(linea.split(",")[0]);
             pedido.setTotal(Double.parseDouble(linea.split(",")[1]));
 
             // Obtener el código del cliente y buscarlo en la lista de clientes cargados
@@ -219,48 +219,46 @@ public class Persistencia2 {
 
 
 
-    public static Pedido cargarRecursoPedidoXML() {
+    public static Restaurante cargarRecursoPedidoXML() {
 
-        Pedido pedido= null;
+        Restaurante restaurante= null;
 
         try {
-            pedido = (Pedido) ArchivoUtil.cargarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_PEDIDOS_XML);
+            restaurante = (Restaurante) ArchivoUtil.cargarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_PEDIDOS_XML);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return pedido;
+        return restaurante;
 
     }
 
 
 
-    public static void guardarRecursoPedidoXML(Pedido pedido)  {
-
+    public static void guardarRecursoPedidoXML(ArrayList<Pedido> pedidos)  {
         try {
-            ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_PEDIDOS_XML, pedido);
+            ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_MODELO_PEDIDOS_XML, pedidos);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
-    public static Pedido cargarRecursoPedidoBinario() {
+    public static Restaurante cargarRecursoPedidoBinario() {
 
-        Pedido pedido = null;
+        Restaurante restaurante = null;
 
         try {
-            pedido = (Pedido) ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_MODELO_PEDIDO_BINARIO);
+            restaurante = (Restaurante) ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_MODELO_PEDIDO_BINARIO);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return pedido;
+        return restaurante;
     }
 
-    public static void guardarRecursoPedidoBinario(Pedido pedido)  {
+    public static void guardarRecursoPedidoBinario(Restaurante restaurante)  {
         try {
-            ArchivoUtil.salvarRecursoSerializado(RUTA_ARCHIVO_MODELO_PEDIDO_BINARIO, pedido);
+            ArchivoUtil.salvarRecursoSerializado(RUTA_ARCHIVO_MODELO_PEDIDO_BINARIO, restaurante);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

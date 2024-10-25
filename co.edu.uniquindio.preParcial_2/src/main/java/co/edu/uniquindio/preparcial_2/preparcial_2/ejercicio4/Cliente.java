@@ -1,6 +1,11 @@
 package co.edu.uniquindio.preparcial_2.preparcial_2.ejercicio4;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String codigo;
     private String cedula;
     private String tipoIdentificacion;
