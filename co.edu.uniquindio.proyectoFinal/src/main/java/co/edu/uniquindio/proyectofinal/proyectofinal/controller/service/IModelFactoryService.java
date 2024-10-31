@@ -16,6 +16,6 @@ public interface IModelFactoryService {
     void actualizarUsuario(String idUsuario, String nombre, String correo, String telefono, String direccion) throws Exception;
     boolean eliminarUsuario(String idUsuario);
     boolean eliminarCuenta(String idCuenta) throws Exception;
-    String consultarSaldo(String idUsuario);
+    String consultarSaldo(String idUsuario, String idCuenta);
     Usuario obtenerUsuario(String idUsuario, int posicion);
 }

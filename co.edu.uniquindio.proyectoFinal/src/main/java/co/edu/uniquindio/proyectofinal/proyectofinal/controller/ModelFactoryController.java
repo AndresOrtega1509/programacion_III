@@ -174,9 +174,9 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     @Override
-    public String consultarSaldo(String idUsuario) {
+    public String consultarSaldo(String idUsuario, String idCuenta) {
 
-        return billeteraVirtual.consultarSaldo(idUsuario);
+        return billeteraVirtual.consultarSaldo(idUsuario, idCuenta);
     }
 
     @Override

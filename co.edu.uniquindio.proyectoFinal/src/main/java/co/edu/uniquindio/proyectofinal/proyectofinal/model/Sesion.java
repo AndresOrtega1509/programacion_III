@@ -43,4 +43,11 @@ public class Sesion {
     public void cerrarSesion() {
         usuario = null;
     }
+
+    /**
+     * Metodo que se encarga de volver nulo a la cuenta para cambiar a otra
+     */
+    public void cerrarCuenta() {
+        cuenta = null;
+    }
 }

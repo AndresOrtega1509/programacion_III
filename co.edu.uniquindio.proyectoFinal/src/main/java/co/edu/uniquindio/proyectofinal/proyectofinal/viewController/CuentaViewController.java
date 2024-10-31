@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.viewController;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.CuentaBancariaController;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
@@ -26,6 +27,7 @@ public class CuentaViewController {
     CuentaBancariaController cuentaBancariaController;
     private final Sesion sesion = Sesion.getInstancia();
     private Usuario usuario;
+    private PanelUsuarioViewController panelUsuarioViewController;
 
     @FXML
     public void initialize() {
@@ -33,6 +35,11 @@ public class CuentaViewController {
         cbTipoCuenta.setItems(FXCollections.observableArrayList(TipoCuenta.values()));
         Usuario usuario = sesion.getUsuario();
         inicializarValores(usuario);
+    }
+
+    public void accederComboBoxCuentas(PanelUsuarioViewController panelUsuarioViewController) {
+        this.panelUsuarioViewController = panelUsuarioViewController;
+
     }
 
     public void crearCuenta(ActionEvent actionEvent) {
@@ -46,6 +53,7 @@ public class CuentaViewController {
                 registrarAcciones("Cuenta bancaria creada", 1, "crearCuenta",
                         usuario.getNombre()+ " creó una cuenta bancaria");
                 cerrarVentana();
+                panelUsuarioViewController.inicializarComboCuentas(sesion.getUsuario());
                 if (!usuario.isTieneCuenta()){
                     navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
                 }
@@ -131,4 +139,5 @@ public class CuentaViewController {
     public void inicializarValores(Usuario usuario) {
         this.usuario = usuario;
     }
+
 }

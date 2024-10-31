@@ -86,4 +86,12 @@ public class Cuenta implements Serializable {
     public void setTipoCuenta(TipoCuenta tipoCuenta) {
         this.tipoCuenta = tipoCuenta;
     }
+
+    @Override
+    public String toString() {
+        return
+                "nombreBanco='" + nombreBanco + '\'' +
+                ", numeroCuenta='" + numeroCuenta + '\'' +
+                '}';
+    }
 }

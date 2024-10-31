@@ -27,6 +27,8 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
     @FXML
     private Label lblCuenta;
     @FXML
+    public ComboBox<Cuenta> cbCuentas;
+    @FXML
     private TableView<Transaccion> tablaTransacciones;
     @FXML
     private TableColumn<Transaccion ,String> txtIdTransaccion;
@@ -43,7 +45,6 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     private final Sesion sesion = Sesion.getInstancia();
     PanelUsuarioController panelUsuarioController;
-    private Cuenta cuenta;
 
 
     @FXML
@@ -57,6 +58,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
         txtMonto.setCellValueFactory(CellData -> new SimpleStringProperty("" + CellData.getValue().getMonto()));
         txtUsuario.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getUsuario().getNombre()));
         txtTipoTransaccion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getTipoTransaccion().toString()));
+
     }
 
 
@@ -64,10 +66,11 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
         try {
             if(usuario != null){
-                cuenta = panelUsuarioController.consultarCuenta(usuario.getIdUsuario(), 0);
+                Cuenta cuenta = panelUsuarioController.consultarCuenta(usuario.getIdUsuario(), 0);
                 sesion.setCuenta(cuenta);
 
                 lblNombre.setText(usuario.getNombre() +", bienvenido a su banco, aquí podra ver sus transacciones");
+                inicializarComboCuentas(usuario);
                 lblCuenta.setText("Nro. Cuenta: " + cuenta.getNumeroCuenta());
                 //consultarTransacciones();
 
@@ -77,6 +80,10 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
         }
     }
 
+    public void inicializarComboCuentas(Usuario usuario) {
+        cbCuentas.setItems(FXCollections.observableArrayList(usuario.getListaCuentas()));
+    }
+
     private void consultarTransacciones() {
 
         //tablaTransacciones.setItems(FXCollections.observableArrayList(cuenta.getListaTransacciones()));
@@ -84,7 +91,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     public void consultarSaldo(ActionEvent actionEvent) {
 
-        String saldo = panelUsuarioController.consultarSaldo(sesion.getUsuario().getIdUsuario());
+        String saldo = panelUsuarioController.consultarSaldo(sesion.getUsuario().getIdUsuario(), sesion.getCuenta().getIdCuenta());
         mostrarMensaje("Notificacion Usuario","Saldo disponible",
                 "El saldo actual de su cuenta es de: " +"$"+ saldo, Alert.AlertType.INFORMATION);
     }
@@ -154,8 +161,11 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
     }
 
     public void irCrearCuentaBancaria(ActionEvent actionEvent) throws Exception {
-        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml",
+        FXMLLoader loader = navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml",
                 "Banco - creación cuenta bancaria");
+
+        CuentaViewController controlador = loader.getController();
+        controlador.accederComboBoxCuentas(this);
     }
 
     public void eliminar(ActionEvent actionEvent) throws Exception {
@@ -197,5 +207,14 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
         } else {
             return false;
         }
+    }
+
+    public void cambiarCuenta(ActionEvent actionEvent) {
+
+        Cuenta cuentaSeleccionada = cbCuentas.getValue();
+        sesion.cerrarCuenta();
+        sesion.setCuenta(cuentaSeleccionada);
+        lblCuenta.setText("Nro. Cuenta: " + sesion.getCuenta().getNumeroCuenta());
+
     }
 }

@@ -7,6 +7,6 @@ public interface IPanelUsuarioService {
     Cuenta consultarCuenta(String idUsuario, int posicion) throws Exception;
     boolean eliminarUsuario(String idUsuario);
     boolean eliminarCuenta(String idCuenta) throws Exception;
-    String consultarSaldo(String idUsuario);
+    String consultarSaldo(String idUsuario, String idCuenta);
     void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado);
 }

@@ -232,10 +232,10 @@ public class BilleteraVirtual implements IBancoService, Serializable {
     }
 
     @Override
-    public String consultarSaldo(String idUsuario) {
+    public String consultarSaldo(String idUsuario, String idCuenta) {
         String saldo = "";
         for (Cuenta cuenta : listaCuentas){
-            if (cuenta.getUsuario().getIdUsuario().equals(idUsuario)) {
+            if (cuenta.getUsuario().getIdUsuario().equals(idUsuario) && cuenta.getIdCuenta().equals(idCuenta)) {
                 saldo = String.valueOf(cuenta.getSaldo());
                 break;
             }

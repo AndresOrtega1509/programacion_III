@@ -14,6 +14,6 @@ public interface IBancoService {
     Cuenta consultarCuenta(String idUsuario, int posicion);
     boolean eliminarUsuario(String idUsuario) throws Exception;
     boolean eliminarCuenta(String idCuenta) throws Exception;
-    String consultarSaldo(String idUsuario);
+    String consultarSaldo(String idUsuario, String idCuenta);
 
 }
