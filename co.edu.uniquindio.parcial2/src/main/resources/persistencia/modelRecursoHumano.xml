@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.4" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.parcial2.parcial2.punto1.RecursoHumano" id="RecursoHumano0">
+  <void property="listaEmpleados">
+   <void method="add">
+    <object class="co.edu.uniquindio.parcial2.parcial2.punto1.Empleado">
+     <void property="apellido">
+      <string>Martinez</string>
+     </void>
+     <void property="id">
+      <string>123</string>
+     </void>
+     <void property="idDepartamento">
+      <string>103</string>
+     </void>
+     <void property="nombre">
+      <string>Oscar</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.parcial2.parcial2.punto1.Empleado">
+     <void property="apellido">
+      <string>Ospina</string>
+     </void>
+     <void property="id">
+      <string>457</string>
+     </void>
+     <void property="idDepartamento">
+      <string>222</string>
+     </void>
+     <void property="nombre">
+      <string>Sara</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.parcial2.parcial2.punto1.Empleado">
+     <void property="apellido">
+      <string>Rodas</string>
+     </void>
+     <void property="id">
+      <string>635</string>
+     </void>
+     <void property="idDepartamento">
+      <string>333</string>
+     </void>
+     <void property="nombre">
+      <string>Santiago</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

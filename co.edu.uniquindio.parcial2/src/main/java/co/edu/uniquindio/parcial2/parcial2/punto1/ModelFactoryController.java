@@ -38,7 +38,7 @@ public class ModelFactoryController {
         //guardarResourceBinario();
 
         //4. Guardar y Cargar el recurso serializable XML
-        //guardarResourceXML();
+        guardarResourceXML();
         //cargarResourceXML();
 
 

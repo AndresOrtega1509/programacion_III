@@ -47,10 +47,10 @@ public class Persistencia {
             {
                 linea = contenido.get(i);//juan,arias,125454,Armenia,uni1@,12454,125444
                 Empleado empleado = new Empleado();
-                empleado.setId(linea.split(",")[0]);
-                empleado.setNombre(linea.split(",")[1]);
-                empleado.setApellido(linea.split(",")[2]);
-                empleado.setIdDepartamento(linea.split(",")[3]);
+                empleado.setId(linea.split("SS")[0]);
+                empleado.setNombre(linea.split("SS")[1]);
+                empleado.setApellido(linea.split("SS")[2]);
+                empleado.setIdDepartamento(linea.split("SS")[3]);
                 empleados.add(empleado);
 
             }
@@ -79,9 +79,9 @@ public class Persistencia {
             {
                 linea = contenido.get(i);//juan,arias,125454,Armenia,uni1@,12454,125444
                 Proyecto proyecto = new Proyecto();
-                proyecto.setId(linea.split(",")[0]);
-                proyecto.setNombreProyecto(linea.split(",")[1]);
-                proyecto.setIdDepartamentoResponsable(linea.split(",")[2]);
+                proyecto.setId(linea.split("SS")[0]);
+                proyecto.setNombreProyecto(linea.split("SS")[1]);
+                proyecto.setIdDepartamentoResponsable(linea.split("SS")[2]);
 
             }
 
@@ -108,10 +108,10 @@ public class Persistencia {
             {
                 linea = contenido.get(i);//juan,arias,125454,Armenia,uni1@,12454,125444
                 Departamento departamento = new Departamento();
-                departamento.setId(linea.split(",")[0]);
-                departamento.setNombreDepartamento(linea.split(",")[1]);
-                departamento.setDescripcion(linea.split(",")[2]);
-                departamento.setUbicacion(linea.split(",")[3]);
+                departamento.setId(linea.split("SS")[0]);
+                departamento.setNombreDepartamento(linea.split("SS")[1]);
+                departamento.setDescripcion(linea.split("SS")[2]);
+                departamento.setUbicacion(linea.split("SS")[3]);
 
             }
 
@@ -126,7 +126,7 @@ public class Persistencia {
         String contenido = "";
         for(Empleado empleado:listaEmpleados)
         {
-            contenido+= empleado.getId()+","+empleado.getNombre()+","+empleado.getApellido()+","+empleado.getIdDepartamento() +"\n";
+            contenido+= empleado.getId()+"SS"+empleado.getNombre()+"SS"+empleado.getApellido()+"SS"+empleado.getIdDepartamento() +"\n";
         }
         Properties loginProperties = new Properties();
         try (FileInputStream fis = new FileInputStream("src/main/resources/persistencia/config.properties")) {
@@ -142,7 +142,7 @@ public class Persistencia {
         String contenido = "";
         for(Proyecto proyecto:listaProyectos)
         {
-            contenido+= proyecto.getId()+","+proyecto.getNombreProyecto()+","+proyecto.getIdDepartamentoResponsable()+"\n";
+            contenido+= proyecto.getId()+"SS"+proyecto.getNombreProyecto()+"SS"+proyecto.getIdDepartamentoResponsable()+"\n";
         }
         Properties loginProperties = new Properties();
         try (FileInputStream fis = new FileInputStream("src/main/resources/persistencia/config.properties")) {
@@ -158,7 +158,7 @@ public class Persistencia {
         String contenido = "";
         for(Departamento departamento:listaDepartamentos)
         {
-            contenido+= departamento.getId()+","+departamento.getNombreDepartamento()+","+departamento.getDescripcion()+","+departamento.getUbicacion()+"\n";
+            contenido+= departamento.getId()+"SS"+departamento.getNombreDepartamento()+"SS"+departamento.getDescripcion()+"SS"+departamento.getUbicacion()+"\n";
         }
         Properties loginProperties = new Properties();
         try (FileInputStream fis = new FileInputStream("src/main/resources/persistencia/config.properties")) {

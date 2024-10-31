@@ -1,3 +1,3 @@
-103,Tecnologia,avanzar con tecnologia,Armenia
-457,innovacion,Crear nuevas oportunidades,Pereira
-635,mejorar,mejorar los recursos,Calarca
+103SSTecnologiaSSavanzar con tecnologiaSSArmenia
+457SSinnovacionSSCrear nuevas oportunidadesSSPereira
+635SSmejorarSSmejorar los recursosSSCalarca
