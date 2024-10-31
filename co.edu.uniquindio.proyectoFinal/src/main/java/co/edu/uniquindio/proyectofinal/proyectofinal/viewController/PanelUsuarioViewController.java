@@ -96,7 +96,12 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
                 "El saldo actual de su cuenta es de: " +"$"+ saldo, Alert.AlertType.INFORMATION);
     }
 
-    public void irTransferencia(ActionEvent actionEvent) {
+    public void irTransferencia(ActionEvent actionEvent) throws Exception {
+
+        navegarVentana(
+                "/co/edu/uniquindio/proyectofinal/proyectofinal/transferencia.fxml",
+                "Banco - Transferir dinero");
+
     }
 
     public void irActualizar(ActionEvent actionEvent) throws Exception {
