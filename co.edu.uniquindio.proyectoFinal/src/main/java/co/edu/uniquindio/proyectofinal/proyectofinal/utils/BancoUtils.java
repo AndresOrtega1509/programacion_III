@@ -27,7 +27,7 @@ public class BancoUtils {
         cuenta.setTipoCuenta(TipoCuenta.AHORROS);
         cuenta.setUsuario(usuario1);
         cuenta.setNumeroCuenta("5846375637");
-        cuenta.setSaldo(0.0);
+        cuenta.setSaldo(4000.0);
 
         billeteraVirtual.getListaCuentas().add(cuenta);
         usuario1.getListaCuentas().add(cuenta);

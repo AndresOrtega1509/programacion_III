@@ -20,7 +20,7 @@
             <children>
                 <Label text="Panel principal" textAlignment="JUSTIFY" wrapText="true">
                     <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="22.0" />
                     </font>
                 </Label>
                 <Region HBox.hgrow="ALWAYS" />
@@ -34,7 +34,17 @@
                 </MenuButton>
             </children>
         </HBox>
-      <ComboBox fx:id="cbCuentas" onAction="#cambiarCuenta" prefWidth="150.0" />
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="739.0">
+         <children>
+            <Label text="Cuentas:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Region prefHeight="26.0" prefWidth="42.0" />
+            <ComboBox fx:id="cbCuentas" onAction="#cambiarCuenta" prefWidth="150.0" />
+         </children>
+      </HBox>
         <HBox prefHeight="21.0" prefWidth="740.0">
             <children>
                 <Label fx:id="lblNombre" prefHeight="22.0" prefWidth="510.0" text="Carlos, bienvenido a su billetera virtual, aquí podrá ver sus transacciones" textAlignment="JUSTIFY">

@@ -1,7 +1,6 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.viewController;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.CuentaBancariaController;
-import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
@@ -53,7 +52,9 @@ public class CuentaViewController {
                 registrarAcciones("Cuenta bancaria creada", 1, "crearCuenta",
                         usuario.getNombre()+ " creó una cuenta bancaria");
                 cerrarVentana();
-                panelUsuarioViewController.inicializarComboCuentas(sesion.getUsuario());
+                if (usuario.isTieneCuenta()){
+                    panelUsuarioViewController.inicializarComboCuentas(sesion.getUsuario());
+                }
                 if (!usuario.isTieneCuenta()){
                     navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);
                 }

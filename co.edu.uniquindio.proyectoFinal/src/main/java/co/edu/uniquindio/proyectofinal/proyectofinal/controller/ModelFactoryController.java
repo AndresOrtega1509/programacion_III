@@ -7,6 +7,7 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.BilleteraVirtual;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.utils.BancoUtils;
 import co.edu.uniquindio.proyectofinal.proyectofinal.utils.Persistencia;
 import javafx.fxml.FXMLLoader;
@@ -182,6 +183,11 @@ public class ModelFactoryController implements IModelFactoryService {
     @Override
     public Usuario obtenerUsuario(String idUsuario, int posicion) {
         return billeteraVirtual.obtenerUsuario(idUsuario, posicion);
+    }
+
+    @Override
+    public void realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
+        billeteraVirtual.realizarTransaccion(numeroCuentaOrigen, numeroCuentaDestino, monto, tipoTransaccion, descripcion);
     }
 
     private void cargarDatosBase() {

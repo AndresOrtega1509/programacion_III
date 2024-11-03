@@ -1,10 +1,14 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 public class Cuenta implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -18,6 +22,7 @@ public class Cuenta implements Serializable {
     private TipoCuenta tipoCuenta;
 
     public Cuenta() {
+        this.listaTransacciones = new ArrayList<>();
     }
 
     public Cuenta(String idCuenta, String nombreBanco, String numeroCuenta, Double saldo, Usuario usuario,
@@ -27,8 +32,8 @@ public class Cuenta implements Serializable {
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
         this.usuario = usuario;
-        this.listaTransacciones = new ArrayList<>();
         this.tipoCuenta = tipoCuenta;
+        this.listaTransacciones = new ArrayList<>();
     }
 
     public String getIdCuenta() {
@@ -93,5 +98,51 @@ public class Cuenta implements Serializable {
                 "nombreBanco='" + nombreBanco + '\'' +
                 ", numeroCuenta='" + numeroCuenta + '\'' +
                 '}';
+    }
+
+    public void transferir(float cantidad, Cuenta cuentaDestino, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
+
+        if (saldo >= cantidad) {
+
+            // Se realiza el retiro
+            saldo -= cantidad;
+            String idTransaccion = UUID.randomUUID().toString();
+
+            // Se registra la transacción de depósito en la cuenta de destino
+            cuentaDestino.depositar(cantidad, usuario, descripcion, idTransaccion);
+
+            // Se crea la transacción de retiro
+            Transaccion transaccion = new Transaccion();
+            transaccion.setIdTransaccion(idTransaccion);
+            transaccion.setFecha(LocalDateTime.now());
+            transaccion.setTipoTransaccion(TipoTransaccion.RETIRO);
+            transaccion.setDescripcion(descripcion);
+            transaccion.setUsuario(cuentaDestino.getUsuario());
+            transaccion.setMonto(cantidad);
+
+            // Se registra la transacción de retiro en la cuenta de origen
+            listaTransacciones.add(transaccion);
+
+        } else {
+            throw new Exception("Saldo insuficiente");
+        }
+    }
+
+    private void depositar(float cantidad, Usuario emisor, String descripcion, String idTransaccion) throws Exception {
+
+        // Se realiza el depósito
+        saldo += cantidad;
+
+        // Se crea la transacción de depósito
+        Transaccion transaccion = new Transaccion();
+        transaccion.setIdTransaccion(idTransaccion);
+        transaccion.setFecha(LocalDateTime.now());
+        transaccion.setTipoTransaccion(TipoTransaccion.DEPOSITO);
+        transaccion.setDescripcion(descripcion);
+        transaccion.setUsuario(emisor);
+        transaccion.setMonto(cantidad);
+
+        // Se registra la transacción de depósito
+        listaTransacciones.add(transaccion);
     }
 }

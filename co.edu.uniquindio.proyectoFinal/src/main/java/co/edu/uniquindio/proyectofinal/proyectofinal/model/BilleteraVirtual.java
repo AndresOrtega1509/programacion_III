@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.services.IBancoService;
 
 import java.io.Serializable;
@@ -242,6 +243,29 @@ public class BilleteraVirtual implements IBancoService, Serializable {
 
         }
         return saldo;
+    }
+
+    public void realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
+        Cuenta cuentaOrigen = obtenerCuenta(numeroCuentaOrigen);
+        Cuenta cuentaDestino = obtenerCuenta(numeroCuentaDestino);
+
+
+        if (cuentaOrigen != null && cuentaDestino != null) {
+            if (tipoTransaccion.equals(TipoTransaccion.TRANSFERENCIA)){
+                cuentaOrigen.transferir(monto, cuentaDestino, tipoTransaccion, descripcion);
+            }
+        } else {
+            throw new Exception("Error con los números de cuenta");
+        }
+    }
+
+    public Cuenta obtenerCuenta(String numeroCuenta) {
+        for (Cuenta cuenta : listaCuentas) {
+            if (cuenta.getNumeroCuenta().equals(numeroCuenta)) {
+                return cuenta;
+            }
+        }
+        return null;
     }
 
 

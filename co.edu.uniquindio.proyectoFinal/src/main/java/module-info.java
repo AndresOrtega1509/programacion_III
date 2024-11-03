@@ -23,8 +23,8 @@ module co.edu.uniquindio.proyectofinal.proyectofinal {
     exports co.edu.uniquindio.proyectofinal.proyectofinal.model;
 
     exports co.edu.uniquindio.proyectofinal.proyectofinal.model.enums;
+    opens co.edu.uniquindio.proyectofinal.proyectofinal.model.enums to javafx.fxml;
 
     exports co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer;
-
 
 }

@@ -7,6 +7,7 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorActualizar;
+import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorTransaccion;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +21,7 @@ import javafx.stage.Stage;
 
 import java.util.Optional;
 
-public class PanelUsuarioViewController implements ObservadorActualizar {
+public class PanelUsuarioViewController implements ObservadorActualizar, ObservadorTransaccion {
 
     @FXML
     private Label lblNombre;
@@ -72,7 +73,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
                 lblNombre.setText(usuario.getNombre() +", bienvenido a su banco, aquí podra ver sus transacciones");
                 inicializarComboCuentas(usuario);
                 lblCuenta.setText("Nro. Cuenta: " + cuenta.getNumeroCuenta());
-                //consultarTransacciones();
+                consultarTransacciones();
 
             }
         } catch (Exception e) {
@@ -86,7 +87,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     private void consultarTransacciones() {
 
-        //tablaTransacciones.setItems(FXCollections.observableArrayList(cuenta.getListaTransacciones()));
+        tablaTransacciones.setItems(FXCollections.observableArrayList(sesion.getCuenta().getListaTransacciones()));
     }
 
     public void consultarSaldo(ActionEvent actionEvent) {
@@ -98,9 +99,11 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
 
     public void irTransferencia(ActionEvent actionEvent) throws Exception {
 
-        navegarVentana(
+        FXMLLoader loader = navegarVentana(
                 "/co/edu/uniquindio/proyectofinal/proyectofinal/transferencia.fxml",
                 "Banco - Transferir dinero");
+        TransferenciaViewController controlador = loader.getController();
+        controlador.inicializarObservable(this);
 
     }
 
@@ -220,6 +223,12 @@ public class PanelUsuarioViewController implements ObservadorActualizar {
         sesion.cerrarCuenta();
         sesion.setCuenta(cuentaSeleccionada);
         lblCuenta.setText("Nro. Cuenta: " + sesion.getCuenta().getNumeroCuenta());
+        consultarTransacciones();
 
+    }
+
+    @Override
+    public void notificarTransaccion() {
+        consultarTransacciones();
     }
 }

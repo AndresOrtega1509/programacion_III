@@ -4,6 +4,7 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.mapping.dto.UsuarioDto;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 
 public interface IModelFactoryService {
 
@@ -18,4 +19,5 @@ public interface IModelFactoryService {
     boolean eliminarCuenta(String idCuenta) throws Exception;
     String consultarSaldo(String idUsuario, String idCuenta);
     Usuario obtenerUsuario(String idUsuario, int posicion);
+    void realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception;
 }
