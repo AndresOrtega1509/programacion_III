@@ -252,14 +252,20 @@ public class BilleteraVirtual implements IBancoService, Serializable {
         Cuenta cuentaOrigen = obtenerCuenta(numeroCuentaOrigen);
         Cuenta cuentaDestino = obtenerCuenta(numeroCuentaDestino);
 
-
-        if (cuentaOrigen != null && cuentaDestino != null) {
-            if (tipoTransaccion.equals(TipoTransaccion.TRANSFERENCIA)){
+        if (tipoTransaccion.equals(TipoTransaccion.TRANSFERENCIA)) {
+            if (cuentaOrigen != null && cuentaDestino != null) {
                 cuentaOrigen.transferir(monto, cuentaDestino, tipoTransaccion, descripcion);
+            } else {
+                throw new Exception("Error con los números de la cuenta");
             }
-        } else {
-            throw new Exception("Error con los números de cuenta");
+        }else {
+            if (cuentaOrigen != null) {
+                cuentaOrigen.retirar(monto, tipoTransaccion, descripcion);
+            }else {
+                throw new Exception("Error con los números de la cuenta");
+            }
         }
+
     }
 
     public Cuenta obtenerCuenta(String numeroCuenta) {

@@ -35,16 +35,24 @@ public class TransferenciaViewController {
 
         try {
             if (validarDatos()){
-                float monto = Float.parseFloat(txtMonto.getText());
-                TipoTransaccion tipoTransaccion = TipoTransaccion.valueOf(cbTipoTransaccion.getValue());
-                transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(),txtCuenta.getText(),
-                        monto, tipoTransaccion, txtDescripcion.getText());
+                if (cbTipoTransaccion.getSelectionModel().getSelectedItem().equals("RETIRO")) {
+
+                    float monto = Float.parseFloat(txtMonto.getText());
+                    TipoTransaccion tipoTransaccion = TipoTransaccion.valueOf(cbTipoTransaccion.getValue());
+                    transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(),"",
+                            monto, tipoTransaccion, txtDescripcion.getText());
+
+                }else {
+                    float monto = Float.parseFloat(txtMonto.getText());
+                    TipoTransaccion tipoTransaccion = TipoTransaccion.valueOf(cbTipoTransaccion.getValue());
+                    transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(),txtCuenta.getText(),
+                            monto, tipoTransaccion, txtDescripcion.getText());
+                }
                 observadorTransaccion.notificarTransaccion();
                 mostrarMensaje("Notificación usuario", "Transacción exitosa", "La transferencia ha sido procesada correctamente",
                         Alert.AlertType.INFORMATION);
                 cerrarVentana();
             }
-
 
         } catch (Exception e) {
             mostrarMensaje("Notificación usuario", "Transacción rechazada", e.getMessage(),
@@ -54,21 +62,36 @@ public class TransferenciaViewController {
 
     private boolean validarDatos() {
 
-        float monto = Float.parseFloat(txtMonto.getText());
-
         String mensaje = "";
-        if(txtCuenta == null || txtCuenta.getText().isEmpty())
-            mensaje += "La cuenta de destino es obligatoria \n" ;
-        if(txtMonto == null || txtMonto.getText().isEmpty())
-            mensaje += "El monto es obligatorio \n" ;
-        if(monto <= 0)
-            mensaje += "El monto es invalido \n" ;
-        if(cbTipoTransaccion.getValue() == null)
-            mensaje += "El tipo de transación es obligatorio \n" ;
-        if(mensaje.isEmpty()){
+        // Validar que el tipo de transacción esté seleccionado
+        if (cbTipoTransaccion.getValue() == null) {
+            mensaje += "El tipo de transacción es obligatorio \n";
+            if (txtCuenta == null || txtCuenta.getText().isEmpty()){
+                mensaje += "La cuenta de destino es obligatoria \n";
+            }
+        } else if ("TRANSFERENCIA".equals(cbTipoTransaccion.getValue())) {
+            // Si el tipo de transacción es "TRANSFERENCIA", validar la cuenta de destino
+            if (txtCuenta == null || txtCuenta.getText().isEmpty()) {
+                mensaje += "La cuenta de destino es obligatoria \n";
+            }
+        }
+        if (txtMonto == null || txtMonto.getText().isEmpty()) {
+            mensaje += "El monto es obligatorio \n";
+        } else {
+            try {
+                float monto = Float.parseFloat(txtMonto.getText());
+                if (monto <= 0) {
+                    mensaje += "El monto es invalido \n";
+                }
+            } catch (NumberFormatException e) {
+                mensaje += "El monto debe ser un número válido \n";
+            }
+        }
+
+        if (mensaje.isEmpty()) {
             return true;
-        }else{
-            mostrarMensaje("Notificación Usuario","Datos invalidos",mensaje, Alert.AlertType.WARNING);
+        } else {
+            mostrarMensaje("Notificación Usuario", "Datos invalidos", mensaje, Alert.AlertType.WARNING);
             return false;
         }
     }
@@ -91,4 +114,14 @@ public class TransferenciaViewController {
         this.observadorTransaccion = observadorTransaccion;
     }
 
+    public void seleccionarTipoTransaccion(ActionEvent actionEvent) {
+        if (cbTipoTransaccion.getSelectionModel().getSelectedItem().equals("RETIRO")) {
+            txtCuenta.setDisable(true);
+            if (!txtCuenta.getText().isEmpty()) {
+                txtCuenta.clear();
+            }
+        }else {
+            txtCuenta.setDisable(false);
+        }
+    }
 }

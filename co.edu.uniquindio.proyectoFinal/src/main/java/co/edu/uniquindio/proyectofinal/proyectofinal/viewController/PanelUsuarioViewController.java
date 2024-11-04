@@ -42,6 +42,8 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
     private TableColumn<Transaccion, String> txtUsuario;
     @FXML
     private TableColumn<Transaccion, String> txtTipoTransaccion;
+    @FXML
+    private TableColumn<Transaccion, String> txtDescripcion;
 
     ObservableList<UsuarioDto> listaUsuariosDto = FXCollections.observableArrayList();
 
@@ -60,6 +62,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
         txtMonto.setCellValueFactory(CellData -> new SimpleStringProperty("" + CellData.getValue().getMonto()));
         txtUsuario.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getUsuario().getNombre()));
         txtTipoTransaccion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getTipoTransaccion().toString()));
+        txtDescripcion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getDescripcion()));
 
     }
 

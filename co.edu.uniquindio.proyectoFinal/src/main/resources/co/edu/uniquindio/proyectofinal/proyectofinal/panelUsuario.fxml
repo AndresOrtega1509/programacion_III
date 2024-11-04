@@ -60,13 +60,14 @@
                 </Label>
             </children>
         </HBox>
-        <TableView fx:id="tablaTransacciones" editable="true" nodeOrientation="LEFT_TO_RIGHT" style="-fx-border-color: #00BFFF;">
+        <TableView fx:id="tablaTransacciones" editable="true" nodeOrientation="LEFT_TO_RIGHT" prefWidth="706.0" style="-fx-border-color: #00BFFF;">
             <columns>
                 <TableColumn fx:id="txtIdTransaccion" prefWidth="75.0" text="idTransaccion" />
                 <TableColumn fx:id="txtFecha" prefWidth="77.0" text="Fecha" />
                 <TableColumn fx:id="txtMonto" prefWidth="77.0" text="Monto" />
                 <TableColumn fx:id="txtUsuario" prefWidth="77.0" text="Usuario" />
                 <TableColumn fx:id="txtTipoTransaccion" prefWidth="77.0" text="TipoTransacción" />
+            <TableColumn fx:id="txtDescripcion" prefWidth="77.0" text="Descripción" />
             </columns>
             <cursor>
                 <Cursor fx:constant="TEXT" />
