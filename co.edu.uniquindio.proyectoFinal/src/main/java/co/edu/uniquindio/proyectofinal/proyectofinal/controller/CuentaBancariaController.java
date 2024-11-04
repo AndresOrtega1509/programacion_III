@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.controller;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.service.ICuentaBancariaService;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 
 public class CuentaBancariaController implements ICuentaBancariaService {
@@ -11,8 +12,8 @@ public class CuentaBancariaController implements ICuentaBancariaService {
         modelFactoryController = ModelFactoryController.getInstance();
     }
     @Override
-    public void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
-        modelFactoryController.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
+    public Cuenta agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
+        return modelFactoryController.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
     }
 
     @Override

@@ -1,9 +1,11 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.viewController;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.CuentaBancariaController;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorComboBoxCuentas;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +28,7 @@ public class CuentaViewController {
     CuentaBancariaController cuentaBancariaController;
     private final Sesion sesion = Sesion.getInstancia();
     private Usuario usuario;
-    private PanelUsuarioViewController panelUsuarioViewController;
+    ObservadorComboBoxCuentas observadorComboBoxCuentas;
 
     @FXML
     public void initialize() {
@@ -36,8 +38,8 @@ public class CuentaViewController {
         inicializarValores(usuario);
     }
 
-    public void accederComboBoxCuentas(PanelUsuarioViewController panelUsuarioViewController) {
-        this.panelUsuarioViewController = panelUsuarioViewController;
+    public void accederComboBoxCuentas(ObservadorComboBoxCuentas observadorComboBoxCuentas) {
+        this.observadorComboBoxCuentas = observadorComboBoxCuentas;
 
     }
 
@@ -45,15 +47,15 @@ public class CuentaViewController {
 
         try {
             if (datosValidos()){
-                cuentaBancariaController.agregarCuenta(txtIdCuenta.getText(), txtNombreBanco.getText(),0.0,
+                Cuenta cuentaNueva = cuentaBancariaController.agregarCuenta(txtIdCuenta.getText(), txtNombreBanco.getText(),0.0,
                         usuario.getIdUsuario(), cbTipoCuenta.getValue());
                 mostrarMensaje("Notificacion - Usuario","Creación Cuenta", "La cuenta ha sido creada con exito",
                         Alert.AlertType.INFORMATION);
                 registrarAcciones("Cuenta bancaria creada", 1, "crearCuenta",
                         usuario.getNombre()+ " creó una cuenta bancaria");
                 cerrarVentana();
-                if (usuario.isTieneCuenta()){
-                    panelUsuarioViewController.inicializarComboCuentas(sesion.getUsuario());
+                if (sesion.getUsuario().isTieneCuenta()){
+                    observadorComboBoxCuentas.notificarCreacionCuenta();
                 }
                 if (!usuario.isTieneCuenta()){
                     navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/panelUsuario.fxml", "Banco - Panel principal", usuario);

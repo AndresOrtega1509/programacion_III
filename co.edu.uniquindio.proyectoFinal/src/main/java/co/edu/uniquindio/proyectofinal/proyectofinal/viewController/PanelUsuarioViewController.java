@@ -7,6 +7,7 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorActualizar;
+import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorComboBoxCuentas;
 import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorTransaccion;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -21,14 +22,14 @@ import javafx.stage.Stage;
 
 import java.util.Optional;
 
-public class PanelUsuarioViewController implements ObservadorActualizar, ObservadorTransaccion {
+public class PanelUsuarioViewController implements ObservadorActualizar, ObservadorTransaccion, ObservadorComboBoxCuentas {
 
     @FXML
     private Label lblNombre;
     @FXML
     private Label lblCuenta;
     @FXML
-    public ComboBox<Cuenta> cbCuentas;
+    public ComboBox<Cuenta> cbCuentas = new ComboBox<>();
     @FXML
     private TableView<Transaccion> tablaTransacciones;
     @FXML
@@ -67,13 +68,14 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
 
         try {
             if(usuario != null){
+                inicializarComboCuentas(usuario);
                 Cuenta cuenta = panelUsuarioController.consultarCuenta(usuario.getIdUsuario(), 0);
                 sesion.setCuenta(cuenta);
 
                 lblNombre.setText(usuario.getNombre() +", bienvenido a su banco, aquí podra ver sus transacciones");
-                inicializarComboCuentas(usuario);
                 lblCuenta.setText("Nro. Cuenta: " + cuenta.getNumeroCuenta());
                 consultarTransacciones();
+
 
             }
         } catch (Exception e) {
@@ -83,6 +85,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
 
     public void inicializarComboCuentas(Usuario usuario) {
         cbCuentas.setItems(FXCollections.observableArrayList(usuario.getListaCuentas()));
+
     }
 
     private void consultarTransacciones() {
@@ -169,6 +172,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
     }
 
     public void irCrearCuentaBancaria(ActionEvent actionEvent) throws Exception {
+
         FXMLLoader loader = navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/cuenta.fxml",
                 "Banco - creación cuenta bancaria");
 
@@ -219,16 +223,27 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
 
     public void cambiarCuenta(ActionEvent actionEvent) {
 
-        Cuenta cuentaSeleccionada = cbCuentas.getValue();
-        sesion.cerrarCuenta();
-        sesion.setCuenta(cuentaSeleccionada);
-        lblCuenta.setText("Nro. Cuenta: " + sesion.getCuenta().getNumeroCuenta());
-        consultarTransacciones();
+        try {
+            Cuenta cuentaSeleccionada = cbCuentas.getSelectionModel().getSelectedItem();
+            if (cuentaSeleccionada != null) {
+                sesion.setCuenta(cuentaSeleccionada);
+                lblCuenta.setText("Nro. Cuenta: " + sesion.getCuenta().getNumeroCuenta());
+                consultarTransacciones();
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
 
     }
 
     @Override
     public void notificarTransaccion() {
         consultarTransacciones();
+    }
+
+    @Override
+    public void notificarCreacionCuenta() {
+        inicializarComboCuentas(sesion.getUsuario());
     }
 }

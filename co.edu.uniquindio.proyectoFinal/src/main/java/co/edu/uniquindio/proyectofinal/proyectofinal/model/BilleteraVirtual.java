@@ -101,7 +101,7 @@ public class BilleteraVirtual implements IBancoService, Serializable {
     }
 
     @Override
-    public void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario,
+    public Cuenta agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario,
                                 TipoCuenta tipoCuenta) throws Exception {
 
         Usuario propietario = obtenerUsuario(idUsuario, 0);
@@ -116,9 +116,12 @@ public class BilleteraVirtual implements IBancoService, Serializable {
             Cuenta cuenta = new Cuenta(idCuenta, nombreBanco,numeroCuenta, saldo, propietario, tipoCuenta);
             listaCuentas.add(cuenta);
             propietario.getListaCuentas().add(cuenta);
+            return cuenta;
+
 
         }else {
             throw new Exception("No se encontró el usuario con el número de identificación: " + idUsuario);
+
         }
 
     }

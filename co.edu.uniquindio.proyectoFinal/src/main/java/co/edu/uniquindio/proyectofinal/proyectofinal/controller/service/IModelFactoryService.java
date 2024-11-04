@@ -13,7 +13,7 @@ public interface IModelFactoryService {
     void navegarVentana(String nombreArchivoFxml, String tituloVentana);
     Usuario validarInicioSesion(String nombre, String idUsuario) throws Exception;
     Cuenta consultarCuenta(String idUsuario, int posicion) throws Exception;
-    void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception;
+    Cuenta agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception;
     void actualizarUsuario(String idUsuario, String nombre, String correo, String telefono, String direccion) throws Exception;
     boolean eliminarUsuario(String idUsuario);
     boolean eliminarCuenta(String idCuenta) throws Exception;

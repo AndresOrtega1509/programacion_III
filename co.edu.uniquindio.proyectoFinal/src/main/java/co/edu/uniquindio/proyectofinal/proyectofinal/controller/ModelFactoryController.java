@@ -129,12 +129,12 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     @Override
-    public void agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
+    public Cuenta agregarCuenta(String idCuenta, String nombreBanco, Double saldo, String idUsuario, TipoCuenta tipoCuenta) throws Exception {
 
-        billeteraVirtual.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
+        Cuenta cuenta = billeteraVirtual.agregarCuenta(idCuenta, nombreBanco, saldo, idUsuario, tipoCuenta);
         guardarResourceXML();
         salvarDatosPrueba();
-
+        return cuenta;
     }
 
     @Override
