@@ -2,3 +2,37 @@ nov 04, 2024 12:04:25 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.util
 INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-04
 nov 07, 2024 7:07:04 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-07
+nov 07, 2024 9:36:13 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-07
+nov 07, 2024 9:36:25 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-07
+nov 07, 2024 9:38:43 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,sara creó una cuenta bancaria,2024-11-07
+nov 07, 2024 9:39:03 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-07
+nov 07, 2024 9:39:12 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: logiarse,Los datos ingresados son incorrectos,,2024-11-07
+nov 07, 2024 9:39:17 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-07
+nov 07, 2024 9:39:37 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,edwin creó una cuenta bancaria,2024-11-07
+nov 07, 2024 9:39:48 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-07
+nov 07, 2024 9:39:55 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-07
+nov 07, 2024 9:40:51 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-07
+nov 07, 2024 9:41:01 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-07
+nov 07, 2024 9:41:52 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-07
+nov 07, 2024 9:42:51 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,jose se registró en la aplicación,2024-11-07
+nov 07, 2024 9:43:35 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,jose inició sesion,2024-11-07
+nov 07, 2024 9:43:51 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,jose creó una cuenta bancaria,2024-11-07
+nov 07, 2024 9:43:57 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,jose ha cerrado la sesión,2024-11-07
+nov 07, 2024 9:44:07 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,jose inició sesion,2024-11-07
