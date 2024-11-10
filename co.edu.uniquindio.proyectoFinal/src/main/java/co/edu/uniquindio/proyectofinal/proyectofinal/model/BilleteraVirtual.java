@@ -7,11 +7,13 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.services.IBancoServic
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.UUID;
 
 public class BilleteraVirtual implements IBancoService, Serializable {
     private static final long serialVersionUID = 1L;
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     private ArrayList<Cuenta> listaCuentas = new ArrayList<>();
+    private ArrayList<Transaccion> listaTransacciones = new ArrayList<>();
 
 
     public BilleteraVirtual() {
@@ -31,6 +33,14 @@ public class BilleteraVirtual implements IBancoService, Serializable {
 
     public void setListaCuentas(ArrayList<Cuenta> listaCuentas) {
         this.listaCuentas = listaCuentas;
+    }
+
+    public ArrayList<Transaccion> getListaTransacciones() {
+        return listaTransacciones;
+    }
+
+    public void setListaTransacciones(ArrayList<Transaccion> listaTransacciones) {
+        this.listaTransacciones = listaTransacciones;
     }
 
     public void agregarUsuario(Usuario usuario) {
@@ -254,13 +264,18 @@ public class BilleteraVirtual implements IBancoService, Serializable {
 
         if (tipoTransaccion.equals(TipoTransaccion.TRANSFERENCIA)) {
             if (cuentaOrigen != null && cuentaDestino != null) {
-                cuentaOrigen.transferir(monto, cuentaDestino, tipoTransaccion, descripcion);
+                String idTransaccion = UUID.randomUUID().toString();
+                Transaccion transaccionRetiro = cuentaOrigen.transferir(monto, cuentaDestino, tipoTransaccion, descripcion, idTransaccion);
+                Transaccion transaccionDeposito = cuentaDestino.depositar(monto, cuentaOrigen.getUsuario(), descripcion, idTransaccion);
+                listaTransacciones.add(transaccionRetiro);
+                listaTransacciones.add(transaccionDeposito);
             } else {
                 throw new Exception("Error con los números de la cuenta");
             }
         }else {
             if (cuentaOrigen != null) {
-                cuentaOrigen.retirar(monto, tipoTransaccion, descripcion);
+                Transaccion transaccionRetiro = cuentaOrigen.retirar(monto, tipoTransaccion, descripcion);
+                listaTransacciones.add(transaccionRetiro);
             }else {
                 throw new Exception("Error con los números de la cuenta");
             }

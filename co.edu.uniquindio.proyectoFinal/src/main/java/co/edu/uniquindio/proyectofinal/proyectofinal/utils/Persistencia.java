@@ -2,11 +2,15 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.utils;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.BilleteraVirtual;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +20,8 @@ public class Persistencia {
     //bancoUq/src/main/resources/persistencia/archivoClientes.txt
     public static final String RUTA_ARCHIVO_USUARIOS = "src/main/resources/persistencia/archivoUsuarios.txt";
     public static final String RUTA_ARCHIVO_CUENTAS = "src/main/resources/persistencia/archivoCuentas.txt";
+    public static final String RUTA_ARCHIVO_TRANSACCIONES = "src/main/resources/persistencia/archivoTransacciones.txt";
     public static final String RUTA_ARCHIVO_LOG = "src/main/resources/persistencia/log/billeteraVirtualLog.txt";
-    public static final String RUTA_ARCHIVO_OBJETOS = "src/main/resources/persistencia/archivoObjetos.txt";
     public static final String RUTA_ARCHIVO_MODELO_BILLETERA_VIRTUAL_BINARIO = "src/main/resources/persistencia/model.dat";
     public static final String RUTA_ARCHIVO_MODELO_BILLETERA_VIRTUAL_XML = "src/main/resources/persistencia/model.xml";
 //	C:\td\persistencia
@@ -44,6 +48,42 @@ public class Persistencia {
             }
             billeteraVirtual.getListaCuentas().addAll(cuentasCargadas);
         }
+
+        ArrayList<Transaccion> transaccionesCargadas = cargarTransacciones();
+        if (transaccionesCargadas.size() > 0) {
+            for (Transaccion transaccion : transaccionesCargadas) {
+                // Buscar el usuario correspondiente en el Map utilizando el idUsuario
+                Usuario usuario = usuariosCargadosMap.get(transaccion.getUsuario().getIdUsuario());
+                if (usuario != null) {
+                    transaccion.setUsuario(usuario); // Asocia la cuenta con el usuario
+                }
+            }
+            billeteraVirtual.getListaTransacciones().addAll(transaccionesCargadas);
+        }
+
+    }
+
+    private static ArrayList<Transaccion> cargarTransacciones() throws IOException {
+        ArrayList<Transaccion> transacciones = new ArrayList<>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_TRANSACCIONES);
+        Map<String, Usuario> mapaUsuarios = cargarUsuarios();
+
+        for (String linea : contenido) {
+            String[] datos = linea.split("@@");
+            Transaccion transaccion = new Transaccion();
+            transaccion.setIdTransaccion(datos[0]);
+            transaccion.setFecha(datos[1]);
+            transaccion.setMonto(Float.parseFloat(datos[2]));
+            transaccion.setDescripcion(datos[3]);
+            transaccion.setTipoTransaccion(TipoTransaccion.valueOf(datos[5]));
+
+            String idUsuario = datos[4];
+            Usuario usuario = mapaUsuarios.get(idUsuario);
+            transaccion.setUsuario(usuario);
+
+            transacciones.add(transaccion);
+        }
+        return transacciones;
     }
 
     /**
@@ -76,6 +116,20 @@ public class Persistencia {
                     "@@"+cuenta.getUsuario().getIdUsuario()+"\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_CUENTAS, contenido, false);
+    }
+
+    public static void guardarTransacciones(ArrayList<Transaccion> listaTransacciones) throws IOException {
+        String contenido = "";
+        for (Transaccion transaccion : listaTransacciones) {
+
+            contenido += transaccion.getIdTransaccion() +
+                    "@@" + transaccion.getFecha() +
+                    "@@" + transaccion.getMonto() +
+                    "@@" + transaccion.getDescripcion() +
+                    "@@" + transaccion.getUsuario().getIdUsuario() +
+                    "@@" + transaccion.getTipoTransaccion() + "\n";
+        }
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_TRANSACCIONES, contenido, false);
     }
 
 

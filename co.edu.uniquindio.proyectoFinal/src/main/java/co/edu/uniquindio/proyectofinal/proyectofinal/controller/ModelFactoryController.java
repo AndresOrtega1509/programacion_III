@@ -94,6 +94,7 @@ public class ModelFactoryController implements IModelFactoryService {
         try {
             Persistencia.guardarUsuarios(billeteraVirtual.getListaUsuarios());
             Persistencia.guardarCuentas(billeteraVirtual.getListaCuentas());
+            Persistencia.guardarTransacciones(billeteraVirtual.getListaTransacciones());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -188,6 +189,8 @@ public class ModelFactoryController implements IModelFactoryService {
     @Override
     public void realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
         billeteraVirtual.realizarTransaccion(numeroCuentaOrigen, numeroCuentaDestino, monto, tipoTransaccion, descripcion);
+        guardarResourceXML();
+        salvarDatosPrueba();
     }
 
     private void cargarDatosBase() {

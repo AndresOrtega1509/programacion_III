@@ -100,21 +100,17 @@ public class Cuenta implements Serializable {
                 '}';
     }
 
-    public void transferir(float cantidad, Cuenta cuentaDestino, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
+    public Transaccion transferir(float cantidad, Cuenta cuentaDestino, TipoTransaccion tipoTransaccion, String descripcion, String idTransaccion) throws Exception {
 
         if (saldo >= cantidad) {
 
             // Se realiza el retiro
             saldo -= cantidad;
-            String idTransaccion = UUID.randomUUID().toString();
-
-            // Se registra la transacción de depósito en la cuenta de destino
-            cuentaDestino.depositar(cantidad, usuario, descripcion, idTransaccion);
 
             // Se crea la transacción de retiro
             Transaccion transaccion = new Transaccion();
             transaccion.setIdTransaccion(idTransaccion);
-            transaccion.setFecha(LocalDateTime.now());
+            transaccion.setFechaAsLocalDateTime(LocalDateTime.now());
             transaccion.setTipoTransaccion(TipoTransaccion.RETIRO);
             transaccion.setDescripcion(descripcion);
             transaccion.setUsuario(cuentaDestino.getUsuario());
@@ -123,12 +119,14 @@ public class Cuenta implements Serializable {
             // Se registra la transacción de retiro en la cuenta de origen
             listaTransacciones.add(transaccion);
 
+            return transaccion;
+
         } else {
             throw new Exception("Saldo insuficiente");
         }
     }
 
-    private void depositar(float cantidad, Usuario emisor, String descripcion, String idTransaccion) throws Exception {
+    public Transaccion depositar(float cantidad, Usuario emisor, String descripcion, String idTransaccion) throws Exception {
 
         // Se realiza el depósito
         saldo += cantidad;
@@ -136,7 +134,7 @@ public class Cuenta implements Serializable {
         // Se crea la transacción de depósito
         Transaccion transaccion = new Transaccion();
         transaccion.setIdTransaccion(idTransaccion);
-        transaccion.setFecha(LocalDateTime.now());
+        transaccion.setFechaAsLocalDateTime(LocalDateTime.now());
         transaccion.setTipoTransaccion(TipoTransaccion.DEPOSITO);
         transaccion.setDescripcion(descripcion);
         transaccion.setUsuario(emisor);
@@ -144,9 +142,11 @@ public class Cuenta implements Serializable {
 
         // Se registra la transacción de depósito
         listaTransacciones.add(transaccion);
+
+        return transaccion;
     }
 
-    public void retirar(float cantidad, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
+    public Transaccion retirar(float cantidad, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
 
         if (saldo >= cantidad) {
 
@@ -157,7 +157,7 @@ public class Cuenta implements Serializable {
             // Se crea la transacción de retiro
             Transaccion transaccion = new Transaccion();
             transaccion.setIdTransaccion(idTransaccion);
-            transaccion.setFecha(LocalDateTime.now());
+            transaccion.setFechaAsLocalDateTime(LocalDateTime.now());
             transaccion.setTipoTransaccion(tipoTransaccion);
             transaccion.setDescripcion(descripcion);
             transaccion.setUsuario(usuario);
@@ -165,6 +165,8 @@ public class Cuenta implements Serializable {
 
             // Se registra la transacción de retiro en la cuenta de origen
             listaTransacciones.add(transaccion);
+
+            return transaccion;
 
         } else {
             throw new Exception("Saldo insuficiente");
