@@ -1,0 +1,4 @@
+nov 11, 2024 10:33:13 P. M. co.edu.uniquindio.preparcial_3.preparcial_3.productorConsumidorHilos.ejercicio2.Consumidor guardarRegistroLog
+INFORMACIÓN: colocarCaracter,palabra armada,2024-11-11
+nov 12, 2024 9:38:47 A. M. co.edu.uniquindio.preparcial_3.preparcial_3.productorConsumidorHilos.ejercicio2.Consumidor guardarRegistroLog
+INFORMACIÓN: colocarCaracter,palabra armada,2024-11-12

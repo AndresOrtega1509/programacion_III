@@ -164,3 +164,7 @@ nov 09, 2024 7:58:05 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils
 INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-09
 nov 09, 2024 7:58:09 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-09
+nov 12, 2024 2:41:04 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-12
+nov 12, 2024 2:41:09 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-12
