@@ -2,10 +2,14 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.viewController;
 
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.TransferenciaController;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorTransaccion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -45,13 +49,15 @@ public class TransferenciaViewController {
                 }else {
                     float monto = Float.parseFloat(txtMonto.getText());
                     TipoTransaccion tipoTransaccion = TipoTransaccion.valueOf(cbTipoTransaccion.getValue());
-                    transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(),txtCuenta.getText(),
+                    Transaccion transaccion = transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(),txtCuenta.getText(),
                             monto, tipoTransaccion, txtDescripcion.getText());
+                    navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/crearCategoria.fxml", "Banco - Categoria - Transaccion", transaccion.getIdTransaccion());
                 }
                 observadorTransaccion.notificarTransaccion();
                 mostrarMensaje("Notificación usuario", "Transacción exitosa", "La transferencia ha sido procesada correctamente",
                         Alert.AlertType.INFORMATION);
                 cerrarVentana();
+
             }
 
         } catch (Exception e) {
@@ -123,5 +129,31 @@ public class TransferenciaViewController {
         }else {
             txtCuenta.setDisable(false);
         }
+    }
+
+
+    private FXMLLoader navegarVentana(String nombreArchivoFxml, String tituloVentana, String idTransaccion) throws Exception{
+
+        // Cargar la vista
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(nombreArchivoFxml));
+        Parent root = loader.load();
+
+        // Obtener el controlador de la nueva ventana
+        CategoriaViewController controller = loader.getController();
+        controller.inicializarValores(idTransaccion);
+
+        // Crear la escena
+        Scene scene = new Scene(root);
+
+        // Crear un nuevo escenario (ventana)
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle(tituloVentana);
+
+        // Mostrar la nueva ventana
+        stage.show();
+
+        return loader;
     }
 }

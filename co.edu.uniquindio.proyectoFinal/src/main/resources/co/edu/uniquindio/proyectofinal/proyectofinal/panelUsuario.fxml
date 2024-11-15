@@ -85,7 +85,7 @@
                 <Region prefHeight="200.0" prefWidth="200.0" />
                 <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#irTransferencia" style="-fx-background-color: #00807a;" text="Transferir" textFill="WHITE" />
                 <Region prefHeight="200.0" prefWidth="200.0" />
-                <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#eliminar" style="-fx-background-color: #00807a;" text="Eliminar" textFill="WHITE" />
+                <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#irGestionarCategorias" style="-fx-background-color: #00807a;" text="Gestionar Categorias" textFill="WHITE" />
             </children>
         </HBox>
     </children>

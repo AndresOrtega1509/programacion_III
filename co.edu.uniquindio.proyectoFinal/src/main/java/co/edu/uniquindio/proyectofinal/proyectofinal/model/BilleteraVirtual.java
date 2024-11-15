@@ -14,6 +14,7 @@ public class BilleteraVirtual implements IBancoService, Serializable {
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     private ArrayList<Cuenta> listaCuentas = new ArrayList<>();
     private ArrayList<Transaccion> listaTransacciones = new ArrayList<>();
+    private ArrayList<Categoria> listaCategorias = new ArrayList<>();
 
 
     public BilleteraVirtual() {
@@ -41,6 +42,14 @@ public class BilleteraVirtual implements IBancoService, Serializable {
 
     public void setListaTransacciones(ArrayList<Transaccion> listaTransacciones) {
         this.listaTransacciones = listaTransacciones;
+    }
+
+    public ArrayList<Categoria> getListaCategorias() {
+        return listaCategorias;
+    }
+
+    public void setListaCategorias(ArrayList<Categoria> listaCategorias) {
+        this.listaCategorias = listaCategorias;
     }
 
     public void agregarUsuario(Usuario usuario) {
@@ -258,29 +267,55 @@ public class BilleteraVirtual implements IBancoService, Serializable {
         return saldo;
     }
 
-    public void realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
+    public Transaccion realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
         Cuenta cuentaOrigen = obtenerCuenta(numeroCuentaOrigen);
         Cuenta cuentaDestino = obtenerCuenta(numeroCuentaDestino);
+        Transaccion transaccionRetiro = null;
 
         if (tipoTransaccion.equals(TipoTransaccion.TRANSFERENCIA)) {
             if (cuentaOrigen != null && cuentaDestino != null) {
                 String idTransaccion = UUID.randomUUID().toString();
-                Transaccion transaccionRetiro = cuentaOrigen.transferir(monto, cuentaDestino, tipoTransaccion, descripcion, idTransaccion);
+                transaccionRetiro = cuentaOrigen.transferir(monto, cuentaDestino, tipoTransaccion, descripcion, idTransaccion);
                 Transaccion transaccionDeposito = cuentaDestino.depositar(monto, cuentaOrigen.getUsuario(), descripcion, idTransaccion);
                 listaTransacciones.add(transaccionRetiro);
                 listaTransacciones.add(transaccionDeposito);
+
+                return transaccionRetiro;
+
             } else {
                 throw new Exception("Error con los números de la cuenta");
             }
         }else {
             if (cuentaOrigen != null) {
-                Transaccion transaccionRetiro = cuentaOrigen.retirar(monto, tipoTransaccion, descripcion);
-                listaTransacciones.add(transaccionRetiro);
+                Transaccion transaccionRetiro2 = cuentaOrigen.retirar(monto, tipoTransaccion, descripcion);
+                listaTransacciones.add(transaccionRetiro2);
             }else {
                 throw new Exception("Error con los números de la cuenta");
             }
         }
+        return transaccionRetiro;
+    }
 
+    public Categoria agregarCategoria(Usuario usuario, String nombreCategoria, String descripcion, String idTransaccion) throws Exception {
+        String idCategoria = UUID.randomUUID().toString();
+        Transaccion transaccion = obtenerTransaccion(idTransaccion, 0);
+        Categoria categoria = usuario.crearCategoria(nombreCategoria, descripcion, transaccion, idCategoria);
+
+        return categoria;
+
+    }
+
+    private Transaccion obtenerTransaccion(String idTransaccion, int posicion) {
+
+        if (posicion >= listaTransacciones.size()){
+            return null;
+        }else {
+            if (listaTransacciones.get(posicion).getIdTransaccion().equals(idTransaccion)) {
+                return listaTransacciones.get(posicion);
+            }else {
+                return obtenerTransaccion(idTransaccion,posicion+1);
+            }
+        }
     }
 
     public Cuenta obtenerCuenta(String numeroCuenta) {
@@ -290,6 +325,25 @@ public class BilleteraVirtual implements IBancoService, Serializable {
             }
         }
         return null;
+    }
+
+    public void eliminarCategoria(Usuario usuario, Categoria categoria) {
+
+        usuario.eliminarCategoria(categoria);
+    }
+
+    public void actualizarCategoria(Usuario usuario, String idCategoria, String nombreCategoria,String descripcion) throws Exception {
+
+        if (idCategoria == null || nombreCategoria.isBlank()) {
+            throw new Exception("El id es obligatorio");
+        }
+
+        if (descripcion == null || descripcion.isBlank()) {
+            throw new Exception("La descripcion es obligatoria");
+        }
+
+        usuario.actualizarCategoria(idCategoria, nombreCategoria, descripcion);
+
     }
 
 

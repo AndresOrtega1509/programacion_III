@@ -14,18 +14,22 @@ public class Usuario implements Serializable {
     private String direccion;
     private boolean tieneCuenta = false;
     private List<Cuenta> listaCuentas = new ArrayList<>();
+    private List<Categoria> listaCategorias = new ArrayList<>();
 
     public Usuario() {
 
     }
 
-    public Usuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion, boolean tieneCuenta,List<Cuenta> listaCuentas) {
+    public Usuario(String idUsuario, String nombre, String correoElectronico, String numeroTelefono, String direccion, boolean tieneCuenta,
+                   List<Cuenta> listaCuentas, List<Categoria> listaCategorias) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;
         this.numeroTelefono = numeroTelefono;
         this.direccion = direccion;
         this.tieneCuenta = tieneCuenta;
+        this.listaCategorias = listaCategorias;
+
 
         if (listaCuentas == null) {
             this.listaCuentas = new ArrayList<>();
@@ -90,6 +94,14 @@ public class Usuario implements Serializable {
         this.tieneCuenta = tieneCuenta;
     }
 
+    public List<Categoria> getListaCategorias() {
+        return listaCategorias;
+    }
+
+    public void setListaCategorias(List<Categoria> listaCategorias) {
+        this.listaCategorias = listaCategorias;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -99,5 +111,51 @@ public class Usuario implements Serializable {
                 ", numeroTelefono='" + numeroTelefono + '\'' +
                 ", direccion='" + direccion + '\'' +
                 '}';
+    }
+
+    public Categoria crearCategoria(String nombreCategoria, String descripcion, Transaccion transaccion, String idCategoria) {
+
+        Categoria categoria = new Categoria();
+        categoria.setIdCategoria(idCategoria);
+        categoria.setNombreCategoria(nombreCategoria);
+        categoria.setDescripcionCategoria(descripcion);
+        listaCategorias.add(categoria);
+
+        if (transaccion != null) {
+            transaccion.setCategoria(categoria);
+        }
+
+        return categoria;
+    }
+
+    public void eliminarCategoria(Categoria categoria) {
+        if (categoria != null) {
+            listaCategorias.remove(categoria);
+        }
+    }
+
+    public void actualizarCategoria(String idCategoria, String nombreCategoria, String descripcion) throws Exception{
+
+        Categoria categoria = obtenerCategoria(idCategoria,0);
+
+        if (categoria != null) {
+            categoria.setNombreCategoria(nombreCategoria);
+            categoria.setDescripcionCategoria(descripcion);
+        }else {
+            throw new Exception("No existe una categoria con el id: " + idCategoria);
+        }
+    }
+
+    private Categoria obtenerCategoria(String idCategoria, int posicion) {
+
+        if (posicion >= listaCategorias.size()){
+            return null;
+        }else {
+            if (listaCategorias.get(posicion).getIdCategoria().equals(idCategoria)) {
+                return listaCategorias.get(posicion);
+            }else {
+                return obtenerCategoria(idUsuario,posicion+1);
+            }
+        }
     }
 }

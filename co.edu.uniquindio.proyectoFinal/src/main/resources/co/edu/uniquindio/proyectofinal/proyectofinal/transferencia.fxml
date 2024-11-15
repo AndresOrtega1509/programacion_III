@@ -26,7 +26,7 @@
         <TextField fx:id="txtMonto" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
         <Label text="Tipo de transacción:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <ComboBox fx:id="cbTipoTransaccion" onAction="#seleccionarTipoTransaccion" editable="true" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" style="-fx-border-color: #060070;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <ComboBox fx:id="cbTipoTransaccion" editable="true" nodeOrientation="LEFT_TO_RIGHT" onAction="#seleccionarTipoTransaccion" prefWidth="150.0" style="-fx-border-color: #060070;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
         <Label text="Descripción:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
         <TextField fx:id="txtDescripcion" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />

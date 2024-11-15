@@ -16,17 +16,19 @@ public class Transaccion implements Serializable {
     private String descripcion;
     private Usuario usuario;
     private TipoTransaccion tipoTransaccion;
+    private Categoria categoria;
 
     public Transaccion() {
     }
 
-    public Transaccion(String idTransaccion, LocalDateTime fecha, float monto, String descripcion, Usuario usuario, TipoTransaccion tipoTransaccion) {
+    public Transaccion(String idTransaccion, LocalDateTime fecha, float monto, String descripcion, Usuario usuario, TipoTransaccion tipoTransaccion, Categoria categoria) {
         this.idTransaccion = idTransaccion;
         this.fecha = fechaToString(fecha); // Convierte LocalDateTime a String
         this.monto = monto;
         this.descripcion = descripcion;
         this.usuario = usuario;
         this.tipoTransaccion = tipoTransaccion;
+        this.categoria = categoria;
     }
 
     public String getIdTransaccion() {
@@ -83,6 +85,14 @@ public class Transaccion implements Serializable {
 
     public void setTipoTransaccion(TipoTransaccion tipoTransaccion) {
         this.tipoTransaccion = tipoTransaccion;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     // Métodos de conversión entre LocalDateTime y String

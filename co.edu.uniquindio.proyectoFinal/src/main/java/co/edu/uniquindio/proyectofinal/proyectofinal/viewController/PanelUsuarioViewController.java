@@ -183,22 +183,24 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
         controlador.accederComboBoxCuentas(this);
     }
 
-    public void eliminar(ActionEvent actionEvent) throws Exception {
-        if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar su cuenta?")){
+    //public void eliminar(ActionEvent actionEvent) throws Exception {
+        //if(mostrarMensajeConfirmacion("¿Estas seguro de elmininar su cuenta?")){
 
-            registrarAcciones("Usuario eliminado", 1, "eliminar",
-                    sesion.getUsuario().getNombre() + " eliminó su cuenta");
-            boolean clienteEliminado = panelUsuarioController.eliminarUsuario(sesion.getUsuario().getIdUsuario());
-            panelUsuarioController.eliminarCuenta(sesion.getCuenta().getIdCuenta());
-            if(clienteEliminado){
-                for (UsuarioDto usuarioDto : listaUsuariosDto) {
-                    listaUsuariosDto.remove(usuarioDto);
-                }
-            }
-            cerrarVentana();
-        }
-                
-    }
+        //registrarAcciones("Usuario eliminado", 1, "eliminar",
+        //      sesion.getUsuario().getNombre() + " eliminó su cuenta");
+        //  boolean clienteEliminado = panelUsuarioController.eliminarUsuario(sesion.getUsuario().getIdUsuario());
+        // panelUsuarioController.eliminarCuenta(sesion.getCuenta().getIdCuenta());
+        //    if(clienteEliminado){
+        //      for (UsuarioDto usuarioDto : listaUsuariosDto) {
+        //          listaUsuariosDto.remove(usuarioDto);
+        //      }
+        //   }
+        //  cerrarVentana();
+        // }
+
+    //}
+
+
 
     private void registrarAcciones(String mensaje, int nivel, String accion, String usuarioAsociado) {
 
@@ -248,5 +250,11 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
     @Override
     public void notificarCreacionCuenta() {
         inicializarComboCuentas(sesion.getUsuario());
+    }
+
+    public void irGestionarCategorias(ActionEvent actionEvent) throws Exception {
+
+        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/gestionarCategorias.fxml",
+                "Banco - Gestionar Categorias");
     }
 }

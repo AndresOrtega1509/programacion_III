@@ -3,9 +3,7 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.controller;
 import co.edu.uniquindio.proyectofinal.proyectofinal.controller.service.IModelFactoryService;
 import co.edu.uniquindio.proyectofinal.proyectofinal.mapping.dto.UsuarioDto;
 import co.edu.uniquindio.proyectofinal.proyectofinal.mapping.mappers.BilleteraVirtualMapper;
-import co.edu.uniquindio.proyectofinal.proyectofinal.model.BilleteraVirtual;
-import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
-import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.*;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.utils.BancoUtils;
@@ -187,14 +185,30 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     @Override
-    public void realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
-        billeteraVirtual.realizarTransaccion(numeroCuentaOrigen, numeroCuentaDestino, monto, tipoTransaccion, descripcion);
+    public Transaccion realizarTransaccion(String numeroCuentaOrigen, String numeroCuentaDestino, float monto, TipoTransaccion tipoTransaccion, String descripcion) throws Exception {
+        Transaccion transaccion = billeteraVirtual.realizarTransaccion(numeroCuentaOrigen, numeroCuentaDestino, monto, tipoTransaccion, descripcion);
         guardarResourceXML();
         salvarDatosPrueba();
+
+        return transaccion;
+    }
+
+    public Categoria agregarCategoria(Usuario usuario,String nombreCategoria, String descripcion, String idTransaccion) throws Exception {
+        return billeteraVirtual.agregarCategoria(usuario,nombreCategoria, descripcion, idTransaccion);
     }
 
     private void cargarDatosBase() {
         billeteraVirtual = BancoUtils.inicializarDatos();
+    }
+
+    public void eliminarCategoria(Usuario usuario,Categoria categoria) {
+        billeteraVirtual.eliminarCategoria(usuario, categoria);
+    }
+
+    public void actualizarCategoria(Usuario usuario, String idCategoria, String nombreCategoria,String descripcion) throws Exception {
+
+        billeteraVirtual.actualizarCategoria(usuario, idCategoria, nombreCategoria, descripcion);
+
     }
 
     @Override

@@ -139,6 +139,182 @@
                 </void>
                </object>
               </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion4">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T12:41:41.0553754</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>b7308cb9-fc45-4701-8a61-d8fd49593cde</string>
+                </void>
+                <void property="monto">
+                 <float>10.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion5">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T14:51:47.7332558</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>9c4187d5-5b6a-47dc-b5bc-1a4effedc47d</string>
+                </void>
+                <void property="monto">
+                 <float>100.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion6">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T14:59:31.5887701</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>0b26e705-8458-4f29-9008-41baed834548</string>
+                </void>
+                <void property="monto">
+                 <float>300.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion7">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T17:03:39.1253935</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>85cf72ab-f9f9-44e2-856a-aedc21e20bbd</string>
+                </void>
+                <void property="monto">
+                 <float>100.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion8">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T17:12:41.7812716</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>f2efe195-69db-4a84-856c-daee34062e6e</string>
+                </void>
+                <void property="monto">
+                 <float>100.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion9">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T17:36:23.1018859</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>45e2fde2-9428-4078-85ba-37e7005f6e44</string>
+                </void>
+                <void property="monto">
+                 <float>10.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion10">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T18:11:43.4230639</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>1ef552ee-ef7a-4fbb-ab39-3164ee429eaf</string>
+                </void>
+                <void property="monto">
+                 <float>100.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion11">
+                <void property="descripcion">
+                 <string></string>
+                </void>
+                <void property="fecha">
+                 <string>2024-11-15T18:15:06.870651</string>
+                </void>
+                <void property="idTransaccion">
+                 <string>ecfd6924-c1ad-46e9-bd22-f80c2d8b368d</string>
+                </void>
+                <void property="monto">
+                 <float>10.0</float>
+                </void>
+                <void property="tipoTransaccion">
+                 <object idref="TipoTransaccion1"/>
+                </void>
+                <void property="usuario">
+                 <object idref="Usuario1"/>
+                </void>
+               </object>
+              </void>
              </void>
              <void property="nombreBanco">
               <string>Bancolombia</string>
@@ -147,7 +323,7 @@
               <string>0742936438</string>
              </void>
              <void property="saldo">
-              <double>0.0</double>
+              <double>730.0</double>
              </void>
              <void property="tipoCuenta">
               <object class="java.lang.Enum" method="valueOf">
@@ -175,7 +351,7 @@
        </object>
       </void>
       <void method="add">
-       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion4">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion12">
         <void property="descripcion">
          <string></string>
         </void>
@@ -196,6 +372,182 @@
         </void>
        </object>
       </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion13">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T12:41:41.0533702</string>
+        </void>
+        <void property="idTransaccion">
+         <string>b7308cb9-fc45-4701-8a61-d8fd49593cde</string>
+        </void>
+        <void property="monto">
+         <float>10.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion14">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T14:51:47.7322462</string>
+        </void>
+        <void property="idTransaccion">
+         <string>9c4187d5-5b6a-47dc-b5bc-1a4effedc47d</string>
+        </void>
+        <void property="monto">
+         <float>100.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion15">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T14:59:31.5877675</string>
+        </void>
+        <void property="idTransaccion">
+         <string>0b26e705-8458-4f29-9008-41baed834548</string>
+        </void>
+        <void property="monto">
+         <float>300.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion16">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T17:03:39.123396</string>
+        </void>
+        <void property="idTransaccion">
+         <string>85cf72ab-f9f9-44e2-856a-aedc21e20bbd</string>
+        </void>
+        <void property="monto">
+         <float>100.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion17">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T17:12:41.7801861</string>
+        </void>
+        <void property="idTransaccion">
+         <string>f2efe195-69db-4a84-856c-daee34062e6e</string>
+        </void>
+        <void property="monto">
+         <float>100.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion18">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T17:36:23.0998076</string>
+        </void>
+        <void property="idTransaccion">
+         <string>45e2fde2-9428-4078-85ba-37e7005f6e44</string>
+        </void>
+        <void property="monto">
+         <float>10.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion19">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T18:11:43.4219496</string>
+        </void>
+        <void property="idTransaccion">
+         <string>1ef552ee-ef7a-4fbb-ab39-3164ee429eaf</string>
+        </void>
+        <void property="monto">
+         <float>100.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion" id="Transaccion20">
+        <void property="descripcion">
+         <string></string>
+        </void>
+        <void property="fecha">
+         <string>2024-11-15T18:15:06.869659</string>
+        </void>
+        <void property="idTransaccion">
+         <string>ecfd6924-c1ad-46e9-bd22-f80c2d8b368d</string>
+        </void>
+        <void property="monto">
+         <float>10.0</float>
+        </void>
+        <void property="tipoTransaccion">
+         <object idref="TipoTransaccion0"/>
+        </void>
+        <void property="usuario">
+         <object idref="Usuario0"/>
+        </void>
+       </object>
+      </void>
      </void>
      <void property="nombreBanco">
       <string>Nequi</string>
@@ -204,7 +556,7 @@
       <string>5846375637</string>
      </void>
      <void property="saldo">
-      <double>3500.0</double>
+      <double>2770.0</double>
      </void>
      <void property="tipoCuenta">
       <object class="java.lang.Enum" method="valueOf">
@@ -235,7 +587,55 @@
     <object idref="Transaccion3"/>
    </void>
    <void method="add">
+    <object idref="Transaccion12"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion13"/>
+   </void>
+   <void method="add">
     <object idref="Transaccion4"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion14"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion5"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion15"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion6"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion16"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion7"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion17"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion8"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion18"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion9"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion19"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion10"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion20"/>
+   </void>
+   <void method="add">
+    <object idref="Transaccion11"/>
    </void>
   </void>
   <void property="listaUsuarios">
