@@ -81,11 +81,13 @@
         </TableView>
         <HBox alignment="CENTER" focusTraversable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
             <children>
-                <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#consultarSaldo" style="-fx-background-color: #00807a;" text="Consultar" textFill="WHITE" />
-                <Region prefHeight="200.0" prefWidth="200.0" />
+                <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#consultarSaldo" style="-fx-background-color: #00807a;" text="Consultar Saldo" textFill="WHITE" />
+                <Region prefHeight="40.0" prefWidth="86.0" />
                 <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#irTransferencia" style="-fx-background-color: #00807a;" text="Transferir" textFill="WHITE" />
-                <Region prefHeight="200.0" prefWidth="200.0" />
+                <Region prefHeight="40.0" prefWidth="89.0" />
                 <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#irGestionarCategorias" style="-fx-background-color: #00807a;" text="Gestionar Categorias" textFill="WHITE" />
+            <Region prefHeight="40.0" prefWidth="90.0" />
+            <Button minHeight="40.0" minWidth="142.0" mnemonicParsing="false" style="-fx-background-color: #00807a; -fx-text-fill: white;" text="Gestionar Presupuestos" />
             </children>
         </HBox>
     </children>
