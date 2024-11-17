@@ -297,20 +297,46 @@ public class BilleteraVirtual implements IBancoService, Serializable {
     }
 
     public Categoria agregarCategoria(Usuario usuario, String nombreCategoria, String descripcion, String idTransaccion) throws Exception {
+
+        // Verificar si el monto gastado supera el asignado antes de continuar
+        for (Presupuesto presupuesto : listaPresupuestos) {
+            if (presupuesto.getNombre().equals(nombreCategoria) &&
+                    presupuesto.getUsuarioAsociado().equals(usuario)) {
+                float montoGastado = presupuesto.getMontoGastado();
+                float montoAsignado = presupuesto.getMontoAsignado();
+
+                if (montoGastado > montoAsignado) {
+                    throw new Exception("El presupuesto para la categoría: " + presupuesto.getNombre() +
+                            ", ha superado el monto límite");
+                }
+            }
+        }
+
+        // Crear nueva categoría
         String idCategoria = UUID.randomUUID().toString();
         Transaccion transaccion = obtenerTransaccion(idTransaccion, 0);
+        if (transaccion == null) {
+            throw new Exception("La transacción no puede ser nula");
+        }
+
         Categoria categoria = usuario.crearCategoria(nombreCategoria, descripcion, transaccion, idCategoria);
 
-        for (Presupuesto presupuesto : listaPresupuestos){
-            if (presupuesto.getCategoria().getNombreCategoria().equals(nombreCategoria)){
+        // Incrementar el monto gastado y verificar de nuevo
+        for (Presupuesto presupuesto : listaPresupuestos) {
+            if (presupuesto.getCategoria().getNombreCategoria().equals(nombreCategoria) &&
+                    presupuesto.getUsuarioAsociado().equals(usuario)) {
                 float montoGastado = presupuesto.getMontoGastado();
-                assert transaccion != null;
-                presupuesto.setMontoGastado(montoGastado + transaccion.getMonto());
+                float nuevoMontoGastado = montoGastado + transaccion.getMonto();
+
+                if (nuevoMontoGastado > presupuesto.getMontoAsignado()) {
+                    throw new Exception("El presupuesto para la categoría: " + presupuesto.getNombre() +
+                            " ha superado el monto límite");
+                }
+                presupuesto.setMontoGastado(nuevoMontoGastado);
             }
         }
 
         return categoria;
-
     }
 
     private Transaccion obtenerTransaccion(String idTransaccion, int posicion) {

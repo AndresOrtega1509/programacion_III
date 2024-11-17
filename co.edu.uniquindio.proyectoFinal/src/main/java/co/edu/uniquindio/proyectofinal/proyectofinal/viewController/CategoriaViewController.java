@@ -35,7 +35,8 @@ public class CategoriaViewController {
             System.out.println(categoria);
             cerrarVentana();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            mostrarMensaje("Categoria","Notificación Usuario",e.getMessage(),
+                    Alert.AlertType.ERROR);
         }
     }
 

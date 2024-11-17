@@ -168,3 +168,337 @@ nov 12, 2024 2:41:04 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils
 INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-12
 nov 12, 2024 2:41:09 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-12
+nov 12, 2024 2:42:26 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-12
+nov 12, 2024 3:49:09 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-12
+nov 12, 2024 3:49:39 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-12
+nov 15, 2024 11:17:26 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 11:17:33 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 11:28:38 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 11:57:01 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 11:57:06 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 12:17:29 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 12:17:40 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 12:22:14 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 12:22:20 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 12:24:46 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 12:24:52 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 12:27:32 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 12:27:39 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 12:41:19 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 12:41:22 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 2:51:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 2:51:19 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 2:58:58 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 2:59:05 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 4:55:32 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 4:55:41 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 5:03:05 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 5:03:14 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 5:04:35 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-15
+nov 15, 2024 5:04:50 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-15
+nov 15, 2024 5:05:05 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-15
+nov 15, 2024 5:05:09 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 5:12:13 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 5:12:19 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 5:35:39 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 5:35:45 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 5:39:51 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 5:39:55 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 6:10:59 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 6:11:05 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 15, 2024 6:14:33 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-15
+nov 15, 2024 6:14:40 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-15
+nov 16, 2024 7:19:10 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 7:19:20 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 7:53:03 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 7:53:51 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: agregar usuario,Usuario creado,luis se registró en la aplicación,2024-11-16
+nov 16, 2024 7:53:58 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,luis inició sesion,2024-11-16
+nov 16, 2024 7:54:11 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,luis creó una cuenta bancaria,2024-11-16
+nov 16, 2024 7:54:26 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,luis ha cerrado la sesión,2024-11-16
+nov 16, 2024 7:54:33 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,luis inició sesion,2024-11-16
+nov 16, 2024 7:54:58 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,luis creó una cuenta bancaria,2024-11-16
+nov 16, 2024 7:55:12 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,luis ha cerrado la sesión,2024-11-16
+nov 16, 2024 11:00:44 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:25:05 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:25:11 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 1:16:29 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 1:16:33 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 1:19:59 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 1:20:01 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 1:20:08 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 1:21:13 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 1:21:19 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 1:23:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 1:23:15 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 1:25:20 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 1:25:25 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 2:59:06 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 2:59:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 3:06:56 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 3:07:00 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 6:06:39 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 6:06:43 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 6:27:55 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 6:28:01 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 6:29:30 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-16
+nov 16, 2024 6:29:38 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-16
+nov 16, 2024 6:29:53 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-16
+nov 16, 2024 6:29:58 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 6:40:59 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 6:41:03 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 6:42:12 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 6:42:22 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 6:53:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 6:53:15 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 7:17:17 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 7:17:23 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: logiarse,Los datos ingresados son incorrectos,,2024-11-16
+nov 16, 2024 7:17:26 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 7:36:32 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 7:36:36 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 8:30:18 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 8:30:23 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 8:33:11 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 8:33:16 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 8:35:34 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 8:35:39 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 8:37:16 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 8:37:21 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 8:41:10 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 8:41:15 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 8:42:17 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 8:42:22 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 8:46:05 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 8:46:10 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 10:39:37 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 10:39:41 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 10:44:48 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 10:44:52 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:09:30 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:09:38 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:15:53 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:15:57 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:18:29 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:18:33 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:24:26 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:24:30 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:27:25 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:27:30 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:30:27 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: crearCuenta,Cuenta bancaria creada,sara creó una cuenta bancaria,2024-11-16
+nov 16, 2024 11:31:17 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-16
+nov 16, 2024 11:31:25 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-16
+nov 16, 2024 11:32:06 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-16
+nov 16, 2024 11:32:10 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:33:27 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-16
+nov 16, 2024 11:33:33 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-16
+nov 16, 2024 11:37:35 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-16
+nov 16, 2024 11:37:39 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 16, 2024 11:48:03 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-16
+nov 16, 2024 11:48:10 P. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-16
+nov 17, 2024 12:04:23 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 12:04:28 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 12:12:57 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 12:13:01 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 1:50:01 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 1:50:48 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 1:54:09 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 1:54:14 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 1:56:41 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 1:56:46 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:02:22 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 2:02:27 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:05:18 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 2:05:24 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:32:08 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 2:32:13 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:34:35 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 2:34:41 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:41:09 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 2:41:14 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:49:41 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 2:49:50 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:53:41 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 2:53:46 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 2:58:53 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-17
+nov 17, 2024 2:58:59 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-17
+nov 17, 2024 3:07:03 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 3:07:07 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 3:07:22 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-17
+nov 17, 2024 3:07:31 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-17
+nov 17, 2024 3:18:43 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 3:19:01 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-17
+nov 17, 2024 3:19:24 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,edwin ha cerrado la sesión,2024-11-17
+nov 17, 2024 3:19:28 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 3:19:35 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-17
+nov 17, 2024 3:19:40 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,sara inició sesion,2024-11-17
+nov 17, 2024 3:19:49 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: cerrarSesion,La sesión se ha cerrado,sara ha cerrado la sesión,2024-11-17
+nov 17, 2024 3:19:57 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: logiarse,Los datos ingresados son incorrectos,,2024-11-17
+nov 17, 2024 3:20:00 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-17
+nov 17, 2024 3:21:54 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: inicioSistema,Inicio de la aplicacion,,2024-11-17
+nov 17, 2024 3:22:03 A. M. co.edu.uniquindio.proyectofinal.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: logiarse,Inicio de sesión,edwin inició sesion,2024-11-17
