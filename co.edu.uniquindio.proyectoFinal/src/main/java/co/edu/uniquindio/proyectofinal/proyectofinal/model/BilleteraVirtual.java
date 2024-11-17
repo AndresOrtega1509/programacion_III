@@ -6,6 +6,7 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.services.IBancoServic
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
@@ -14,7 +15,7 @@ public class BilleteraVirtual implements IBancoService, Serializable {
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     private ArrayList<Cuenta> listaCuentas = new ArrayList<>();
     private ArrayList<Transaccion> listaTransacciones = new ArrayList<>();
-    private ArrayList<Categoria> listaCategorias = new ArrayList<>();
+    private ArrayList<Presupuesto> listaPresupuestos = new ArrayList<>();
 
 
     public BilleteraVirtual() {
@@ -44,12 +45,12 @@ public class BilleteraVirtual implements IBancoService, Serializable {
         this.listaTransacciones = listaTransacciones;
     }
 
-    public ArrayList<Categoria> getListaCategorias() {
-        return listaCategorias;
+    public ArrayList<Presupuesto> getListaPresupuestos() {
+        return listaPresupuestos;
     }
 
-    public void setListaCategorias(ArrayList<Categoria> listaCategorias) {
-        this.listaCategorias = listaCategorias;
+    public void setListaPresupuestos(ArrayList<Presupuesto> listaPresupuestos) {
+        this.listaPresupuestos = listaPresupuestos;
     }
 
     public void agregarUsuario(Usuario usuario) {
@@ -279,7 +280,6 @@ public class BilleteraVirtual implements IBancoService, Serializable {
                 Transaccion transaccionDeposito = cuentaDestino.depositar(monto, cuentaOrigen.getUsuario(), descripcion, idTransaccion);
                 listaTransacciones.add(transaccionRetiro);
                 listaTransacciones.add(transaccionDeposito);
-
                 return transaccionRetiro;
 
             } else {
@@ -300,6 +300,14 @@ public class BilleteraVirtual implements IBancoService, Serializable {
         String idCategoria = UUID.randomUUID().toString();
         Transaccion transaccion = obtenerTransaccion(idTransaccion, 0);
         Categoria categoria = usuario.crearCategoria(nombreCategoria, descripcion, transaccion, idCategoria);
+
+        for (Presupuesto presupuesto : listaPresupuestos){
+            if (presupuesto.getCategoria().getNombreCategoria().equals(nombreCategoria)){
+                float montoGastado = presupuesto.getMontoGastado();
+                assert transaccion != null;
+                presupuesto.setMontoGastado(montoGastado + transaccion.getMonto());
+            }
+        }
 
         return categoria;
 
@@ -346,5 +354,99 @@ public class BilleteraVirtual implements IBancoService, Serializable {
 
     }
 
+    public void actualizarPresupuesto(String idUsuario, String nombrePresupuesto, float montoAsignado, float montoGastado,
+                                      String idPresupuesto) throws Exception {
 
+        if (nombrePresupuesto == null || nombrePresupuesto.isBlank()) {
+            throw new Exception("El nombre del presupuesto es obligatorio");
+        }
+
+        if (montoAsignado <= 0) {
+            throw new Exception("El monto asignado debe ser un monto válido");
+        }
+
+        if (montoGastado < 0) {
+            throw new Exception("El monto gastado debe ser un monto válido");
+        }
+
+        Usuario usuario = obtenerUsuario(idUsuario, 0);
+
+        // Verificar si el nombre del presupuesto corresponde a alguna categoría
+        boolean categoriaExiste = false;
+        for (Categoria categoria : usuario.getListaCategorias()) {
+            if (Objects.equals(categoria.getNombreCategoria(), nombrePresupuesto)) {
+                categoriaExiste = true;
+                break; // Salimos del bucle si encontramos la categoría
+            }
+        }
+
+        if (!categoriaExiste) {
+            throw new Exception("El nombre del presupuesto debe corresponder a una categoría existente");
+        }
+
+        // Actualizar el presupuesto
+        for (Presupuesto presupuesto : listaPresupuestos) {
+            if (presupuesto.getIdPresupuesto().equals(idPresupuesto)) {
+                presupuesto.setMontoGastado(montoGastado);
+                presupuesto.setMontoAsignado(montoAsignado);
+                presupuesto.setNombre(nombrePresupuesto);
+                return; // Salimos del método si se actualiza el presupuesto
+            }
+        }
+
+        // Si no se encuentra el presupuesto con el ID proporcionado
+        throw new Exception("Presupuesto no encontrado");
+    }
+
+    public void eliminarPresupuesto(Presupuesto presupuesto) throws Exception {
+
+        if (presupuesto != null) {
+            listaPresupuestos.remove(presupuesto);
+        }
+
+    }
+
+    public Presupuesto agregarPresupuesto(String idUsuario,String nombrePresupuesto, float montoAsignado, Categoria categoria) throws Exception {
+        if (montoAsignado <= 0) {
+            throw new Exception("El monto asignado debe ser un numero valido");
+        }
+
+        String idPresupuesto = UUID.randomUUID().toString();
+        Usuario usuario = obtenerUsuario(idUsuario, 0);
+        Presupuesto nuevoPresupuesto = null;
+
+        if (usuario != null) {
+
+            for (Presupuesto presupuesto : listaPresupuestos){
+                if (!presupuesto.getNombre().equals(nombrePresupuesto)) {
+                    nuevoPresupuesto = new Presupuesto();
+                    nuevoPresupuesto.setIdPresupuesto(idPresupuesto);
+                    nuevoPresupuesto.setMontoAsignado(montoAsignado);
+                    nuevoPresupuesto.setUsuarioAsociado(usuario);
+                    nuevoPresupuesto.setCategoria(categoria);
+                    nuevoPresupuesto.setNombre(nombrePresupuesto);
+                    listaPresupuestos.add(nuevoPresupuesto);
+
+                    return nuevoPresupuesto;
+                }else {
+                    throw new Exception("Ya existe un presupuesto con la categoria o nombre: " + presupuesto.getNombre());
+                }
+            }
+
+        }else {
+            throw new Exception("El usuario no existe");
+        }
+        return nuevoPresupuesto;
+
+    }
+
+    public ArrayList<Presupuesto> obtenerListaPresupuestosUsuario(String idUsuario) {
+        ArrayList<Presupuesto> presupuestos = new ArrayList<>();
+        for (Presupuesto presupuesto : listaPresupuestos){
+            if (presupuesto.getUsuarioAsociado().getIdUsuario().equals(idUsuario)){
+                presupuestos.add(presupuesto);
+            }
+        }
+        return presupuestos;
+    }
 }

@@ -87,7 +87,7 @@
                 <Region prefHeight="40.0" prefWidth="89.0" />
                 <Button minHeight="40.0" minWidth="130.0" mnemonicParsing="false" onAction="#irGestionarCategorias" style="-fx-background-color: #00807a;" text="Gestionar Categorias" textFill="WHITE" />
             <Region prefHeight="40.0" prefWidth="90.0" />
-            <Button minHeight="40.0" minWidth="142.0" mnemonicParsing="false" style="-fx-background-color: #00807a; -fx-text-fill: white;" text="Gestionar Presupuestos" />
+            <Button minHeight="40.0" minWidth="142.0" mnemonicParsing="false" onAction="#irGestionarPresupuesto" style="-fx-background-color: #00807a; -fx-text-fill: white;" text="Gestionar Presupuestos" />
             </children>
         </HBox>
     </children>

@@ -45,11 +45,11 @@ public class GestionarCategoriasViewController {
         tcDescripcion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getDescripcionCategoria()));
         tcNombreCategoria.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getNombreCategoria()));
         mostrarCategorias();
-        // Agregar el evento de doble clic a la tabla
+        // Agregar el evento de un clic a la tabla
         tablaCategorias.setRowFactory(tv -> {
             TableRow<Categoria> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
-                if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2 && (!row.isEmpty())) {
+                if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 1 && (!row.isEmpty())) {
                     Categoria categoria = row.getItem();
                     this.categoria = categoria;
 
@@ -60,7 +60,7 @@ public class GestionarCategoriasViewController {
 
     }
 
-    private void cancelarCategoria(Categoria categoria) {
+    private void eliminarCategoria(Categoria categoria) {
 
         try {
             gestionarCategoriasController.eliminarCategoria(sesion.getUsuario(), categoria);
@@ -107,7 +107,7 @@ public class GestionarCategoriasViewController {
     public void eliminarCategoria(ActionEvent actionEvent) {
 
         if (categoria != null) {
-            cancelarCategoria(categoria);
+            eliminarCategoria(categoria);
         }else {
             mostrarMensaje("Categoria","Notificación Usuario", "Seleccione una categoria",
                     Alert.AlertType.WARNING);

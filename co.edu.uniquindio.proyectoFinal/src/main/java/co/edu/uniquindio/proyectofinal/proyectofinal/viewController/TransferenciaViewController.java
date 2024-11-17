@@ -11,9 +11,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.util.Optional;
 
 public class TransferenciaViewController {
 
@@ -38,31 +41,52 @@ public class TransferenciaViewController {
     public void transferir(ActionEvent actionEvent) {
 
         try {
-            if (validarDatos()){
-                if (cbTipoTransaccion.getSelectionModel().getSelectedItem().equals("RETIRO")) {
+            if (validarDatos()) {
+                String tipoSeleccionado = cbTipoTransaccion.getSelectionModel().getSelectedItem();
+                float monto = Float.parseFloat(txtMonto.getText());
+                TipoTransaccion tipoTransaccion = TipoTransaccion.valueOf(cbTipoTransaccion.getValue());
+                Transaccion transaccion = null;
 
-                    float monto = Float.parseFloat(txtMonto.getText());
-                    TipoTransaccion tipoTransaccion = TipoTransaccion.valueOf(cbTipoTransaccion.getValue());
-                    transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(),"",
-                            monto, tipoTransaccion, txtDescripcion.getText());
-
-                }else {
-                    float monto = Float.parseFloat(txtMonto.getText());
-                    TipoTransaccion tipoTransaccion = TipoTransaccion.valueOf(cbTipoTransaccion.getValue());
-                    Transaccion transaccion = transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(),txtCuenta.getText(),
-                            monto, tipoTransaccion, txtDescripcion.getText());
-                    navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/crearCategoria.fxml", "Banco - Categoria - Transaccion", transaccion.getIdTransaccion());
+                if ("RETIRO".equals(tipoSeleccionado)) {
+                    transferenciaController.realizarTransaccion(sesion.getCuenta().getNumeroCuenta(), "", monto, tipoTransaccion, txtDescripcion.getText());
+                } else {
+                    transaccion = transferenciaController.realizarTransaccion(
+                            sesion.getCuenta().getNumeroCuenta(),
+                            txtCuenta.getText(),
+                            monto,
+                            tipoTransaccion,
+                            txtDescripcion.getText()
+                    );
                 }
+
                 observadorTransaccion.notificarTransaccion();
-                mostrarMensaje("Notificación usuario", "Transacción exitosa", "La transferencia ha sido procesada correctamente",
-                        Alert.AlertType.INFORMATION);
+                mostrarMensaje("Notificación usuario", "Transacción exitosa", "La transferencia ha sido procesada correctamente", Alert.AlertType.INFORMATION);
+
+                // Realiza la navegación si es una transferencia
+                if (transaccion != null) {
+                    if(mostrarMensajeConfirmacion("¿Desea crear una categoria para su transferencia?")){
+                        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/crearCategoria.fxml", "Banco - Categoria - Transaccion", transaccion.getIdTransaccion());
+                    }
+                }
+
                 cerrarVentana();
-
             }
-
         } catch (Exception e) {
-            mostrarMensaje("Notificación usuario", "Transacción rechazada", e.getMessage(),
-                    Alert.AlertType.ERROR);
+            mostrarMensaje("Notificación usuario", "Transacción rechazada", e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    private boolean mostrarMensajeConfirmacion(String mensaje) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Confirmación");
+        alert.setContentText(mensaje);
+        Optional<ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
         }
     }
 

@@ -19,7 +19,7 @@
                 </Label>
             </children>
         </HBox>
-        <TableView fx:id="tablaCategorias" layoutX="32.0" layoutY="122.0" prefHeight="169.0" prefWidth="534.0">
+        <TableView fx:id="tablaPresupuestos" layoutX="32.0" layoutY="122.0" prefHeight="169.0" prefWidth="534.0">
             <columns>
                 <TableColumn fx:id="tcIdPresupuesto" prefWidth="75.0" text="idPresupuesto" />
                 <TableColumn fx:id="tcNombrePresupuesto" prefWidth="75.0" text="Nombre" />
@@ -30,7 +30,7 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
-        <Label layoutX="32.0" layoutY="52.0" prefHeight="62.0" prefWidth="534.0" text="Seleccione con doble click el presupuesto para actualizar o eliminar">
+        <Label alignment="CENTER" layoutX="32.0" layoutY="52.0" prefHeight="62.0" prefWidth="534.0" text="Seleccione el presupuesto para actualizar o eliminar">
             <font>
                 <Font size="18.0" />
             </font>

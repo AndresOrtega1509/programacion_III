@@ -257,4 +257,9 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
         navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/gestionarCategorias.fxml",
                 "Banco - Gestionar Categorias");
     }
+
+    public void irGestionarPresupuesto(ActionEvent actionEvent) throws Exception {
+        navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/gestionarPresupuesto.fxml",
+                "Banco - Gestionar Presupuesto");
+    }
 }

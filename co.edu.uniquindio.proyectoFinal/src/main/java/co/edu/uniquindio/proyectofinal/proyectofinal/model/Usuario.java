@@ -1,7 +1,9 @@
 package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Usuario implements Serializable {
 
@@ -115,17 +117,33 @@ public class Usuario implements Serializable {
 
     public Categoria crearCategoria(String nombreCategoria, String descripcion, Transaccion transaccion, String idCategoria) {
 
-        Categoria categoria = new Categoria();
-        categoria.setIdCategoria(idCategoria);
-        categoria.setNombreCategoria(nombreCategoria);
-        categoria.setDescripcionCategoria(descripcion);
-        listaCategorias.add(categoria);
-
-        if (transaccion != null) {
-            transaccion.setCategoria(categoria);
+        // Recorremos las categorías existentes
+        for (Categoria c : listaCategorias) {
+            Categoria categoria = new Categoria();
+            if (c.getNombreCategoria().equals(nombreCategoria)) {
+                categoria.setIdCategoria(c.getIdCategoria());
+            } else {
+                categoria.setIdCategoria(idCategoria);
+            }
+            categoria.setNombreCategoria(nombreCategoria);
+            categoria.setDescripcionCategoria(descripcion);
+            listaCategorias.add(categoria);
+            if (transaccion != null) {
+                transaccion.setCategoria(categoria);
+            }
+            return categoria; // Retornamos la categoría creada o asociada
         }
 
-        return categoria;
+        // Si la lista está vacía o no se ejecutó el bucle, creamos una nueva categoría
+        Categoria nuevaCategoria = new Categoria();
+        nuevaCategoria.setIdCategoria(idCategoria);
+        nuevaCategoria.setNombreCategoria(nombreCategoria);
+        nuevaCategoria.setDescripcionCategoria(descripcion);
+        listaCategorias.add(nuevaCategoria);
+        if (transaccion != null) {
+            transaccion.setCategoria(nuevaCategoria);
+        }
+        return nuevaCategoria; // Retornamos la categoría nueva
     }
 
     public void eliminarCategoria(Categoria categoria) {
@@ -157,5 +175,25 @@ public class Usuario implements Serializable {
                 return obtenerCategoria(idUsuario,posicion+1);
             }
         }
+    }
+
+    /**
+     * Metodo que obtiene solo una categoria por el nombre para permitir que el usuario seleccione la
+     * categoria a la cual quiere asignarle el presupuesto
+     * @return List<Categoria>
+     */
+    public List<Categoria> obtenerCategoriasUnicas() {
+        // Usamos un mapa para filtrar las categorías basándonos en el nombre.
+        Map<String, Categoria> categoriasUnicas = new HashMap<>();
+
+        for (Categoria categoria : listaCategorias) {
+            // Si no existe una categoría con este nombre, la agregamos.
+            if (!categoriasUnicas.containsKey(categoria.getNombreCategoria())) {
+                categoriasUnicas.put(categoria.getNombreCategoria(), categoria);
+            }
+        }
+
+        // Retornamos las categorías como una lista.
+        return new ArrayList<>(categoriasUnicas.values());
     }
 }

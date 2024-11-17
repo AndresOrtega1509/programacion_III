@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ModelFactoryController implements IModelFactoryService {
 
@@ -194,7 +195,9 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     public Categoria agregarCategoria(Usuario usuario,String nombreCategoria, String descripcion, String idTransaccion) throws Exception {
-        return billeteraVirtual.agregarCategoria(usuario,nombreCategoria, descripcion, idTransaccion);
+        Categoria categoria = billeteraVirtual.agregarCategoria(usuario,nombreCategoria, descripcion, idTransaccion);
+        guardarResourceXML();
+        return categoria;
     }
 
     private void cargarDatosBase() {
@@ -203,13 +206,36 @@ public class ModelFactoryController implements IModelFactoryService {
 
     public void eliminarCategoria(Usuario usuario,Categoria categoria) {
         billeteraVirtual.eliminarCategoria(usuario, categoria);
+        guardarResourceXML();
     }
 
     public void actualizarCategoria(Usuario usuario, String idCategoria, String nombreCategoria,String descripcion) throws Exception {
 
         billeteraVirtual.actualizarCategoria(usuario, idCategoria, nombreCategoria, descripcion);
-
+        guardarResourceXML();
     }
+
+    public Presupuesto agregarPresupuesto(String idUsuario, String nombrePresupuesto, float montoAsignado,Categoria categoria) throws Exception {
+
+        Presupuesto presupuesto = billeteraVirtual.agregarPresupuesto(idUsuario, nombrePresupuesto, montoAsignado, categoria);
+        guardarResourceXML();
+        return presupuesto;
+    }
+
+    public ArrayList<Presupuesto> obtenerListaPresupuestosUsuario(String idUsuario) {
+        return billeteraVirtual.obtenerListaPresupuestosUsuario(idUsuario);
+    }
+
+    public void eliminarPresupuesto(Presupuesto presupuesto) throws Exception {
+        billeteraVirtual.eliminarPresupuesto(presupuesto);
+        guardarResourceXML();
+    }
+    public void actualizarPresupuesto(String idUsuario, String nombrePresupuesto, float montoAsignado, float montoGastado,
+                                      String idPresupuesto) throws Exception{
+        billeteraVirtual.actualizarPresupuesto(idUsuario,nombrePresupuesto,montoAsignado,montoGastado,idPresupuesto);
+        guardarResourceXML();
+    }
+
 
     @Override
     public void navegarVentana(String nombreArchivoFxml, String tituloVentana) {
