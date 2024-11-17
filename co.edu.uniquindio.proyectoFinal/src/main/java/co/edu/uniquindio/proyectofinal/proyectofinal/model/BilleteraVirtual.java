@@ -3,8 +3,11 @@ package co.edu.uniquindio.proyectofinal.proyectofinal.model;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoCuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.services.IBancoService;
+import javafx.scene.control.DatePicker;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
@@ -474,5 +477,46 @@ public class BilleteraVirtual implements IBancoService, Serializable {
             }
         }
         return presupuestos;
+    }
+
+    public ArrayList<Transaccion> listarTransaccionFecha(LocalDateTime fecha, String numeroCuentaOrigen) {
+        Cuenta cuentaOrigen = obtenerCuenta(numeroCuentaOrigen);
+        ArrayList<Transaccion> listaTransaccionFecha = new ArrayList<>();
+        if (cuentaOrigen != null) {
+            for (Transaccion transaccion : cuentaOrigen.getListaTransacciones()) {
+                if (transaccion.getFechaAsLocalDateTime().toLocalDate().equals(fecha.toLocalDate())) {
+                    listaTransaccionFecha.add(transaccion);
+                }
+            }
+        }
+        return listaTransaccionFecha;
+
+    }
+
+    public ArrayList<Transaccion> listarTransaccionTipo(TipoTransaccion tipoTransaccion, String numeroCuentaOrigen) {
+
+        Cuenta cuentaOrigen = obtenerCuenta(numeroCuentaOrigen);
+        ArrayList<Transaccion> listaTransaccionTipo = new ArrayList<>();
+        if (cuentaOrigen != null) {
+            for (Transaccion transaccion : cuentaOrigen.getListaTransacciones()) {
+                if (transaccion.getTipoTransaccion().equals(tipoTransaccion)) {
+                    listaTransaccionTipo.add(transaccion);
+                }
+            }
+        }
+        return listaTransaccionTipo;
+    }
+
+    public ArrayList<Transaccion> listarTransaccionCategoria(String categoria, String numeroCuentaOrigen) {
+        Cuenta cuentaOrigen = obtenerCuenta(numeroCuentaOrigen);
+        ArrayList<Transaccion> listaTransaccionCategoria = new ArrayList<>();
+        if (cuentaOrigen != null) {
+            for (Transaccion transaccion : cuentaOrigen.getListaTransacciones()) {
+                if (transaccion.getCategoria() != null && transaccion.getCategoria().getNombreCategoria().equals(categoria)) {
+                    listaTransaccionCategoria.add(transaccion);
+                }
+            }
+        }
+        return listaTransaccionCategoria;
     }
 }

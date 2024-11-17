@@ -6,6 +6,7 @@ import co.edu.uniquindio.proyectofinal.proyectofinal.model.Cuenta;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Sesion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Transaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.model.Usuario;
+import co.edu.uniquindio.proyectofinal.proyectofinal.model.enums.TipoTransaccion;
 import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorActualizar;
 import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorComboBoxCuentas;
 import co.edu.uniquindio.proyectofinal.proyectofinal.viewController.observer.ObservadorTransaccion;
@@ -20,6 +21,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class PanelUsuarioViewController implements ObservadorActualizar, ObservadorTransaccion, ObservadorComboBoxCuentas {
@@ -44,6 +48,16 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
     private TableColumn<Transaccion, String> txtTipoTransaccion;
     @FXML
     private TableColumn<Transaccion, String> txtDescripcion;
+    @FXML
+    private TextField txtNombreCategoria;
+
+    @FXML
+    private ComboBox<TipoTransaccion> comboTipoTransaccion;
+
+    @FXML
+    private DatePicker dpFechaTransaccion;
+    private TipoTransaccion tipoTransaccion;
+    private LocalDateTime fechaTransaccion;
 
     ObservableList<UsuarioDto> listaUsuariosDto = FXCollections.observableArrayList();
 
@@ -64,6 +78,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
         txtTipoTransaccion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getTipoTransaccion().toString()));
         txtDescripcion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getDescripcion()));
 
+        comboTipoTransaccion.setItems(FXCollections.observableArrayList(TipoTransaccion.values()));
     }
 
 
@@ -261,5 +276,78 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
     public void irGestionarPresupuesto(ActionEvent actionEvent) throws Exception {
         navegarVentana("/co/edu/uniquindio/proyectofinal/proyectofinal/gestionarPresupuesto.fxml",
                 "Banco - Gestionar Presupuesto");
+    }
+
+    public void seleccionarTipoTransaccion(ActionEvent actionEvent) {
+
+        this.tipoTransaccion = comboTipoTransaccion.getSelectionModel().getSelectedItem();
+        dpFechaTransaccion.setDisable(true);
+        txtNombreCategoria.setText("");
+        txtNombreCategoria.setDisable(true);
+
+    }
+
+    public void seleccionarFechaTransaccion(ActionEvent actionEvent) {
+        // Verifica si el valor seleccionado es nulo antes de continuar
+        if (dpFechaTransaccion.getValue() == null) {
+            // No realiza ninguna acción si el valor es nulo
+            System.out.println("Fecha deseleccionada.");
+            return;
+        }
+
+        // Si el valor no es nulo, realiza las acciones necesarias
+        LocalDate fechaSeleccionada = dpFechaTransaccion.getValue();
+        LocalDateTime inicioDia = fechaSeleccionada.atStartOfDay();
+        this.fechaTransaccion = inicioDia;
+        txtNombreCategoria.setText("");
+        txtNombreCategoria.setDisable(true);
+        comboTipoTransaccion.getSelectionModel().clearSelection();
+
+    }
+
+    @FXML
+    public void filtrarTransaccion(ActionEvent actionEvent) {
+
+        try {
+            if (comboTipoTransaccion.getValue() == null && txtNombreCategoria.getText().isEmpty()) {
+                ArrayList<Transaccion> transaccionFecha = panelUsuarioController.listarTransaccionFecha(
+                        fechaTransaccion, sesion.getCuenta().getNumeroCuenta());
+                if (transaccionFecha.isEmpty()) {
+                    System.out.println("la lista esta vacia");
+                }
+                tablaTransacciones.setItems(FXCollections.observableArrayList(transaccionFecha));
+                dpFechaTransaccion.setValue(null);
+
+            }else if (txtNombreCategoria.getText().isEmpty() && dpFechaTransaccion.getValue() == null){
+                ArrayList<Transaccion> transaccionTipoTransaccion = panelUsuarioController.listarTransaccionTipo(tipoTransaccion,
+                        sesion.getCuenta().getNumeroCuenta());
+                if (transaccionTipoTransaccion.isEmpty()) {
+                    System.out.println("la lista esta vacia");
+                }
+                tablaTransacciones.setItems(FXCollections.observableArrayList(transaccionTipoTransaccion));
+                comboTipoTransaccion.getSelectionModel().clearSelection();
+
+            }else if (comboTipoTransaccion.getValue() == null && dpFechaTransaccion.getValue() == null){
+                ArrayList<Transaccion> transaccionNombreCategoria = panelUsuarioController.listarTransaccionCategoria(txtNombreCategoria.getText(),
+                        sesion.getCuenta().getNumeroCuenta());
+                if (transaccionNombreCategoria.isEmpty()) {
+                    System.out.println("la lista esta vacia");
+                }
+                tablaTransacciones.setItems(FXCollections.observableArrayList(transaccionNombreCategoria));
+                txtNombreCategoria.setText("");
+            }
+
+            comboTipoTransaccion.setDisable(false);
+            dpFechaTransaccion.setDisable(false);
+            txtNombreCategoria.setDisable(false);
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void mostrarTransacciones(ActionEvent actionEvent) {
+        consultarTransacciones();
     }
 }

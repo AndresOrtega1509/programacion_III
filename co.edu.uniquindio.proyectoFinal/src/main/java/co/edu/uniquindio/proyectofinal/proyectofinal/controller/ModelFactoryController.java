@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class ModelFactoryController implements IModelFactoryService {
@@ -234,6 +235,18 @@ public class ModelFactoryController implements IModelFactoryService {
                                       String idPresupuesto) throws Exception{
         billeteraVirtual.actualizarPresupuesto(idUsuario,nombrePresupuesto,montoAsignado,montoGastado,idPresupuesto);
         guardarResourceXML();
+    }
+
+    public ArrayList<Transaccion> listarTransaccionFecha(LocalDateTime fecha, String numeroCuentaOrigen) {
+        return billeteraVirtual.listarTransaccionFecha(fecha, numeroCuentaOrigen);
+    }
+
+    public ArrayList<Transaccion> listarTransaccionTipo(TipoTransaccion tipoTransaccion, String idUsuario) {
+        return billeteraVirtual.listarTransaccionTipo(tipoTransaccion, idUsuario);
+    }
+
+    public ArrayList<Transaccion> listarTransaccionCategoria(String categoria, String idUsuario) {
+        return billeteraVirtual.listarTransaccionCategoria(categoria, idUsuario);
     }
 
 
