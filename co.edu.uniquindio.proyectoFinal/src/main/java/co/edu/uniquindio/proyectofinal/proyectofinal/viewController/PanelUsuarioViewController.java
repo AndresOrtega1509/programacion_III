@@ -52,11 +52,11 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
     private TextField txtNombreCategoria;
 
     @FXML
-    private ComboBox<TipoTransaccion> comboTipoTransaccion;
+    private ComboBox<String> comboTipoTransaccion;
 
     @FXML
     private DatePicker dpFechaTransaccion;
-    private TipoTransaccion tipoTransaccion;
+    private String tipoTransaccion;
     private LocalDateTime fechaTransaccion;
 
     ObservableList<UsuarioDto> listaUsuariosDto = FXCollections.observableArrayList();
@@ -78,7 +78,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
         txtTipoTransaccion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getTipoTransaccion().toString()));
         txtDescripcion.setCellValueFactory(CellData -> new SimpleStringProperty(CellData.getValue().getDescripcion()));
 
-        comboTipoTransaccion.setItems(FXCollections.observableArrayList(TipoTransaccion.values()));
+        comboTipoTransaccion.getItems().addAll("DEPOSITO", "RETIRO");
     }
 
 
@@ -309,7 +309,11 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
     public void filtrarTransaccion(ActionEvent actionEvent) {
 
         try {
-            if (comboTipoTransaccion.getValue() == null && txtNombreCategoria.getText().isEmpty()) {
+            if (comboTipoTransaccion.getValue() == null && txtNombreCategoria.getText().isEmpty() &&
+                    dpFechaTransaccion.getValue() == null){
+                mostrarMensaje("Notificación Usuario", "Busqueda fallida", "Seleccione un componente " +
+                        "para filtrar", Alert.AlertType.ERROR);
+            }else if (comboTipoTransaccion.getValue() == null && txtNombreCategoria.getText().isEmpty()) {
                 ArrayList<Transaccion> transaccionFecha = panelUsuarioController.listarTransaccionFecha(
                         fechaTransaccion, sesion.getCuenta().getNumeroCuenta());
                 if (transaccionFecha.isEmpty()) {
@@ -319,7 +323,7 @@ public class PanelUsuarioViewController implements ObservadorActualizar, Observa
                 dpFechaTransaccion.setValue(null);
 
             }else if (txtNombreCategoria.getText().isEmpty() && dpFechaTransaccion.getValue() == null){
-                ArrayList<Transaccion> transaccionTipoTransaccion = panelUsuarioController.listarTransaccionTipo(tipoTransaccion,
+                ArrayList<Transaccion> transaccionTipoTransaccion = panelUsuarioController.listarTransaccionTipo(TipoTransaccion.valueOf(tipoTransaccion),
                         sesion.getCuenta().getNumeroCuenta());
                 if (transaccionTipoTransaccion.isEmpty()) {
                     System.out.println("la lista esta vacia");
